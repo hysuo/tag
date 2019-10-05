@@ -1,0 +1,134 @@
+import styled from 'styled-components'
+
+const ChatContainer = styled.div`
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    header{
+        background:#fff;
+        height:.5rem;
+        display:flex;
+        align-items:center;
+        justify-content:space-around;
+        padding: 0 .1rem;
+        img:nth-child(1){
+           height:.16rem;
+           width:.16rem;
+        }
+        p:nth-child(2){
+            width:80%;
+            text-align:center;
+            font-size:.18rem;
+        }
+        img:nth-child(3){
+           height:.2rem;
+           width:.2rem;
+        }
+    }
+    main{
+        flex:1;
+        overflow-y:auto;
+        .show{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            >p:nth-child(1){
+                padding:.18rem 0;
+                color:#707070;
+                font-size:.12rem;
+            }
+            >div:nth-child(2){
+                background:#89C3EB;
+                width:2.36rem;
+                height: .84rem;
+                border-radius:.3rem;
+                >p:nth-child(1){
+                    text-align:center;
+                    margin-top:.2rem;
+                    color:#fff;
+                }
+                >div:nth-child(2){
+                    display:flex;
+                    justify-content:space-around;
+                    margin-top:.12rem;
+                    >span:nth-child(1){
+                        color:#fff;
+                        font-size:.12rem;
+                    }
+                    .zan{
+                        width:.4rem;
+                        height:.2rem;
+                        background:#fff;
+                        border-radius:.12rem;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        img{
+                            width:.12rem;
+                            height:.12rem;
+                        }
+                        span{
+                            padding-left:.02rem;
+                            color:#707070;
+                            font-size:.12rem;
+                        }
+                    }
+                    
+                }
+            } 
+        }
+        .list{
+          float:right;
+          li{
+            margin-top:.15rem;
+            display:flex;
+            img{
+                width:.4rem;
+                height:.4rem;
+            }
+            span{
+                display:inline-block;
+                max-width:3rem;
+                overflow-wrap: break-word;
+                background:#89C3EB;
+                color:#fff;
+                font-size:.14rem;
+                padding:.1rem .24rem;
+                border-radius:.2rem;
+                margin-right:.05rem;
+            }
+          }
+        }
+    }
+    footer{
+        padding-left:.12rem;
+        height:.5rem;
+        background:#89C3EB;
+        display:flex;
+        align-items:center;
+        input{
+            background:#fff;
+            border-radius:.26rem;
+            width:2.9rem;
+            height:.36rem;
+            border:0;
+            padding:.05rem .15rem;
+        }
+        >div{
+            width:.34rem;
+            height:.34rem;
+            border-radius:50%;
+            background:#fff;
+            margin-left:.2rem;
+            i{
+                color:#89C3EB;
+                font-size:.16rem;
+                margin-left:.08rem;
+                line-height:.34rem;
+            }
+        }
+    }
+`
+export{
+    ChatContainer
+}
