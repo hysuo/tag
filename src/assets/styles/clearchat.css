@@ -1,0 +1,30 @@
+.am-modal-transparent{
+     width:3.32rem!important;
+    /*height:1.76rem!important; */
+    background:#fff!important;
+    border-radius: .2rem!important; 
+  }
+.am-modal-content{
+    padding-top: 0!important;
+    border-radius: .2rem!important; 
+}
+.am-modal-content{
+     margin-top: .2rem!important;
+    /*width: 2.98rem!important;
+    height:1.08rem!important; */
+}
+
+.am-modal-body{
+    padding-bottom: 0!important;
+}
+.am-modal-alert-content{
+    background: #89C3EB!important;
+    color:#fff!important;
+    font-size: .18rem!important;
+    padding: .2rem .15rem;
+    border-radius: .16rem!important;
+}
+.am-modal-button-group-h{
+    border-bottom-right-radius: .2rem!important;
+    border-bottom-left-radius: .2rem!important;
+}
