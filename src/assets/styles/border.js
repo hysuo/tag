@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const border = ({width='1px', style='solid', color='#ccc', radius=0, comp}) => {
+const border = ({width='1px', style='solid', color='#F7F7F7', radius=0, comp}) => {
   return styled(comp) `
     position: relative;
     border-radius: ${radius};
