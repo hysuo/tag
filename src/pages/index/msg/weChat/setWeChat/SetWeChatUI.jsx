@@ -16,7 +16,7 @@ export default (props)=>{
             </header>
             <main>
                 <ul className="member">
-                    <li>
+                    {/* <li>
                         <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=489703808,1101083043&fm=26&gp=0.jpg" alt=""/>   
                         <p>name</p>
                     </li>
@@ -39,7 +39,26 @@ export default (props)=>{
                     <li>
                         <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=489703808,1101083043&fm=26&gp=0.jpg" alt=""/>   
                         <p>name</p>
-                    </li>
+                    </li> */}
+                    {
+                        props.list.map((value,index) => {
+                            if(value.id ===1 && value.flag){
+                                return (
+                                    <li key={index}>
+                                        <img src={value.img} alt=""/>
+                                        <p>name</p>
+                                    </li>
+                                )
+                            }else if(value.id!==1){
+                                return (
+                                    <li key={index}>
+                                        <img src={value.img} alt=""/>
+                                        <p>name</p>
+                                    </li>
+                                )
+                            }
+                        })
+                    }
                     <li>
                         <img src={add} alt=""/>
                         <p>添加</p>
