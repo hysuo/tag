@@ -5,6 +5,7 @@ import ChangeName from './views/setChat/change/ChangeName'
 import MsgSearch from './views/msgSearch/MsgSearchContainer'
 import TagWeChat from './weChat/tag/TagChatContainer'
 import SetWeChat from './weChat/setWeChat/SetWeChatContainer'
+import reducer from './reducer'
 export{
     Msg,
     Chat,
@@ -12,5 +13,6 @@ export{
     ChangeName,
     MsgSearch,
     TagWeChat,
-    SetWeChat
+    SetWeChat,
+    reducer
 }

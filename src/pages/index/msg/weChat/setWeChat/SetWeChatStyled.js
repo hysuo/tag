@@ -32,7 +32,7 @@ const SetWeChatContainer = styled.div`
                     margin:.1rem .05rem 0;
                     width:.6rem;
                     height:.6rem;
-                    border-radius:.2rem;
+                    border-radius:50%;
                 }
             }
         }
