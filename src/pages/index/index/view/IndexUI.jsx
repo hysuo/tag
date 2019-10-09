@@ -37,7 +37,7 @@ export default (props) => {
                     <img src={home} alt=""/>
                     <p>首页</p>
                 </div>
-                <div className={pathname === '/index/msg' ? 'active' : ''} onClick={() => handleClick('/msg')}>
+                <div className={(pathname === '/index/msg/sixin'||pathname ==='/index/msg/xitong'||pathname ==='/index/msg/tuisong') ? 'active' : ''} onClick={() => handleClick('/msg')}>
                     <img src={msg} alt=""/>
                     <p>消息</p>
                 </div>

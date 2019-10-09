@@ -16,7 +16,7 @@ body {
 html {
   background-color: #eee;
   color: #212121;
-  font-size: 100px;
+  font-size: 26.666666667vw;
   -webkit-user-select: none;
   user-select: none; }
 
@@ -201,6 +201,9 @@ a {
 @font-face {
   font-family: yofont;
   src: url(//ss.qunarzz.com/yo/font/1.0.3/yofont.woff) format("woff"), url(//ss.qunarzz.com/yo/font/1.0.3/yofont.ttf) format("truetype"); }
+@font-face {
+  font-family: yofont;
+  src: url(../icon/send/iconfont.woff) format("woff"), url(../icon/send/iconfont.ttf) format("truetype"); }
 
 .yo-ico {
   font-family: yofont !important;
