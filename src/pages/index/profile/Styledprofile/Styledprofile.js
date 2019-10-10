@@ -9,7 +9,7 @@ const ProfileContainer = styled.div `
   header {
 	  height: 2rem;
 	  width: 100%;
-	  background: url(${backImg});
+	  background: url(${backImg}) no-repeat;
 	  position: relative;
 
   }
@@ -41,7 +41,7 @@ const Headbottom = styled.div `
 	width: 2.9rem;
 	height: .6rem;
 	position: absolute;
-	top: 1.7rem;
+	top: 85%;
 	left: .4rem;
 	border-radius: .2rem;
 	display: flex;
