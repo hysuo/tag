@@ -22,6 +22,8 @@ class SetWeChatContainer extends Component {
      changeshowName={this.showName}
      flag = {this.state.flag}
      changeflag = {this.changeflag}
+     goChangeName = {this.goChangeName}
+     searchContent = {this.searchContent}
      ></SetWeChatUI>
    )
  }
@@ -47,6 +49,12 @@ class SetWeChatContainer extends Component {
     this.setState({
         flag:false
      })
+ }
+ goChangeName=()=>{
+     this.props.history.push('/tag/changewename')
+ }
+ searchContent=()=>{
+    this.props.history.push('/tag/searchcontent')
  }
 }
 export default SetWeChatContainer

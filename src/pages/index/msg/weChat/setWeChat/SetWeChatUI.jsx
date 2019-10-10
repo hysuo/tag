@@ -16,30 +16,6 @@ export default (props)=>{
             </header>
             <main>
                 <ul className="member">
-                    {/* <li>
-                        <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=489703808,1101083043&fm=26&gp=0.jpg" alt=""/>   
-                        <p>name</p>
-                    </li>
-                    <li>
-                        <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=489703808,1101083043&fm=26&gp=0.jpg" alt=""/>   
-                        <p>name</p>
-                    </li>
-                    <li>
-                        <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=489703808,1101083043&fm=26&gp=0.jpg" alt=""/>   
-                        <p>name</p>
-                    </li>
-                    <li>
-                        <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=489703808,1101083043&fm=26&gp=0.jpg" alt=""/>   
-                        <p>name</p>
-                    </li>
-                    <li>
-                        <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=489703808,1101083043&fm=26&gp=0.jpg" alt=""/>   
-                        <p>name</p>
-                    </li>
-                    <li>
-                        <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=489703808,1101083043&fm=26&gp=0.jpg" alt=""/>   
-                        <p>name</p>
-                    </li> */}
                     {
                         props.list.map((value,index) => {
                             if(value.id ===1 && value.flag){
@@ -73,7 +49,7 @@ export default (props)=>{
                         <p>标签创建者</p>
                         <p>柠檬酸本酸</p>
                     </li>
-                    <li>
+                    <li onClick={()=>{props.searchContent()}}>
                         <p>查找聊记录</p>
                         <img src={go} alt=""/>
                     </li>
@@ -98,7 +74,7 @@ export default (props)=>{
                                 />}
                             >保存到收藏</List.Item>
                         </BorderContainer>
-                        <div>
+                        <div onClick={()=>{props.goChangeName()}}>
                             <p>我在本群的昵称</p>
                             <p>
                                 <span>name</span>

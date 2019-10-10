@@ -5,11 +5,10 @@ import 'styles/reset.css'
 import 'styles/clearchat.css'
 import {Index} from 'pages/index/index/'
 import {IndexContainer} from "./pages/login/"
-import { BrowserRouter as Router } from 'react-router-dom'
 import { RegisterContainer } from "./pages/register"
 import {ResetPasswordContainer } from "./pages/lostpass"
 
-import {Chat,SetChat,ChangeName,MsgSearch,TagWeChat,SetWeChat}from 'msg/'
+import {Chat,SetChat,ChangeName,MsgSearch,TagWeChat,SetWeChat,SearchContent}from 'msg/'
 function App() {
   return (
     <Switch>
@@ -25,6 +24,7 @@ function App() {
         <Route path="/msg/search" component={MsgSearch}></Route>
         <Route path="/tag/wechat" component={TagWeChat}></Route>
         <Route path="/tag/setwechat" component={SetWeChat}></Route>
+        <Route path="/tag/searchcontent" component={SearchContent}></Route>
         <Redirect from="/" to="/index" exact></Redirect>
     </Switch>
   );
