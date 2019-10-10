@@ -35,7 +35,6 @@ function App() {
         <Route path="/resetpassword" component={ResetPasswordContainer}></Route>
         
 
-<<<<<<< HEAD
         <Route path="/msg/chat" component={Chat}></Route>
         <Route path="/msg/setchat" component={SetChat}></Route>
         <Route path="/msg/changename" component={ChangeName}></Route>
@@ -59,12 +58,9 @@ function App() {
         <Route path="/profile/dynamic" component={Dynamic}></Route>
         <Route path="/profile/fan" component={Fan}></Route>
         <Route path="/profile/follow" component={Follow}></Route>
-        <Redirect from="/" to="/index" exact></Redirect>
-=======
         <Route path="/chat" component={Chat}></Route>
         <Route path="/cate" component={MainPageCategoryContainer}></Route>
-        <Redirect from="/" to="/cate" exact></Redirect>
->>>>>>> gdy
+        <Redirect from="/" to="/index" exact></Redirect>
     </Switch>
   );
 }
