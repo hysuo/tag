@@ -1,12 +1,25 @@
 import React, { Component } from 'react'
 import connect from './connect'
-
+import {AllContainer} from './Styled'
 @connect
-class All extends Component {
+class AllMsg extends Component {
  render(){
    return (
-     <div>all</div>
+     <AllContainer>
+       <ul>
+         {
+           this.props.list.map((value,index) => {
+             return(
+               <li key={index}>
+                 <img src={value.img} alt=""/>
+                 <span className={value.active ? value.active : ''}>{value.content}</span>
+               </li>
+             )
+           })
+         }
+       </ul>
+     </AllContainer>
    )
  }
 }
-export default All
+export default AllMsg
