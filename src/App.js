@@ -25,6 +25,9 @@ import Updatenum from 'pages/index/profile/views/inform/updatenum/Updatenum.jsx'
 import Dynamic from 'pages/index/profile/views/dynamic/Dynamic.jsx'
 import Fan from 'pages/index/profile/views/fan/Fan.jsx'
 import Follow from 'pages/index/profile/views/follow/Follow.jsx'
+import PublishDynamicContainer from "./pages/index/publish/publishDynamic/PublishDynamicContainer"
+import PublishTagContainer from "./pages/index/publish/publishTag/PublishTagContainer"
+import DynamicDetailContainer from './pages/index/dynamic/views/dynamicDetail/DynamicDetailContainer'
 
 function App() {
   return (
@@ -33,7 +36,9 @@ function App() {
         <Route path="/login" component={IndexContainer}></Route>
         <Route path="/register" component={RegisterContainer}></Route>
         <Route path="/resetpassword" component={ResetPasswordContainer}></Route>
-        
+        <Route path="/publishDynamic" component={PublishDynamicContainer}></Route>
+        <Route path="/publishTag" component={PublishTagContainer}></Route>
+        <Route path="/dynamic/dynamicDetail" component={DynamicDetailContainer}></Route>
 
         <Route path="/msg/chat" component={Chat}></Route>
         <Route path="/msg/setchat" component={SetChat}></Route>

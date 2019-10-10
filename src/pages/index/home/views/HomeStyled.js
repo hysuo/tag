@@ -11,6 +11,14 @@ const HomeContainer = styled.div`
         top:5.37rem;
         z-index: 999;
         display:none;
+        p{
+            font-size:.1rem;
+            color:#fff;
+            position: absolute;
+            top: .56rem;
+            left: .1rem;
+            font-weight: bold;
+        }
     }
     .publishT{
         position: absolute;
@@ -18,6 +26,14 @@ const HomeContainer = styled.div`
         top:5.37rem;
         z-index: 999;
         display:none;
+        p{
+            font-size:.1rem;
+            color:#fff;
+            position: absolute;
+            top: .56rem;
+            left: .1rem;
+            font-weight: bold;
+        }
     }
     .active{
         display:block;
@@ -77,7 +93,7 @@ const HomeContainer = styled.div`
                 >div{
                     display:flex;
                     img{
-                        z-index:999;
+                        z-index:1;
                     }
                     >div{
                         display:flex;

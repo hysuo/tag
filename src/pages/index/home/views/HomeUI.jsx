@@ -14,14 +14,17 @@ import publishD from 'assets/img/publish/组 646.png'
 import publishT from 'assets/img/publish/组 647.png'
 
 export default (props) => {
-    let {flag} = props
+    let {isShowPublish,publishDynamic,publishTag} = props
     return(
         <HomeContainer>
-            <div className={!flag ? 'active publishD':'publishD'}>
+            <div className={!isShowPublish ? 'active publishD':'publishD'} onClick={() => publishDynamic()}>
                 <img src={publishD} alt=""/>
+                <p>发布动态</p>
             </div>
-            <div className={!flag ? 'active publishT':'publishT'}>
+            <div className={!isShowPublish ? 'active publishT':'publishT'}
+            onClick={() => publishTag()}>
                 <img src={publishT} alt=""/>
+                <p>创建标签</p>
             </div>
            <header>
                <div>
