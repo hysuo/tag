@@ -6,8 +6,9 @@ class SetWeChatContainer extends Component {
  state={
      disturb:false,
      collection:false,
-     showName:false,
-     flag:true
+     showName:true,
+     flag:true,
+     myName:this.props.selfInfo.wechatname
   }
  render(){
    return (
@@ -17,6 +18,7 @@ class SetWeChatContainer extends Component {
      disturb={this.state.disturb}
      collection={this.state.collection}
      showName={this.state.showName}
+     myName={this.state.myName}
      changedisturb={this.disturb} 
      changecollection={this.collection} 
      changeshowName={this.showName}
@@ -51,7 +53,7 @@ class SetWeChatContainer extends Component {
      })
  }
  goChangeName=()=>{
-     this.props.history.push('/tag/changewename')
+     this.props.history.push('/msg/changename')
  }
  searchContent=()=>{
     this.props.history.push('/tag/searchcontent')

@@ -4,3 +4,14 @@ export const addwechatlist = (data) => {
     data
   }
 }
+export const searchcontent = (data) => {
+  return {
+    type: 'wechatsearch',
+    data
+  }
+}
+export const clear = () => {
+  return {
+    type: 'wechatsearchclear',
+  }
+}

@@ -4,8 +4,9 @@ import back from 'assets/img/msg/chat/back.png'
 import cancel from 'assets/img/msg/chat/cancel.png'
 
 import {ChangeNameContainer,SearchContainer} from './changeStyled'
-
-export default class ChangeName extends Component {
+import connect  from './connect';
+@connect
+class ChangeName extends Component {
  render(){
    return (
      <ChangeNameContainer>
@@ -18,11 +19,15 @@ export default class ChangeName extends Component {
       </header>
       <SearchContainer>
         <div>
-          <input type="text" placeholder='修改备注'></input>
+          <input type="text" onBlur={this.Change} ref='changename' placeholder='修改备注'></input>
           <img src={cancel} alt=""/>
         </div>
       </SearchContainer>
      </ChangeNameContainer>
    )
  }
+ Change=()=>{
+
+ }
 }
+export default ChangeName

@@ -40,6 +40,11 @@ import connect from './connect'
    )
  }
  addMessage=(value) => {
+  let date = new Date();
+  let year = date.getFullYear();
+  let month = date.getMonth() + 1;
+  let day = date.getDate();
+  let nowDate = year + '/' + month + '/' + day; 
   if(value){
     // this.setState({
     //   chatlist:[
@@ -55,11 +60,11 @@ import connect from './connect'
         {
          id:1,
          img:headImg,
-         content:value
+         content:value,
+         time:nowDate
        }
     )
   }
-  console.log(this)
 }
 goNext=()=>{
   this.props.history.push('/tag/setwechat')

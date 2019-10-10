@@ -19,19 +19,35 @@ export default (props)=>{
                     {
                         props.list.map((value,index) => {
                             if(value.id ===1 && value.flag){
-                                return (
-                                    <li key={index}>
-                                        <img src={value.img} alt=""/>
-                                        <p>name</p>
-                                    </li>
-                                )
+                                if(props.showName){
+                                    return (
+                                        <li key={index}>
+                                            <img src={value.img} alt=""/>
+                                            <p>{value.name}</p>
+                                        </li>
+                                    )
+                                }else{
+                                    return (
+                                        <li key={index}>
+                                            <img src={value.img} alt=""/>
+                                        </li>
+                                    )
+                                }
                             }else if(value.id!==1){
-                                return (
-                                    <li key={index}>
-                                        <img src={value.img} alt=""/>
-                                        <p>name</p>
-                                    </li>
-                                )
+                                if(props.showName){
+                                    return (
+                                        <li key={index}>
+                                            <img src={value.img} alt=""/>
+                                            <p>{value.name}</p>
+                                        </li>
+                                    )
+                                }else{
+                                    return (
+                                        <li key={index}>
+                                            <img src={value.img} alt=""/>
+                                        </li>
+                                    )
+                                }
                             }
                         })
                     }
@@ -77,7 +93,7 @@ export default (props)=>{
                         <div onClick={()=>{props.goChangeName()}}>
                             <p>我在本群的昵称</p>
                             <p>
-                                <span>name</span>
+                                <span>{props.myName}</span>
                                 <img src={go} alt=""/>
                             </p>
                         </div>

@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
 const SearchContent = styled.div`
+    display:flex;
+    flex-direction:column;
+    height:100%;
     header{
         height:.44rem;
         display:flex;
@@ -20,6 +23,7 @@ const SearchContent = styled.div`
     }
     .search{
         position: relative;
+        height:1rem;
         input{
             margin:.12rem .3rem;
             border:0;
@@ -54,7 +58,10 @@ const SearchContent = styled.div`
             }
         }
     }
-        
+    main{
+        flex:1;
+        overflow-y:auto;
+    }  
 `
 export{
     SearchContent
