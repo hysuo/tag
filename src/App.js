@@ -7,6 +7,7 @@ import {Index} from 'pages/index/index/'
 import {IndexContainer} from "./pages/login/"
 import { RegisterContainer } from "./pages/register"
 import {ResetPasswordContainer } from "./pages/lostpass"
+import {MainPageCategoryContainer} from "./pages/mainPageCategroy"
 
 import {Chat,SetChat,ChangeName,MsgSearch,TagWeChat,SetWeChat,SearchContent}from 'msg/'
 // import ChangeImg from 'pages/index/profile/views/changeImg/changeImg.jsx'
@@ -34,6 +35,7 @@ function App() {
         <Route path="/resetpassword" component={ResetPasswordContainer}></Route>
         
 
+<<<<<<< HEAD
         <Route path="/msg/chat" component={Chat}></Route>
         <Route path="/msg/setchat" component={SetChat}></Route>
         <Route path="/msg/changename" component={ChangeName}></Route>
@@ -58,6 +60,11 @@ function App() {
         <Route path="/profile/fan" component={Fan}></Route>
         <Route path="/profile/follow" component={Follow}></Route>
         <Redirect from="/" to="/index" exact></Redirect>
+=======
+        <Route path="/chat" component={Chat}></Route>
+        <Route path="/cate" component={MainPageCategoryContainer}></Route>
+        <Redirect from="/" to="/cate" exact></Redirect>
+>>>>>>> gdy
     </Switch>
   );
 }

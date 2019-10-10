@@ -6,9 +6,6 @@ import {
 } from './Styledt'
 
 export default class Tip extends Component {
-  constructor(props){
-    super(props)
-  }
   render() {
     return (
       <div {...this.props}>

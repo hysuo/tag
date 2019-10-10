@@ -6,7 +6,6 @@ import forw from 'images/use/zhanghao.svg'
 import rt from 'images/rig/dui.svg'
 import wg from 'images/rig/cuo.svg'
 import pas from 'images/pas/xiugaimima.svg'
-import ey from 'images/ey/eyq.svg'
 import shouji from 'images/tel/ziyuan.svg'
 import validateimg from 'images/tel/yanzhengma.svg'
 import RegisterButton from './RegisterButton'
@@ -83,8 +82,7 @@ const padding ="0 29px 0 20px"
     })
   }
   handleGetvalidate(e){
-    if (e.target.id=="q") {
-      
+    if (e.target.id==="q") {
     }
   }
   handleName(e){
