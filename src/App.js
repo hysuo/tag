@@ -8,6 +8,9 @@ import {IndexContainer} from "./pages/login/"
 import { BrowserRouter as Router } from 'react-router-dom'
 import { RegisterContainer } from "./pages/register"
 import {ResetPasswordContainer } from "./pages/lostpass"
+import PublishDynamicContainer from "./pages/index/publish/publishDynamic/PublishDynamicContainer"
+import PublishTagContainer from "./pages/index/publish/publishTag/PublishTagContainer"
+import DynamicDetailContainer from './pages/index/dynamic/views/dynamicDetail/DynamicDetailContainer'
 
 import {Chat,SetChat,ChangeName,MsgSearch,TagWeChat,SetWeChat}from 'msg/'
 function App() {
@@ -17,7 +20,9 @@ function App() {
         <Route path="/login" component={IndexContainer}></Route>
         <Route path="/register" component={RegisterContainer}></Route>
         <Route path="/resetpassword" component={ResetPasswordContainer}></Route>
-        
+        <Route path="/publishDynamic" component={PublishDynamicContainer}></Route>
+        <Route path="/publishTag" component={PublishTagContainer}></Route>
+        <Route path="/dynamic/dynamicDetail" component={DynamicDetailContainer}></Route>
 
         <Route path="/msg/chat" component={Chat}></Route>
         <Route path="/msg/setchat" component={SetChat}></Route>

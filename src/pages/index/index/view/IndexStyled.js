@@ -7,6 +7,16 @@ const IndexContainer = styled.div`
     main{
         flex:1;
         overflow-y:auto;
+        .activeM{
+            position: absolute;
+            top：0;
+            left:0;
+            z-index:2;
+            width:375px;
+            height:667px;
+            background:rgba(93,92,92,1);
+            opacity:0.55;
+        }
     }
     footer{
         height:.5rem;
@@ -32,6 +42,9 @@ const IndexContainer = styled.div`
                 }
                 color:#89C3EB;
                 }
+            &.activeP{
+                z-index:999;
+            }
         }
     }
         
