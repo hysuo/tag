@@ -4,9 +4,9 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 import 'styles/reset.css'
 import {Index} from 'pages/index/index/'
 import {IndexContainer} from "./pages/login/"
-import { BrowserRouter as Router } from 'react-router-dom'
 import { RegisterContainer } from "./pages/register"
 import {ResetPasswordContainer } from "./pages/lostpass"
+import {MainPageCategoryContainer} from "./pages/mainPageCategroy"
 
 import {Chat}from 'msg/'
 function App() {
@@ -19,7 +19,8 @@ function App() {
         
 
         <Route path="/chat" component={Chat}></Route>
-        <Redirect from="/" to="/index" exact></Redirect>
+        <Route path="/cate" component={MainPageCategoryContainer}></Route>
+        <Redirect from="/" to="/cate" exact></Redirect>
     </Switch>
   );
 }
