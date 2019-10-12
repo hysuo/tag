@@ -13,7 +13,7 @@ export default class SwiperContainer extends Component{
             <SwiperShow>
                 <div className="swiper-container">
                     <div className="swiper-wrapper">
-                    <div className="swiper-slide">
+                    <div className="swiper-slide" style={{marginRight:0}}>
                         <img src={banner1} alt=""/>
                     </div>
                     <div className="swiper-slide">
@@ -23,7 +23,7 @@ export default class SwiperContainer extends Component{
                         <img src={banner3} alt=""/>
                     </div>
                     </div>
-                    <div className='swiper-pagination'></div>
+                    <div className="swiper-scrollbar"></div>
                 </div>
             </SwiperShow>
         )
@@ -36,8 +36,17 @@ export default class SwiperContainer extends Component{
             autoplay: true,
             slidesPerView: "auto",
             centeredSlides:true,
+            spaceBetween: 20,
             // 如果需要分页器
-            pagination: '.swiper-pagination',
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                draggable: false,
+                snapOnRelease: true,
+                dragSize: 20,
+              }
         });
+        mySwiper.scrollbar.$el.css('height','.08rem');
+        mySwiper.scrollbar.$dragEl.css('background','#fff');
+
     }
 }

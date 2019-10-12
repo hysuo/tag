@@ -1,13 +1,17 @@
 import styled from 'styled-components'
 const SwiperShow = styled.div`
-    img{
-        width:3.18rem;
-        height:1.68rem;
-    }
+    overflow:hidden;
     .swiper-container {
         width: 100%;
         height: 1.68rem;
         overflow: visible!important;
+        margin-left: .6rem;
+        .swiper-scrollbar{
+            width:.9rem;
+            position: absolute;
+            top: 1.4rem;
+            left: .8rem;
+        }
     }
     .swiper-container .swiper-wrapper .swiper-slide{ width: 3.18rem; border-radius: 20px; margin-right:0!important;}
     .swiper-container .swiper-wrapper .swiper-slide img{width: 100%; height: 1.68rem; border-radius: 20px;}

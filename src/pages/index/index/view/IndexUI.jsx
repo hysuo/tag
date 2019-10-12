@@ -24,13 +24,11 @@ export default (props) => {
     return(
         <IndexContainer>
             <main>
-                <div className = {!isShowPublish ? 'activeM':''}>
-                    
-                </div>
-                <div className={!isShowPublish ? 'activeTD publishD':'publishD'} onClick={() => publishDynamic()}>
-                    <img src={publishD} alt=""/>
-                    <p>发布动态</p>
-                </div>
+                <div className = {!isShowPublish ? 'activeM':''}></div>
+                    <div className={!isShowPublish ? 'activeTD publishD':'publishD'} onClick={() => publishDynamic()}>
+                        <img src={publishD} alt=""/>
+                        <p>发布动态</p>
+                    </div>
                 <div className={!isShowPublish ? 'activeTD publishT':'publishT'}
                 onClick={() => publishTag()}>
                     <img src={publishT} alt=""/>

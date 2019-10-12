@@ -12,8 +12,8 @@ const IndexContainer = styled.div`
             top:0;
             left:0;
             z-index:2;
-            width:375px;
-            height:667px;
+            width:100%;
+            height:100%;
             background:rgba(93,92,92,1);
             opacity:0.55;
         }
@@ -25,12 +25,15 @@ const IndexContainer = styled.div`
             opacity:1;
             display:none;
             p{
-                font-size:.1rem;
+                font-size:.2rem;
                 color:#fff;
                 position: absolute;
                 top: .56rem;
                 left: .1rem;
                 font-weight: bold;
+                transform: scale(.5);
+                width: 1rem;
+                margin-left: -.2rem;
             }
         }
         .publishT{
@@ -41,12 +44,15 @@ const IndexContainer = styled.div`
             opacity:1;
             display:none;
             p{
-                font-size:.1rem;
+                font-size:.2rem;
                 color:#fff;
                 position: absolute;
                 top: .56rem;
                 left: .1rem;
                 font-weight: bold;
+                transform: scale(.5);
+                width: 1rem;
+                margin-left: -.2rem;
             }
         }
         .activeTD{

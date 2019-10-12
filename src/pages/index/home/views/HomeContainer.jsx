@@ -8,7 +8,7 @@ class HomeContainder extends Component {
   let { isShowPublish } = this.props
    return (
      <HomeUI isShowPublish = {isShowPublish} publishDynamic = {this.publishDynamic} publishTag = {this.publishTag} weChat={this.weChat}
-     cate={this.cate}></HomeUI>
+     cate={this.cate} account={this.account}></HomeUI>
    )
  }
  publishDynamic=()=>{
@@ -22,6 +22,9 @@ class HomeContainder extends Component {
  }
  cate=()=>{
   this.props.history.push('/cate')
+ }
+ account=()=>{
+   this.props.history.push('./profile/account')
  }
 }
 export default HomeContainder
