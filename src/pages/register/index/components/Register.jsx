@@ -9,14 +9,15 @@ import pas from 'images/pas/xiugaimima.svg'
 import shouji from 'images/tel/ziyuan.svg'
 import validateimg from 'images/tel/yanzhengma.svg'
 import RegisterButton from './RegisterButton'
-const margin ="30px 16px 0 24px"
-const other ="10px 16px 0 24px"
-const getValidatePadding ='0 12px 0 20px'
-const padding ="0 29px 0 20px"
+const margin =".3rem .16rem 0 .24rem"
+const other =".1rem .16rem 0 .24rem"
+const getValidatePadding ='0 .1rem 0 .06rem'
+const padding ="0 .29rem 0 .2rem"
  class Page extends React.Component{
   constructor(props){
     super(props)  
     this.state ={
+    handlet:"获取验证码",
       change0:"",
       change1:'active',
       accountvalidateimg:'',
@@ -39,6 +40,7 @@ const padding ="0 29px 0 20px"
   this.handleReg=this.handleReg.bind(this)
   this.handleGetvalidate= this.handleGetvalidate.bind(this);
   this.handleLog= this.handleLog.bind(this);
+  this.handlebuttont= this.handlebuttont.bind(this)
   }  
   render() {
     return (
@@ -46,7 +48,7 @@ const padding ="0 29px 0 20px"
           <ul><li className={this.state.change0} onClick={this.handleLog}>登陆</li>|<li className={this.state.change1} onClick={this.handleReg}>注册</li></ul>
           <form>
           <Input iconbeforebg={shouji} iconlastbg={this.state.accountvalidateimg} placeholder="账号（手机号）" id='user' margin={margin} padding={padding} onChange={this.handleAcc}></Input>
-          <Input iconbeforebg={validateimg} iconlastbg={this.state.accountvalidateimg} placeholder="验证码" getValidate="1" margin ={other} padding={getValidatePadding} onChange={this.handleValida} onClick={this.handleGetvalidate}></Input>
+          <Input iconbeforebg={validateimg} iconlastbg={this.state.accountvalidateimg} handle={this.state.handlet} placeholder="验证码" getValidate="1" margin ={other} padding={getValidatePadding} onChange={this.handleValida} onClick={this.handleGetvalidate}></Input>
           <Input iconbeforebg={forw} iconlastbg={this.state.namevalidate} placeholder="设置昵称" margin ={other} padding={padding} onChange={this.handleName}></Input>
           <Input iconbeforebg={pas} iconlastbg={this.state.passwordvalidate} placeholder="设置密码" margin ={other} padding={padding} onChange={this.handlePassword}></Input>
           <Input iconbeforebg={pas} iconlastbg={this.state.repasswordvalidate} placeholder="再次 输入密码" margin ={other} padding={padding} onChange={this.handleRepassword}></Input>
@@ -83,6 +85,9 @@ const padding ="0 29px 0 20px"
   }
   handleGetvalidate(e){
     if (e.target.id==="q") {
+      // this.setState({handlet:!this.state.handlet})
+      this.handlebuttont()
+      
     }
   }
   handleName(e){
@@ -133,6 +138,25 @@ const padding ="0 29px 0 20px"
              }
              console.log(users)
   }
+  handlebuttont(){
+    // setTimeout(function(){
+    //   code.css("opacity","0.8");
+    // },1000)
+    var time = 60;
+    console.log(1)
+    var set=setInterval(function(){
+    --time
+     console.log(time);
+     this.setState({
+       handlet:time +"秒后重新获取"
+     })
+
+    }.bind(this), 1000);
+    setTimeout(function(){
+    // code.attr("disabled",false).val("重新获取验证码");
+    clearInterval(set);
+    }, 60000);
   }
+}
   export default  withRouter(Page)
 

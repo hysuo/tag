@@ -10,12 +10,13 @@ import wg from 'images/rig/cuo.svg'
 const margin ="30px 16px 0 24px"
 const other ="10px 16px 0 24px"
 const padding ="0 29px 0 20px"
-const getValidatePadding ='0 12px 0 20px'
+const getValidatePadding ='0 .1rem 0 .06rem'
 
 export default class Page extends PureComponent {
   constructor(props){
     super(props)
     this.state={
+      handlet:"获取验证码",
       accountvalidateimg:'',
       numvalidate:'',
       namevalidate:'',
@@ -29,17 +30,18 @@ export default class Page extends PureComponent {
     }
     this.handleAcc=this.handleAcc.bind(this)
     this.handleValida=this.handleValida.bind(this)
+    this.handleGetvalidate= this.handleGetvalidate.bind(this);
     this.handlePassword=this.handlePassword.bind(this)
     this.handleRepassword=this.handleRepassword.bind(this)
     this.handleResetPassword= this.handleResetPassword.bind(this)
-
+    this.handlebuttont= this.handlebuttont.bind(this)
   }
   render() {
     return (
         <Pagestyle>
           <ul><li>找回密码</li></ul>
           <Input iconbeforebg={shouji} iconlastbg={this.state.accountvalidateimg} placeholder="账号（手机号）" margin={margin} padding={padding}  onChange={this.handleAcc}></Input>
-          <Input iconbeforebg={validateimg} iconlastbg={rt} placeholder="验证码" getValidate="1" margin ={other} padding={getValidatePadding} onChange={this.handleValida}></Input>
+          <Input iconbeforebg={validateimg} iconlastbg={rt} handle={this.state.handlet} placeholder="验证码" getValidate="1" margin ={other} padding={getValidatePadding} onChange={this.handleValida}onClick={this.handleGetvalidate} ></Input>
           <Input iconbeforebg={pas} iconlastbg={this.state.passwordvalidate} placeholder="设置密码" margin ={other} padding={padding} onChange={this.handlePassword}></Input>
           <Input iconbeforebg={pas} iconlastbg={this.state.repasswordvalidate} placeholder="再次 输入密码" margin ={other} padding={padding} onChange={this.handleRepassword}></Input>
           <ResetButton onClick={this.handleResetPassword}>登陆</ResetButton>
@@ -80,6 +82,12 @@ export default class Page extends PureComponent {
     else{
       this.setState({repasswordvalidate:wg})
     }
+  }handleGetvalidate(e){
+    if (e.target.id==="q") {
+      // this.setState({handlet:!this.state.handlet})
+      this.handlebuttont()
+      
+    }
   }
  handleResetPassword (){
    const user={
@@ -90,5 +98,23 @@ export default class Page extends PureComponent {
     repassword:this.state.repassword
    }
    console.log(user)
- } 
+ } handlebuttont(){
+  // setTimeout(function(){
+  //   code.css("opacity","0.8");
+  // },1000)
+  var time = 60;
+  console.log(1)
+  var set=setInterval(function(){
+  --time
+   console.log(time);
+   this.setState({
+     handlet:time +"秒后重新获取"
+   })
+
+  }.bind(this), 1000);
+  setTimeout(function(){
+  // code.attr("disabled",false).val("重新获取验证码");
+  clearInterval(set);
+  }, 60000);
+}
 }

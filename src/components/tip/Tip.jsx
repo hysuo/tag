@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import checimg from 'images/check/xuanzekuanghou.svg'
 import {
   TipContainer
   ,CheckContainer
@@ -10,7 +9,7 @@ export default class Tip extends Component {
     return (
       <div {...this.props}>
         <TipContainer>记住密码</TipContainer>
-        <CheckContainer check={checimg}></CheckContainer>
+        <CheckContainer><input type="checkbox"></input></CheckContainer>
         </div>
     )
   }
