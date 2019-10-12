@@ -21,7 +21,7 @@ const HomeContainer = styled.div`
     main{
         flex:1;
         >div:first-child{
-            margin-left:.3rem;
+            
         }
         >div:nth-child(2){
             display:flex;

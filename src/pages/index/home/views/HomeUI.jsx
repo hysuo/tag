@@ -3,13 +3,14 @@ import {HomeContainer} from './HomeStyled'
 import more from 'assets/img/home1/gengduo.png'
 import logo from 'assets/img/home1/TAGTAG.png'
 import search from 'assets/img/home1/搜索.png'
-import banner from 'assets/img/home1/0135d65d2e93fba8012187f4e7dfef.jpg@1280w_1l_2o_100sh(1).png'
 import hot from 'assets/img/home1/shandian.png'
 import dianzan from 'assets/img/home1/dianzan-yuanshijituantubiao.png'
 import xiaolian from 'assets/img/home1/xiaolian.png'
 import yanjing from 'assets/img/home1/yanjing.png'
 import go from 'assets/img/home1/微信图片_20190919090717.png'
 import img1 from 'assets/img/home1/01f97a5d2e93f3a80120695cf04d1d.jpg@1280w_1l_2o_100sh.png'
+
+import Banner from './components/swiper/SwiperContainer'
 
 export default (props) => {
     let {weChat,cate} = props
@@ -28,9 +29,7 @@ export default (props) => {
                </div>
            </header>
            <main>
-                <div>
-                    <img src={banner} alt=""/>
-                </div>
+                <Banner></Banner>
                 <div>
                     <div onClick={()=>{cate()}}>
                         <img src={hot} alt=""/>
