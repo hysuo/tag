@@ -10,22 +10,12 @@ import xiaolian from 'assets/img/home1/xiaolian.png'
 import yanjing from 'assets/img/home1/yanjing.png'
 import go from 'assets/img/home1/微信图片_20190919090717.png'
 import img1 from 'assets/img/home1/01f97a5d2e93f3a80120695cf04d1d.jpg@1280w_1l_2o_100sh.png'
-import publishD from 'assets/img/publish/组 646.png'
-import publishT from 'assets/img/publish/组 647.png'
 
 export default (props) => {
-    let {isShowPublish,publishDynamic,publishTag, weChat,cate} = props
+    let {weChat,cate} = props
     return(
         <HomeContainer>
-            <div className={!isShowPublish ? 'active publishD':'publishD'} onClick={() => publishDynamic()}>
-                <img src={publishD} alt=""/>
-                <p>发布动态</p>
-            </div>
-            <div className={!isShowPublish ? 'active publishT':'publishT'}
-            onClick={() => publishTag()}>
-                <img src={publishT} alt=""/>
-                <p>创建标签</p>
-            </div>
+            
            <header>
                <div>
                    <img src={more} alt=""/>
