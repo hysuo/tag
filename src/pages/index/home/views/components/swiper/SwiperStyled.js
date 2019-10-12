@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-const Swiper = styled.div`
+const SwiperShow = styled.div`
     
 `
 export{
-    Swiper
+    SwiperShow
 }
