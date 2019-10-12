@@ -7,17 +7,28 @@ const MessageContainer = styled.ul`
     overflow-y:auto;
     border-top-left-radius:.3rem;
     border-top-right-radius:.3rem;
+    position: relative;
+    .blank{
+    }
+    .none{
+        position:absolute;
+        top:3.7rem;
+        left:1.26rem
+    }
 `
 const BorderContainer = border({
     width: '0 0 1px 0',
     comp:styled.li`
         height:.6rem;
-        padding:0.05rem .2rem;
+        padding:0.05rem 0;
+        margin:0 .2rem;
         display:flex;
         align-items:center;
         img{
-            width:20%;
-            height:120%;
+            width:.44rem;
+            height:.44rem;
+            border-radius:50%;
+            margin-right:.1rem;
         }
         >div:nth-child(2){
             width:60%;

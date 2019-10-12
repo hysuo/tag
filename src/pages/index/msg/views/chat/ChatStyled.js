@@ -78,9 +78,21 @@ const ChatContainer = styled.div`
             } 
         }
         .list{
-          float:right;
+            display:flex;
+            flex-direction:column;
+            align-items:flex-end;
+            .right{
+                float:right;
+                margin-right:.1rem;
+            }
+            /* .left{
+                float:left;
+                margin-left:.1rem;
+            } */
           li{
-            margin-top:.15rem;
+            margin-top:.075rem;
+            margin-bottom:.075rem;
+            margin-right:.1rem;
             display:flex;
             img{
                 width:.4rem;
@@ -96,6 +108,7 @@ const ChatContainer = styled.div`
                 padding:.1rem .24rem;
                 border-radius:.2rem;
                 margin-right:.05rem;
+                margin-left:.05rem;
             }
           }
         }

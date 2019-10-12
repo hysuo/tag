@@ -1,9 +1,15 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
+
+import {
+  withRouter
+} from 'react-router-dom'
+
 import {
   Head
 } from '../Styledprofile/Styledprofile.js'
+
 import HeadImg from '../../../../assets/img/profile/headImg.png'
-export default class Header extends Component {
+class Header extends PureComponent {
   render() {
     return (
       <Head>
@@ -11,10 +17,17 @@ export default class Header extends Component {
           <img src={HeadImg} alt=""/>
         </div>
         <div className="headRight">
-          <div className="username">kuoluo</div>
-          <div className="signature">人在塔在</div>
+          <div className="username" onClick={() => this.handleClick('/profile/username')}>kuoluo</div>
+          <div className="signature" onClick={() => this.handleClick('/profile/signature')}>人在塔在</div>
         </div>
       </Head>
     )
   }
+  handleClick(name){
+    this.props.history.push(name)
+  }
+    
+  
 }
+
+export default withRouter(Header)

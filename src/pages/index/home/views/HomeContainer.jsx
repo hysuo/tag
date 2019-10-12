@@ -1,9 +1,20 @@
 import React, { Component } from 'react'
-
-export default class HomeContainder extends Component {
+import HomeUI from './HomeUI'
+import connect from './connect'
+ 
+@connect
+class HomeContainder extends Component {
  render(){
+  let { isShowPublish } = this.props
    return (
-     <div>home</div>
+     <HomeUI isShowPublish = {isShowPublish} publishDynamic = {this.publishDynamic} publishTag = {this.publishTag}></HomeUI>
    )
  }
+ publishDynamic=()=>{
+  this.props.history.push('/publishDynamic')
+ }
+ publishTag=()=>{
+  this.props.history.push('/publishTag')
+ }
 }
+export default HomeContainder
