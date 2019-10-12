@@ -14,7 +14,7 @@ import publishD from 'assets/img/publish/组 646.png'
 import publishT from 'assets/img/publish/组 647.png'
 
 export default (props) => {
-    let {isShowPublish,publishDynamic,publishTag} = props
+    let {isShowPublish,publishDynamic,publishTag, weChat,cate} = props
     return(
         <HomeContainer>
             <div className={!isShowPublish ? 'active publishD':'publishD'} onClick={() => publishDynamic()}>
@@ -42,19 +42,19 @@ export default (props) => {
                     <img src={banner} alt=""/>
                 </div>
                 <div>
-                    <div>
+                    <div onClick={()=>{cate()}}>
                         <img src={hot} alt=""/>
                         <p>热词霸主</p>
                     </div>
-                    <div>
+                    <div onClick={()=>{cate()}}>
                         <img src={dianzan} alt=""/>
                         <p>请你表扬</p>
                     </div>
-                    <div>
+                    <div onClick={()=>{cate()}}>
                         <img src={xiaolian} alt=""/>
                         <p>朕的自嘲</p>
                     </div>
-                    <div>
+                    <div onClick={()=>{cate()}}>
                         <img src={yanjing} alt=""/>
                         <p>复古主义</p>
                     </div>
@@ -64,7 +64,7 @@ export default (props) => {
                         我的收藏
                     </div>
                     <div>
-                        <div>
+                        <div onClick={()=>{weChat()}}>
                             <img src={img1} alt=""/>
                             <div>
                                 <div>
@@ -76,7 +76,7 @@ export default (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div onClick={()=>{weChat()}}>
                             <img src={img1} alt=""/>
                             <div>
                                 <div>
@@ -88,7 +88,7 @@ export default (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div onClick={()=>{weChat()}}>
                             <img src={img1} alt=""/>
                             <div>
                                 <div>
@@ -100,7 +100,7 @@ export default (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div onClick={()=>{weChat()}}>
                             <img src={img1} alt=""/>
                             <div>
                                 <div>
@@ -112,7 +112,7 @@ export default (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div onClick={()=>{weChat()}}>
                             <img src={img1} alt=""/>
                             <div>
                                 <div>

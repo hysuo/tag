@@ -1,29 +1,19 @@
 import React from 'react'
 import {DynamicContainer,UserList, DynamicList} from './DynamicStyled'
-import goBack from 'assets/img/dynamic/20190919090717.png'
 import cat from 'assets/img/dynamic/e85555c5e7440afedc20db0dad77bf2a.png'
 import add from 'assets/img/dynamic/add.png'
 import more from 'assets/img/dynamic/more.png'
 import comment from 'assets/img/dynamic/51568880997_.pic.png'
 import zan from 'assets/img/dynamic/61568880998_.pic.png'
+import Header from 'pages/index/dynamic/components/header/Header'
 
 export default (props) => {
-    let {cancel, flagM, isShowMore, goToDetail} = props;
+    let {flagM, isShowMore, goToDetail, title, marginLeft} = props;
     return(
         <DynamicContainer>
             <div className={flagM ? 'meng active':'meng'} onClick={()=>{isShowMore()}}>
-                <div>
-                    <p>关注用户</p>
-                    <p>屏蔽用户</p>
-                    <p>给他私信</p>
-                </div>
             </div>
-            <header>
-                <div onClick={()=>{cancel()}}>
-                    <img src={goBack} alt=""/>
-                </div>
-                <div>动态</div>
-            </header>
+            <Header title={title} marginLeft={marginLeft}></Header>
             <main>
                 <UserList>
                     <div>
@@ -62,6 +52,11 @@ export default (props) => {
                             <p>赞</p>
                             <img src={comment} alt=""/>
                             <p>评论</p>
+                        </div>
+                        <div className={flagM ? 'mengShow active':'mengShow'} >
+                            <p>关注用户</p>
+                            <p>屏蔽用户</p>
+                            <p>给他私信</p>
                         </div>
                     </div>
                     <div>
