@@ -8,9 +8,10 @@ class SetWeChatContainer extends Component {
      collection:false,
      showName:true,
      flag:true,
-     myName:this.props.selfInfo.wechatname
+     myName:this.props.list[2].name
   }
  render(){
+     console.log(this.state.myName)
    return (
      <SetWeChatUI 
      list={this.props.list}

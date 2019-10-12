@@ -10,6 +10,7 @@ import {ResetPasswordContainer } from "./pages/lostpass"
 import {MainPageCategoryContainer} from "./pages/mainPageCategroy"
 
 import {Chat,SetChat,ChangeName,MsgSearch,TagWeChat,SetWeChat,SearchContent}from 'msg/'
+import {OtherDynamic } from './pages/index/dynamic/'
 // import ChangeImg from 'pages/index/profile/views/changeImg/changeImg.jsx'
 import ChangeUsr from 'pages/index/profile/views/changeUsr/ChangeUsr.jsx'
 import ChangeSignature from 'pages/index/profile/views/changeSignature/ChangeSignature.jsx'
@@ -65,6 +66,7 @@ function App() {
         <Route path="/profile/follow" component={Follow}></Route>
         <Route path="/chat" component={Chat}></Route>
         <Route path="/cate" component={MainPageCategoryContainer}></Route>
+        <Route path="/otherdynamic" component={OtherDynamic}></Route>
         <Redirect from="/" to="/index" exact></Redirect>
     </Switch>
   );
