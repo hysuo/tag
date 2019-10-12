@@ -8,17 +8,28 @@ import commit from 'assets/img/msg/chat/commit.png'
 import pic from 'assets/img/msg/pic.png'
 import circle from 'assets/img/msg/circle.png'
 import xian from 'assets/img/msg/xian.png'
+import care from 'assets/img/msg/care.png'
 
 export default (props)=>{
     return (
         <OtherDynamic>
+            <div>
             {
                 props.showcloak&&<div onClick={()=>{props.cloak()}} className='showcloak'></div>
             }
             {
                 props.showcloak&&<div className='blacklist'>
-                    <p>举报</p>
+                    <p onClick={()=>{props.gobacklist()}}>举报</p>
                     <p onClick={()=>{props.cloak()}}>取消</p>
+                </div>
+            }
+            {
+                props.showcloak2&&<div onClick={()=>{props.cloak2()}} className='showcloak2'></div>
+            }
+            {
+                props.showcloak2&&<div className='showbigpic'>
+                    <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=489703808,1101083043&fm=26&gp=0.jpg" alt=""/>
+                    <p>保存至相册</p>
                 </div>
             }
             <header>
@@ -27,7 +38,7 @@ export default (props)=>{
                     <img src={more} onClick={()=>{props.cloak()}} alt=""/>
                 </div>
                 <div className="info">
-                    <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=489703808,1101083043&fm=26&gp=0.jpg" alt=""/>
+                    <img onClick={()=>{props.cloak2()}} src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=489703808,1101083043&fm=26&gp=0.jpg" alt=""/>
                     <p>皮卡丘</p>
                     <p>爱旅行的吃货</p>
                 </div>
@@ -43,7 +54,7 @@ export default (props)=>{
                 </div>
             </header>
             <main>
-                <div className="dynamic">
+                <div className="dynamic" onClick={()=>{props.godetail()}}>
                         <div className="xian">
                             <img src={circle} alt=""/>
                             <img src={xian} alt=""/>
@@ -64,7 +75,7 @@ export default (props)=>{
                             </div>
                         </div>
                 </div>
-                <div className="dynamic">
+                <div className="dynamic" onClick={()=>{props.godetail()}}>
                         <div className="all">
                             <p className="time">2019-10-8 10:00</p>
                             <p className='content'>想去旅行</p>
@@ -85,7 +96,7 @@ export default (props)=>{
                             <img src={xian} alt=""/>
                         </div>
                 </div>
-                <div className="dynamic">
+                <div className="dynamic" onClick={()=>{props.godetail()}}>
                         <div className="all">
                             <p className="time">2019-10-8 10:00</p>
                             <p className='content'>想去旅行</p>
@@ -107,6 +118,16 @@ export default (props)=>{
                         </div>
                 </div>
             </main>
+            </div>
+            <footer>
+                <div>
+                    <img src={care} alt=""/>
+                    <p>关注</p>
+                </div>
+                <div>
+                    <p>私聊</p>
+                </div>
+            </footer>
         </OtherDynamic>
     )
 }

@@ -8,7 +8,7 @@ export default (props)=>{
     return (
        <TagChat>
            <header>
-               <img src={back} alt=""/>
+               <img src={back} onClick={()=>{props.goback()}} alt=""/>
                <p>柠檬精</p>
                <img onClick={()=>{props.goNext()}} src={more} alt=""/>
            </header>

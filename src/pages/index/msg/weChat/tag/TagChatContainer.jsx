@@ -36,7 +36,7 @@ import connect from './connect'
   // }
  render(){
    return (
-     <TagChatUI chatlist={this.props.list} addMessage={this.addMessage} goNext={this.goNext}></TagChatUI>
+     <TagChatUI chatlist={this.props.list} addMessage={this.addMessage} goNext={this.goNext} goback={this.goback}></TagChatUI>
    )
  }
  addMessage=(value) => {
@@ -68,6 +68,9 @@ import connect from './connect'
 }
 goNext=()=>{
   this.props.history.push('/tag/setwechat')
+}
+goback=()=>{
+  this.props.history.go(-1)
 }
 }
 export default TagChatContainer
