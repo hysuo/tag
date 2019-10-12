@@ -89,7 +89,8 @@ article{
 } */
 }}
 
-}
+}`
+const Search= Styled.div`
 div.mosk{
     width:100%;
     height:100%;
@@ -197,9 +198,8 @@ line-height:.2rem;
 color:rgba(112,112,112,1);
 opacity:1;text-align:center;
         }
-    }
-
-`
+}`
  export {
-    IndexContainer
+    IndexContainer,
+    Search
  }

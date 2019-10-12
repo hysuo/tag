@@ -65,7 +65,7 @@ function App() {
         <Route path="/profile/follow" component={Follow}></Route>
         <Route path="/chat" component={Chat}></Route>
         <Route path="/cate" component={MainPageCategoryContainer}></Route>
-        <Redirect from="/" to="/index" exact></Redirect>
+        <Redirect from="/" to="/cate" exact></Redirect>
     </Switch>
   );
 }
