@@ -29,6 +29,7 @@ import Follow from 'pages/index/profile/views/follow/Follow.jsx'
 import PublishDynamicContainer from "./pages/index/publish/publishDynamic/PublishDynamicContainer"
 import PublishTagContainer from "./pages/index/publish/publishTag/PublishTagContainer"
 import DynamicDetailContainer from './pages/index/dynamic/views/dynamicDetail/DynamicDetailContainer'
+import toInform from './pages/index/dynamic/inform/InformContainer'
 
 function App() {
   return (
@@ -40,7 +41,7 @@ function App() {
         <Route path="/publishDynamic" component={PublishDynamicContainer}></Route>
         <Route path="/publishTag" component={PublishTagContainer}></Route>
         <Route path="/dynamic/dynamicDetail" component={DynamicDetailContainer}></Route>
-
+        <Route path="/inform" component={toInform}></Route>
         <Route path="/msg/chat" component={Chat}></Route>
         <Route path="/msg/setchat" component={SetChat}></Route>
         <Route path="/msg/changename" component={ChangeName}></Route>

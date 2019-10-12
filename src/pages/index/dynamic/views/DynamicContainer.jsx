@@ -3,16 +3,15 @@ import DynamicUI from './DynamicUI'
 
 export default class DynamicContainer extends Component {
   state={
-    flagM : false
+    flagM : false,
+    title:'动态',
+    marginLeft:'1.33rem'
   }
  render(){
    return (
-     <DynamicUI cancel={this.cancel} flagM={this.state.flagM} isShowMore={this.isShowMore} goToDetail={this.goToDetail}></DynamicUI>
+     <DynamicUI flagM={this.state.flagM} isShowMore={this.isShowMore} goToDetail={this.goToDetail} title={this.state.title} marginLeft={this.state.marginLeft}></DynamicUI>
    )
  }
- cancel=()=>{
-    this.props.history.go(-1)
-  }
   isShowMore=()=>{
     this.setState({
       flagM:!this.state.flagM

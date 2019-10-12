@@ -12,17 +12,30 @@ import publish from 'assets/img/home/add@3x.png'
 import dynamic from 'assets/img/home/quanzi-2@2x.png'
 import profile from 'assets/img/home/user@2x.png'
 import close from 'assets/img/home/组 47.png'
+import publishD from 'assets/img/publish/组 646.png'
+import publishT from 'assets/img/publish/组 647.png'
 
 import {Home} from 'pages/index/home/'
 import {Msg} from 'pages/index/msg/'
 import {Dynamic} from 'pages/index/dynamic/'
 import {Profile} from 'pages/index/profile/'
 export default (props) => {
-    let {path,handleClick,pathname, isShowPublish, changePublishState} = props
+    let {path,handleClick,pathname, isShowPublish, changePublishState,publishTag,publishDynamic} = props
     return(
         <IndexContainer>
             <main>
-                <div className = {!isShowPublish ? 'activeM':''}></div>
+                <div className = {!isShowPublish ? 'activeM':''}>
+                    
+                </div>
+                <div className={!isShowPublish ? 'activeTD publishD':'publishD'} onClick={() => publishDynamic()}>
+                    <img src={publishD} alt=""/>
+                    <p>发布动态</p>
+                </div>
+                <div className={!isShowPublish ? 'activeTD publishT':'publishT'}
+                onClick={() => publishTag()}>
+                    <img src={publishT} alt=""/>
+                    <p>创建标签</p>
+                </div>
                 <Switch>
                     <Route path={`${path}/home`} component={Home}></Route>
                     <Route path={`${path}/msg`} component={Msg}></Route>

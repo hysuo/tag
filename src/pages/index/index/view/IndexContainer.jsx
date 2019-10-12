@@ -7,7 +7,7 @@ class IndexContainer extends Component {
  render(){
    return (
      <IndexUI path={this.props.match.path} handleClick={this.handleClick}  pathname = {this.props.location.pathname}
-     isShowPublish = {this.props.isShowPublish}
+     isShowPublish = {this.props.isShowPublish} publishDynamic = {this.publishDynamic} publishTag = {this.publishTag}
      changePublishState = {this.props.changePublishState}></IndexUI>
    )
  }
@@ -16,6 +16,12 @@ class IndexContainer extends Component {
  }
  componentDidMount(){
    console.log(this.props)
+ }
+ publishDynamic=()=>{
+  this.props.history.push('/publishDynamic')
+ }
+ publishTag=()=>{
+  this.props.history.push('/publishTag')
  }
 }
 export default IndexContainer
