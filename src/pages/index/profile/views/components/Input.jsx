@@ -8,10 +8,20 @@ export default class Head extends PureComponent{
 		return (
 		  <Input>
         <div>
-          <input type="text" placeholder={this.props.placehodler} />
+					<input type="text"
+					 ref='newname'
+					 placeholder={this.props.placehodler}
+					 onBlur={this.getValue} 
+					/>
         </div>
-        <Span img={this.props.img}></Span>
+        <Span img={this.props.img} handleclick={() => {
+					this.refs.newname.value = ""
+					this.getValue(this.refs.newname.value)
+				}}></Span>
 	    </Input>
 		)
+	}
+	getValue = () => {
+		this.props.getValue(this.refs.newname.value)
 	}
 }

@@ -10,7 +10,9 @@ class Spanimg extends Component {
 	render() {
     return (
       <Span>
-        <img src={this.props.img} alt=""/>
+        <img src={this.props.img} alt="" onClick={() => {
+          this.props.handleclick()
+        }}/>
       </Span>
     )
   }

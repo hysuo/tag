@@ -13,8 +13,11 @@ export default class ChangeUsr extends Component {
 		return (
 			<ChangeusrContainer>
 				<Head title="添加标签"></Head>
-				<Input placehodler="#自定义标签" img={cancelImg}></Input>
+				<Input placehodler="#自定义标签" img={cancelImg} getValue={this.getValue}></Input>
 			</ChangeusrContainer>
 		)
+	}
+	getValue = () => {
+		console.log(1)
 	}
 }
