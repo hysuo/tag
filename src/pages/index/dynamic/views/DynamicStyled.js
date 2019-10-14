@@ -3,21 +3,6 @@ const DynamicContainer = styled.div`
     height:100%;
     display:flex;
     flex-direction: column;
-    header{
-        height:.64rem;
-        display:flex;
-        align-items:center;
-        background:#fff;
-        box-shadow:0 .03rem .06rem rgba(178,178,178,0.16);
-        font-weight:400;
-        >div:first-child{
-            margin: 0 1.33rem 0 .2rem;
-        }
-        >div:last-child{
-            color:rgba(25,25,25,1);
-            font-size:.18rem;
-        }
-    }
     main{
         flex:1;
         padding:.2rem .2rem 0 .2rem;
@@ -33,37 +18,6 @@ const DynamicContainer = styled.div`
         opacity:0.55;
         position: absolute;
         z-index: 2;
-        >div{
-            width:84px;
-            height:63px;
-            background:rgba(255,255,255,1);
-            box-shadow:0px 3px 6px rgba(112,112,112,0.16);
-            opacity:1;
-            border-radius:20px 0px 20px 20px;
-            position: absolute;
-            top:2.11rem;
-            left:2.41rem;
-            padding:.08rem .2rem;
-            p{
-                font-size:.18rem;
-                font-family:PingFang SC;
-                font-weight:400;
-                line-height:.13rem;
-                transform: scale(0.5);
-                margin-left: -.17rem;
-                width: .8rem;
-                margin-bottom:.05rem;
-            }
-            p:first-child{
-                color:rgba(137,195,235,1);
-            }
-            p:nth-child(2){
-                color:rgba(255,99,99,1);
-            }
-            p:last-child{
-                color:rgba(124,124,124,1);
-            }
-        }
     }
 `
 const UserList = styled.div`
@@ -96,13 +50,13 @@ const DynamicList = styled.div`
     margin-top:.3rem;
     >div{
         width:3.35rem;
-        height:4.06rem;
         background:rgba(255,255,255,1);
         box-shadow:0 .03rem .06rem rgba(0,0,0,0.16);
         opacity:1;
         border-radius:.2rem;
         padding:.2rem .2rem .1rem .2rem;
         margin-bottom:.2rem;
+        position: relative;
         >div:first-child{
             display:flex;
             img:first-child{
@@ -142,8 +96,12 @@ const DynamicList = styled.div`
                 font-size:.12rem;
                 margin:.04rem 0;
             }
+            img{
+                width:2.95rem;
+                height:2.36rem;
+            }
         }
-        >div:last-child{
+        >div:nth-child(3){
             display:flex;
             img{
                 width:.16rem;
@@ -158,6 +116,42 @@ const DynamicList = styled.div`
             }
             img:nth-child(3){
                 margin: 0 .08rem 0 .18rem;
+            }
+        }
+        .mengShow{
+            &.active{
+                display:block;
+            }
+            display:none;
+            width:84px;
+            height:63px;
+            background:rgba(255,255,255,1);
+            box-shadow:0px 3px 6px rgba(112,112,112,0.16);
+            opacity:1;
+            border-radius:20px 0px 20px 20px;
+            position: absolute;
+            top: 0.37rem;
+            left: 2.2rem;
+            padding:.08rem .2rem;
+            z-index:999;
+            p{
+                font-size:.18rem;
+                font-family:PingFang SC;
+                font-weight:400;
+                line-height:.13rem;
+                transform: scale(0.5);
+                margin-left: -.17rem;
+                width: .8rem;
+                margin-bottom:.05rem;
+            }
+            p:first-child{
+                color:rgba(137,195,235,1);
+            }
+            p:nth-child(2){
+                color:rgba(255,99,99,1);
+            }
+            p:last-child{
+                color:rgba(124,124,124,1);
             }
         }
     }

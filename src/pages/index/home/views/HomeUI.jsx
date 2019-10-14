@@ -3,31 +3,22 @@ import {HomeContainer} from './HomeStyled'
 import more from 'assets/img/home1/gengduo.png'
 import logo from 'assets/img/home1/TAGTAG.png'
 import search from 'assets/img/home1/搜索.png'
-import banner from 'assets/img/home1/0135d65d2e93fba8012187f4e7dfef.jpg@1280w_1l_2o_100sh(1).png'
 import hot from 'assets/img/home1/shandian.png'
 import dianzan from 'assets/img/home1/dianzan-yuanshijituantubiao.png'
 import xiaolian from 'assets/img/home1/xiaolian.png'
 import yanjing from 'assets/img/home1/yanjing.png'
 import go from 'assets/img/home1/微信图片_20190919090717.png'
 import img1 from 'assets/img/home1/01f97a5d2e93f3a80120695cf04d1d.jpg@1280w_1l_2o_100sh.png'
-import publishD from 'assets/img/publish/组 646.png'
-import publishT from 'assets/img/publish/组 647.png'
+
+import Banner from './components/swiper/SwiperContainer'
 
 export default (props) => {
-    let {isShowPublish,publishDynamic,publishTag} = props
+    let {weChat,cate,account} = props
     return(
         <HomeContainer>
-            <div className={!isShowPublish ? 'active publishD':'publishD'} onClick={() => publishDynamic()}>
-                <img src={publishD} alt=""/>
-                <p>发布动态</p>
-            </div>
-            <div className={!isShowPublish ? 'active publishT':'publishT'}
-            onClick={() => publishTag()}>
-                <img src={publishT} alt=""/>
-                <p>创建标签</p>
-            </div>
+            
            <header>
-               <div>
+               <div onClick={()=>{account()}}>
                    <img src={more} alt=""/>
                </div>
                <div>
@@ -38,23 +29,21 @@ export default (props) => {
                </div>
            </header>
            <main>
+                <Banner></Banner>
                 <div>
-                    <img src={banner} alt=""/>
-                </div>
-                <div>
-                    <div>
+                    <div onClick={()=>{cate()}}>
                         <img src={hot} alt=""/>
                         <p>热词霸主</p>
                     </div>
-                    <div>
+                    <div onClick={()=>{cate()}}>
                         <img src={dianzan} alt=""/>
                         <p>请你表扬</p>
                     </div>
-                    <div>
+                    <div onClick={()=>{cate()}}>
                         <img src={xiaolian} alt=""/>
                         <p>朕的自嘲</p>
                     </div>
-                    <div>
+                    <div onClick={()=>{cate()}}>
                         <img src={yanjing} alt=""/>
                         <p>复古主义</p>
                     </div>
@@ -64,7 +53,7 @@ export default (props) => {
                         我的收藏
                     </div>
                     <div>
-                        <div>
+                        <div onClick={()=>{weChat()}}>
                             <img src={img1} alt=""/>
                             <div>
                                 <div>
@@ -76,7 +65,7 @@ export default (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div onClick={()=>{weChat()}}>
                             <img src={img1} alt=""/>
                             <div>
                                 <div>
@@ -88,7 +77,7 @@ export default (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div onClick={()=>{weChat()}}>
                             <img src={img1} alt=""/>
                             <div>
                                 <div>
@@ -100,7 +89,7 @@ export default (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div onClick={()=>{weChat()}}>
                             <img src={img1} alt=""/>
                             <div>
                                 <div>
@@ -112,7 +101,7 @@ export default (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div onClick={()=>{weChat()}}>
                             <img src={img1} alt=""/>
                             <div>
                                 <div>

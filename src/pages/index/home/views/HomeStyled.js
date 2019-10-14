@@ -5,39 +5,6 @@ const HomeContainer = styled.div`
     display:flex;
     flex-direction:column;
     background:#fff;
-    .publishD{
-        position: absolute;
-        left:.99rem;
-        top:5.37rem;
-        z-index: 999;
-        display:none;
-        p{
-            font-size:.1rem;
-            color:#fff;
-            position: absolute;
-            top: .56rem;
-            left: .1rem;
-            font-weight: bold;
-        }
-    }
-    .publishT{
-        position: absolute;
-        left:2.09rem;
-        top:5.37rem;
-        z-index: 999;
-        display:none;
-        p{
-            font-size:.1rem;
-            color:#fff;
-            position: absolute;
-            top: .56rem;
-            left: .1rem;
-            font-weight: bold;
-        }
-    }
-    .active{
-        display:block;
-    }
     header{
         height : .72rem;
         width : 100%;
@@ -54,7 +21,7 @@ const HomeContainer = styled.div`
     main{
         flex:1;
         >div:first-child{
-            margin-left:.3rem;
+            
         }
         >div:nth-child(2){
             display:flex;
