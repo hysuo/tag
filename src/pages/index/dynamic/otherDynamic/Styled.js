@@ -74,6 +74,7 @@ const OtherDynamic = styled.div`
         border-bottom-left-radius:.3rem;
         border-bottom-right-radius:.3rem;
         background:url('https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2089088284,3944731500&fm=26&gp=0.jpg');
+        background-size:100% 100%;
         .top{
             height:.44rem;
             background:rgba(255,255,255,0.5);

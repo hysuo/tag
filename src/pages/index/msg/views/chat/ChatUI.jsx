@@ -32,12 +32,27 @@ export default (props) => {
                 </div>
                 <ul className="list">
                     {
+                        props.data.map((item,index)=>{
+                            return(
+                                <div key={index} className="data">
+                                    <li>
+                                        <img src={item.img} alt=""/>
+                                        <span>{item.content}</span>
+                                    </li>
+                                </div>
+                            )
+                        })
+                    }
+                    {
                         props.list.map((value,index) => {
                             return (
-                                <li key={index} className='right'>
+                                <div key={index} className='own'>
+                                    <li>
                                     <span>{value}</span>
                                     <img src={headImg} alt=""/>
                                 </li>
+                                </div>
+                                
                             )
                             // if(index%2){
                             //     return (

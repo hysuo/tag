@@ -3,8 +3,7 @@ import { changewechatname } from '../../../actionCreator'
 
 const mapState = (state) => {
   return {
-    list: state.msg.list,
-    selfInfo:state.msg.selfInfo
+    list: state.msg.chatlist,
   }
 }
 const mapDispatch = (dispatch) => {

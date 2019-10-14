@@ -1,16 +1,16 @@
 import { connect } from 'react-redux'
-import { changewechatname } from '../../../actionCreator'
+import { addchat } from '../../actionCreator'
 
 const mapState = (state) => {
   return {
-    list: state.msg.list,
-    selfInfo:state.msg.selfInfo
+    list: state.msg.chatlist,
+    chat:state.msg.chat
   }
 }
 const mapDispatch = (dispatch) => {
     return {
-      changewechatname(data) {
-        dispatch(changewechatname(data))
+        addchat(data) {
+        dispatch(addchat(data))
       }
     }
   }

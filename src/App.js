@@ -41,8 +41,13 @@ function App() {
         <Route path="/publishDynamic" component={PublishDynamicContainer}></Route>
         <Route path="/publishTag" component={PublishTagContainer}></Route>
         <Route path="/dynamic/dynamicDetail" component={DynamicDetailContainer}></Route>
+<<<<<<< HEAD
         <Route path="/inform" component={toInform}></Route>
         <Route path="/msg/chat" component={Chat}></Route>
+=======
+
+        <Route path="/msg/chat/:id" component={Chat}></Route>
+>>>>>>> hys
         <Route path="/msg/setchat" component={SetChat}></Route>
         <Route path="/msg/changename" component={ChangeName}></Route>
         <Route path="/msg/search" component={MsgSearch}></Route>

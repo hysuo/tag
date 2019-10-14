@@ -5,10 +5,18 @@ export default class setChatContainer extends Component {
   state = {
     checked: false,
     checked1: false,
+    cloak:false
   }
  render(){
    return (
-     <SetChatUI props={this.props} checked={this.state.checked} checked1={this.state.checked1} change={this.change} change1={this.change1}></SetChatUI>
+     <SetChatUI props={this.props}
+      {...this.state}
+       change={this.change}
+        change1={this.change1}
+        showcloak = {this.showcloak}
+        hiddencloak = {this.hiddencloak}
+        // clearcontent = {this.clearcontent}
+      ></SetChatUI>
    )
  }
  change=(value) => {
@@ -21,4 +29,17 @@ export default class setChatContainer extends Component {
     checked1:value
   })
  }
+ showcloak=()=>{
+  this.setState({
+      cloak:!this.state.cloak
+   })
+}
+hiddencloak=()=>{
+  this.setState({
+      cloak:!this.state.cloak
+   })
+}
+// clearcontent=()=>{
+//    this.props.clearcontent()
+// }
 }

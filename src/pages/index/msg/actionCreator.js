@@ -15,3 +15,20 @@ export const clear = () => {
     type: 'wechatsearchclear',
   }
 }
+export const changewechatname = (data) => {
+  return {
+    type: 'changewechatname',
+    data
+  }
+}
+export const clearcontent = () => {
+  return {
+    type: 'clearcontent',
+  }
+}
+export const addchat = (data) => {
+  return {
+    type: 'addchat',
+    data
+  }
+}
