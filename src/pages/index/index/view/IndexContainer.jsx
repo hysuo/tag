@@ -14,8 +14,8 @@ class IndexContainer extends Component {
  handleClick=(value) => {
    this.props.history.push(this.props.match.path + value)
  }
- componentDidMount(){
-   console.log(this.props)
- }
+//  componentDidMount(){
+//    console.log(this.props)
+//  }
 }
 export default IndexContainer

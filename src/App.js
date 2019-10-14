@@ -41,7 +41,7 @@ function App() {
         <Route path="/publishTag" component={PublishTagContainer}></Route>
         <Route path="/dynamic/dynamicDetail" component={DynamicDetailContainer}></Route>
 
-        <Route path="/msg/chat" component={Chat}></Route>
+        <Route path="/msg/chat/:id" component={Chat}></Route>
         <Route path="/msg/setchat" component={SetChat}></Route>
         <Route path="/msg/changename" component={ChangeName}></Route>
         <Route path="/msg/search" component={MsgSearch}></Route>

@@ -9,12 +9,17 @@ class AllMsg extends Component {
        <ul>
          {
            this.props.list.map((value,index) => {
-             return(
-               <li key={index}>
-                 <img src={value.img} alt=""/>
-                 <span className={value.active ? value.active : ''}>{value.content}</span>
-               </li>
-             )
+             if(value.content){
+              return(
+                <li key={index}>
+                  <img src={value.img} alt=""/>
+                  <span className={value.active ? value.active : ''}>{value.content}</span>
+                </li>
+              )
+             }else{
+               return ''
+             }
+             
            })
          }
        </ul>
