@@ -129,7 +129,9 @@ export default (state=defaultState, action) => {
               },
               list:[
                 ...state.list
-              ]
+              ],
+              chatlist:state.chatlist,
+              chat:state.chat,
             };
         case 'clearcontent':
           state.list.map((item,value) => {
