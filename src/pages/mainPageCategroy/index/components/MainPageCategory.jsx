@@ -73,7 +73,7 @@ class MainPageCategory extends Component {
 }
  }
  handleTag(e){console.log(this.props)
-     this.props.history.push('/index/home')
+     this.props.history.push('/tag/wechat')
  }
 }
     export default withRouter(MainPageCategory) 
