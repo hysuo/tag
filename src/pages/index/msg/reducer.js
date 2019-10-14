@@ -91,7 +91,9 @@ export default (state=defaultState, action) => {
           list: [
               ...state.list,
               action.data
-          ]
+          ],
+          chatlist:state.chatlist,
+          chat:state.chat,
         }
       case 'wechatsearch':
         state.list.map((item,value) => {
@@ -137,7 +139,9 @@ export default (state=defaultState, action) => {
             selfInfo:{
               ...state.selfInfo,
             },
-            list:state.list
+            list:state.list,
+            chatlist:state.chatlist,
+            chat:state.chat,
           }
           case 'addchat':
             return{
@@ -145,7 +149,9 @@ export default (state=defaultState, action) => {
               chat:[
                 ...state.chat,
                 action.data
-              ]
+              ],
+              list:state.list,
+              selfInfo:state.selfInfo
             }
       default:
         return state
