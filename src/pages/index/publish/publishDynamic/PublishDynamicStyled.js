@@ -5,6 +5,7 @@ const PublishDynamicContainer = styled.div`
     display:flex;
     flex-direction:column;
     background:#89C3EB;
+    position: relative;
     header{
         height:.64rem;
         width:100%;
@@ -24,6 +25,9 @@ const PublishDynamicContainer = styled.div`
         textarea{
             border:none;
             margin:.4rem .2rem;
+            &.active{
+                display:none;
+            }
         }
         .cueOne,.addTag{
             &.active{
@@ -31,7 +35,7 @@ const PublishDynamicContainer = styled.div`
             }
             display:none;
             width:100%;
-            height:6rem;
+            height:7rem;
             position: absolute;
             background:#fff;
             top: 1rem;
@@ -136,13 +140,16 @@ const PublishDynamicContainer = styled.div`
                         right: 0;
                         z-index: 222;
                     }
+                    &.active{
+                        display:none;
+                    }
                 }
                 >div:last-child{
                     position: relative;
                     img:last-child{
                         position: absolute;
-                        left: .32rem;
-                        top: .32rem;
+                        left: .34rem;
+                        top: .31rem;
                     }
                 }
             }

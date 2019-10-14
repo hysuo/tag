@@ -13,12 +13,12 @@ import img1 from 'assets/img/home1/01f97a5d2e93f3a80120695cf04d1d.jpg@1280w_1l_2
 import Banner from './components/swiper/SwiperContainer'
 
 export default (props) => {
-    let {weChat,cate} = props
+    let {weChat,cate,account} = props
     return(
         <HomeContainer>
             
            <header>
-               <div>
+               <div onClick={()=>{account()}}>
                    <img src={more} alt=""/>
                </div>
                <div>

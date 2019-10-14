@@ -2,15 +2,18 @@ import React from 'react'
 import {PublishDynamicContainer} from './PublishDynamicStyled'
 import goBack from 'assets/img/publish/dy/211569297932_.pic.png'
 import defaultImg from 'assets/img/publish/dy/TAGTAG.png'
-import deleteImg from 'assets/img/publish/dy/组 636.png'
+import deleteImgs from 'assets/img/publish/dy/组 636.png'
 import wrap from 'assets/img/publish/dy/矩形 566.png'
 import add from 'assets/img/publish/dy/组 635.png'
 import merge from 'assets/img/publish/dy/收起.png'
 import hidden from 'assets/img/publish/dy/hidden (1).png'
+
+import Photo from 'components/photo/Photo'
 export default (props) => {
-    let {cancel, isShow, flag, isShowCue, flagCue, flagTag, isShowTag} = props
+    let {cancel, isShow, flag, isShowCue, flagCue, flagTag, isShowTag, isShowAdd, flagAdd, isDeleteImg, deleteImg} = props
     return(
         <PublishDynamicContainer>
+            <Photo flagAdd={flagAdd} isShowAdd={isShowAdd}></Photo>
             <header>
                 <div onClick={()=>{cancel()}}>
                     <img src={goBack} alt=""/>
@@ -19,7 +22,7 @@ export default (props) => {
                 <div>发布</div>
             </header>
             <main>
-                <textarea name="" id="" cols="45" rows="20" placeholder='你的小秘密：'></textarea>
+                <textarea className={flagCue||flagTag ? 'active':''} name="" id="" cols="40" rows="20" placeholder='你的小秘密：'></textarea>
                 <div className={flagTag? 'addTag active' : 'addTag'}>
                     <div>
                         <div onClick={()=>{isShowTag()}}>取消</div>
@@ -53,11 +56,11 @@ export default (props) => {
             <footer>
                 <div>
                     <div>
-                        <div onClick={()=>{isShowTag()}}>
+                        <div className={deleteImg? 'active' : ''}>
                             <img src={defaultImg} alt=""/>
-                            <img src={deleteImg} alt=""/>
+                            <img src={deleteImgs} alt="" onClick={()=>{isDeleteImg()}}/>
                         </div>
-                        <div onClick={()=>{isShowCue()}}>
+                        <div onClick={()=>{isShowAdd()}}>
                             <img src={wrap} alt=""/>
                             <img src={add} alt=""/>
                         </div>

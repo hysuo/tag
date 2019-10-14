@@ -50,7 +50,6 @@ const DynamicList = styled.div`
     margin-top:.3rem;
     >div{
         width:3.35rem;
-        height:4.06rem;
         background:rgba(255,255,255,1);
         box-shadow:0 .03rem .06rem rgba(0,0,0,0.16);
         opacity:1;
@@ -96,6 +95,10 @@ const DynamicList = styled.div`
                 color:rgba(25,25,25,1);
                 font-size:.12rem;
                 margin:.04rem 0;
+            }
+            img{
+                width:2.95rem;
+                height:2.36rem;
             }
         }
         >div:nth-child(3){
