@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-// import { addwechatlist } from '../../actionCreator'
+import { changewechatname } from '../../../actionCreator'
 
 const mapState = (state) => {
   return {
@@ -7,12 +7,12 @@ const mapState = (state) => {
     selfInfo:state.msg.selfInfo
   }
 }
-// const mapDispatch = (dispatch) => {
-//     return {
-//       addwechat() {
-//         dispatch(addwechatlist())
-//       }
-//     }
-//   }
+const mapDispatch = (dispatch) => {
+    return {
+      changewechatname(data) {
+        dispatch(changewechatname(data))
+      }
+    }
+  }
 
-export default connect(mapState)
+export default connect(mapState,mapDispatch)

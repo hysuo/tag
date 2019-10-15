@@ -3,15 +3,30 @@ import back from 'assets/img/msg/chat/back.png'
 import go from 'assets/img/msg/chat/go.png'
 
 import { List, Switch } from 'antd-mobile';
-import { Modal, Button} from 'antd-mobile';
+// import { Modal, Button} from 'antd-mobile';
 
 import {SetChatcontainer,BorderContainer} from './setChatStyled'
 
 export default (props)=>{
-  const alert = Modal.alert;
+  // const alert = Modal.alert;
   
   return(
     <SetChatcontainer>
+      {
+                props.cloak&&<div onClick={()=>{props.hiddencloak()}} className='showcloak'></div>
+            }
+            {
+                props.cloak&&<div className='showtoast'>
+                    <div>
+                        <p>此操作将会清空所有的聊天记录且无法找回，是否清空?</p>
+                    </div>
+                    <div>
+                        <span onClick={()=>{props.clearcontent()
+                             props.hiddencloak()}}>是</span>
+                        <span onClick={()=>{props.hiddencloak()}}>否</span>
+                    </div>
+                </div>
+            }
       <header>
         <div>
           <img src={back} alt="" onClick={()=>{props.props.history.go(-1)}}/>
@@ -50,18 +65,9 @@ export default (props)=>{
             <p>设置当前聊天背景</p>
             <img src={go} alt=""/>
           </li>
-          <li className="clear">
-            <Button
-              onClick={() =>
-                alert('', '此操作将会清空所有的聊天记录且无法找回，是否清空?', [
-                  { text: '是'},
-                  { text: '否'},
-                ])
-              }
-            >
-              <p><span>清空聊天记录</span> <img src={go} alt=""/></p>
-              
-            </Button>
+          <li className="clear" onClick={()=>{props.hiddencloak()}}>
+              <span>清空聊天记录</span> 
+              <img src={go} alt=""/>
           </li>
           
           <li>

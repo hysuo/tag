@@ -11,7 +11,7 @@ import {
 } from './private.js'
 
 import Noconfirm from '../components/Noconfirm'
-import nextImg from '../../../../../assets/img/profile/next.png'
+import nextImg from 'img/profile/next.png'
 
 class Private extends Component {
   constructor(props) {

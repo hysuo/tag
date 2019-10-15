@@ -39,7 +39,7 @@ class Main extends Component {
 				{
 					mainList.map((value,index) => {
 						return <div
-                key={value.txt}
+								key={value.txt}
                 onClick={() => this.handleClick(value.id)}
 							>
 								<p>{value.txt}</p>

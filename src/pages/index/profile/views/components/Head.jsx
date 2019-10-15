@@ -7,20 +7,25 @@ import {
 import {
   withRouter
 } from 'react-router-dom'
+import connect from '../connect.js'
 
+@connect
 class Header extends PureComponent{
 		render() {
 			return (
         <Head>
           <div>
-            <span onClick={() => this.handleClick()}><img src={backImg} alt=""/></span>
+            <span onClick={() => this.backClick()}><img src={backImg} alt=""/></span>
             <p className="usr">{this.props.title}</p>
-            <p className="confirm" onClick={() => this.handleClick()}>确认</p>
+            <p className="confirm" onClick={this.handleClick}>确认</p>
           </div>	
         </Head>
       )
     }
-    handleClick(){
+    handleClick = () => {
+      this.props.handclick(this.props.snt)
+    }
+    backClick(){
       this.props.history.go(-1)
     }
 }

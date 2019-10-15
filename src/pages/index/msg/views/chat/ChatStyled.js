@@ -80,16 +80,27 @@ const ChatContainer = styled.div`
         .list{
             display:flex;
             flex-direction:column;
-            align-items:flex-end;
-            .right{
+            width:100%;
+            .data{
+                display:flex;
+                li{
+                    margin-left:.1rem;
+                }
+            }
+            .own{
+                display:flex;
+                justify-content:flex-end;
+            }
+            /* .right{
                 float:right;
                 margin-right:.1rem;
-            }
+            } */
             /* .left{
                 float:left;
                 margin-left:.1rem;
             } */
           li{
+            /* align-items:flex-end; */
             margin-top:.075rem;
             margin-bottom:.075rem;
             margin-right:.1rem;
@@ -97,6 +108,7 @@ const ChatContainer = styled.div`
             img{
                 width:.4rem;
                 height:.4rem;
+                border-radius:50%
             }
             span{
                 display:inline-block;

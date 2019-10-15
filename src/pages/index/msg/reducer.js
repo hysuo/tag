@@ -51,21 +51,54 @@ const defaultState = {
             time:'2019/10/7'
           },
     ],
+    chatlist:[
+      {
+        id:'002',
+        name:'皮卡丘',
+        img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=489703808,1101083043&fm=26&gp=0.jpg',
+        content:'最近可好',
+        time:'2:00pm'
+      },
+      {
+        id:'003',
+        name:'皮卡丘2',
+        img:'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1607159738,3001324563&fm=26&gp=0.jpg',
+        content:'最近可好',
+        time:'2:00pm'
+      },
+      {
+        id:'004',
+        name:'皮卡丘3',
+        img:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3298005417,2605075504&fm=26&gp=0.jpg',
+        content:'最近可好',
+        time:'2:00pm'
+      },
+      {
+        id:'005',
+        name:'小黄人',
+        img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3326291021,2271121192&fm=26&gp=0.jpg',
+        content:'最近可好',
+        time:'2:00pm'
+      },
+    ],
+    chat:[]
   }
 export default (state=defaultState, action) => {
     switch(action.type) {
       case 'addwechat':
         return {
+          selfInfo:state.selfInfo,
           list: [
               ...state.list,
               action.data
-          ]
+          ],
+          chatlist:state.chatlist,
+          chat:state.chat,
         }
       case 'wechatsearch':
         state.list.map((item,value) => {
-
           if(item.content === action.data){
-            item.active = 'active'
+             item.active = 'active'
           }
         });
         return {
@@ -75,13 +108,53 @@ export default (state=defaultState, action) => {
         }
         case 'wechatsearchclear':
             state.list.map((item,value) => {
-                item.active = ''
+              return item.active = ''
             })
             return {
               list: [
                   ...state.list
               ]
             };
+        case 'changewechatname':
+            state.list.map((item,value) => {
+              if(item.id===1 && action.data!==''){
+                return item.name =action.data
+              }
+          })
+          let wechatname = action.data ? action.data :state.selfInfo.wechatname
+            return {
+              selfInfo:{
+                ...state.selfInfo,
+                wechatname:wechatname
+              },
+              list:[
+                ...state.list
+              ],
+              chatlist:state.chatlist,
+              chat:state.chat,
+            };
+        case 'clearcontent':
+          state.list.map((item,value) => {
+            return item.content = ''
+          })
+          return{
+            selfInfo:{
+              ...state.selfInfo,
+            },
+            list:state.list,
+            chatlist:state.chatlist,
+            chat:state.chat,
+          }
+          case 'addchat':
+            return{
+              chatlist:state.chatlist,
+              chat:[
+                ...state.chat,
+                action.data
+              ],
+              list:state.list,
+              selfInfo:state.selfInfo
+            }
       default:
         return state
     }

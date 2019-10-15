@@ -1,30 +1,54 @@
 import styled from 'styled-components'
 import backImg from '../../../../assets/img/profile/backImg.png'
 const ProfileContainer = styled.div `
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  font-family: "PingFang SC";
-  align-items: center;
-  header {
-	  height: 2rem;
-	  width: 100%;
-	  background: url(${backImg}) no-repeat;
-	  position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	font-family: "PingFang SC";
+	align-items: center;
+	header {
+		height: 2rem;
+		width: 100%;
+		background: url(${backImg}) no-repeat;
+		position: relative;
 
-  }
+	}
+	
 `
 const Head = styled.div `
 	position: absolute;
 	left: .12rem;
 	top: .84rem;
 	display: flex;
+	.headLeft {
+		width: .78rem;
+		height: .78rem;
+		position: relative;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+		.sex {
+			width: .18rem;
+			height: .18rem;
+			border-radius: 50%;
+			background: #fff;
+			position: absolute;
+			left: .5rem;
+			top: .45rem;
+			img {
+				width: 100%;
+				height: 100%;
+				display: block;
+			}
+		}
+	}
 	.headRight{
 		flex: 1;
 		display: flex;
 		flex-direction: column;
 		margin-left:.02rem;
-	
 		.username {
 			font-size: .18rem;
 			color: #fff;

@@ -3,6 +3,51 @@ import styled from 'styled-components'
 import border from 'assets/styles/border.js'
 
 const SetChatcontainer = styled.div`
+.showcloak{
+        position:absolute;
+        z-index: 100;
+        width:100%;
+        height:100%;
+        background:#5D5C5C;
+        opacity:.55;
+    }
+    .showtoast{
+        position:absolute;
+        z-index: 100;
+        left:50%;
+        top:50%;
+        transform:translate(-50%,-50%);
+        width:3.31rem;
+        height:1.75rem;
+        background:#fff;
+        border-radius:.2rem;
+        >div:nth-child(1){
+            background:#89C3EB;
+            width:2.97rem;
+            height:1.07rem;
+            border-radius:.2rem;
+            margin-top:.2rem;
+            margin-left:.17rem;
+            padding:.3rem .13rem .27rem .14rem;
+            p{
+                font-size:.18rem;
+                color:#fff;
+            }
+        }
+        >div:nth-child(2){
+            margin-top:.1rem;
+            span:nth-child(1){
+                color:#191919;
+                font-size:.2rem;
+                margin-left:.75rem;
+            }
+            span:nth-child(2){
+                color:#FF6363;
+                font-size:.2rem;
+                margin-left:1.41rem;
+            }
+        }
+    }
   header{
     display:flex;
     align-items:center;

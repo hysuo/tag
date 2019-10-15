@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { addwechatlist } from '../../actionCreator'
+import { addwechatlist,clearcontent } from '../../actionCreator'
 
 const mapState = (state) => {
   return {
@@ -11,6 +11,9 @@ const mapDispatch = (dispatch) => {
     return {
       addwechat() {
         dispatch(addwechatlist())
+      },
+      clearcontent() {
+        dispatch(clearcontent())
       }
     }
   }

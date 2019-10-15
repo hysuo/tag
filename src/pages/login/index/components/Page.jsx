@@ -13,8 +13,8 @@ import LoginButton from './Button'
 import Tipy from 'components/tip/Tipy'
 const userPlaceholder = '昵称（用户名）'
 const passPlaceholder = '密码'
-const margin = '30px 16px 0 24px'
-const padding ="0 29px 0 20px"
+const margin = '.3rem .16rem 0 .24rem'
+const padding ="0 .29rem 0 .2rem"
 class Page extends PureComponent {
   constructor(props){
    super(props)
@@ -112,6 +112,7 @@ class Page extends PureComponent {
     .catch(()=>{
         //错误
     })
+    this.props.history.push('/index')
 }
   
 

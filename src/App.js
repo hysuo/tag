@@ -8,8 +8,8 @@ import {IndexContainer} from "./pages/login/"
 import { RegisterContainer } from "./pages/register"
 import {ResetPasswordContainer } from "./pages/lostpass"
 import {MainPageCategoryContainer} from "./pages/mainPageCategroy"
-
 import {Chat,SetChat,ChangeName,MsgSearch,TagWeChat,SetWeChat,SearchContent}from 'msg/'
+import {OtherDynamic } from './pages/index/dynamic/'
 // import ChangeImg from 'pages/index/profile/views/changeImg/changeImg.jsx'
 import ChangeUsr from 'pages/index/profile/views/changeUsr/ChangeUsr.jsx'
 import ChangeSignature from 'pages/index/profile/views/changeSignature/ChangeSignature.jsx'
@@ -40,8 +40,9 @@ function App() {
         <Route path="/publishDynamic" component={PublishDynamicContainer}></Route>
         <Route path="/publishTag" component={PublishTagContainer}></Route>
         <Route path="/dynamic/dynamicDetail" component={DynamicDetailContainer}></Route>
+
         <Route path="/inform" component={toInform}></Route>
-        <Route path="/msg/chat" component={Chat}></Route>
+        <Route path="/msg/chat/:id" component={Chat}></Route>
         <Route path="/msg/setchat" component={SetChat}></Route>
         <Route path="/msg/changename" component={ChangeName}></Route>
         <Route path="/msg/search" component={MsgSearch}></Route>
@@ -66,6 +67,7 @@ function App() {
         <Route path="/profile/follow" component={Follow}></Route>
         <Route path="/chat" component={Chat}></Route>
         <Route path="/cate" component={MainPageCategoryContainer}></Route>
+        <Route path="/otherdynamic" component={OtherDynamic}></Route>
         <Redirect from="/" to="/index" exact></Redirect>
     </Switch>
   );

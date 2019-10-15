@@ -8,24 +8,25 @@ class SetWeChatContainer extends Component {
      collection:false,
      showName:true,
      flag:true,
-     myName:this.props.selfInfo.wechatname
+     myName:this.props.selfInfo.wechatname,
+     cloak:false
   }
  render(){
    return (
      <SetWeChatUI 
      list={this.props.list}
      goBack={this.goBack} 
-     disturb={this.state.disturb}
-     collection={this.state.collection}
-     showName={this.state.showName}
-     myName={this.state.myName}
      changedisturb={this.disturb} 
      changecollection={this.collection} 
      changeshowName={this.showName}
-     flag = {this.state.flag}
      changeflag = {this.changeflag}
      goChangeName = {this.goChangeName}
      searchContent = {this.searchContent}
+     {...this.state}
+     showcloak = {this.showcloak}
+     hiddencloak = {this.hiddencloak}
+     clearcontent = {this.clearcontent}
+     tohisdynamic = {this.tohisdynamic}
      ></SetWeChatUI>
    )
  }
@@ -57,6 +58,22 @@ class SetWeChatContainer extends Component {
  }
  searchContent=()=>{
     this.props.history.push('/tag/searchcontent')
+ }
+ tohisdynamic=()=>{
+    this.props.history.push('/otherdynamic')
+ }
+ showcloak=()=>{
+    this.setState({
+        cloak:!this.state.cloak
+     })
+ }
+ hiddencloak=()=>{
+    this.setState({
+        cloak:!this.state.cloak
+     })
+ }
+ clearcontent=()=>{
+     this.props.clearcontent()
  }
 }
 export default SetWeChatContainer
