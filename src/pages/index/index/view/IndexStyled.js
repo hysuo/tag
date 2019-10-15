@@ -4,6 +4,78 @@ const IndexContainer = styled.div`
     height:100%;
     display:flex;
     flex-direction:column;
+    .wrap {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .5;
+    position: absolute;
+    z-index:2;
+    
+	}
+  .content {
+    width: 2.6rem;
+    height: 2.9rem;
+    background: #89C3EB;
+    border-radius: .3rem;
+    position: absolute;
+    z-index: 999;
+    top: 21%;
+    left: 16%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		.headimg {
+			position: absolute;
+			top: -17%;
+		}
+		.photograph{
+			width: 1.56rem;
+			height: .4rem;
+			background: #fff;
+			border-radius: .24rem;
+			display: flex;
+			align-items: center;
+			img {
+				margin-left: .2rem;
+			}
+			p {
+				margin-left: .2rem;
+			}
+		}
+		.gallery{
+			width: 1.56rem;
+			height: .4rem;
+			background: #fff;
+			border-radius: .24rem;
+			margin-top: .2rem;
+			display: flex;
+			align-items: center;
+			img {
+				margin-left: .2rem;
+			}
+			p {
+				margin-left: .2rem;
+			}
+		}
+		.cancel{
+			width: 1.56rem;
+			height: .4rem;
+			background: #fff;
+			border-radius: .24rem;
+			margin-top: .2rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+  }
+	.sexcontent {
+		height: 3.38rem;
+	}
+	.nocontent {
+		display: none;
+	}
     main{
         flex:1;
         overflow-y:auto;
@@ -88,8 +160,7 @@ const IndexContainer = styled.div`
             }
         }
     }
-        
 `
 export{
-    IndexContainer
+	IndexContainer
 }
