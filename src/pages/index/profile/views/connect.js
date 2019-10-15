@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 import { changeusr } from '../actionCreator'
 import { changesnt } from '../actionCreator'
-import { changeHeadImg } from '../../../index/index/actionCreator'
-import { changeSex } from '../../../index/index/actionCreator'
+// import { changeHeadImg } from '../../../index/index/actionCreator'
+// import { changeSex } from '../../../index/index/actionCreator'
 
 const mapState = (state) => {
   return {

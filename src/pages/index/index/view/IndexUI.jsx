@@ -23,12 +23,12 @@ import {Home} from 'pages/index/home/'
 import {Msg} from 'pages/index/msg/'
 import {Dynamic} from 'pages/index/dynamic/'
 import {Profile} from 'pages/index/profile/'
+
 export default (props) => {
-	let {path,handleClick,pathname, isShowPublish, changePublishState,isUpdateheadimg,isUpadatesex,changeHeadImg,changeSex} = props
-	console.log(isUpdateheadimg)
+	let {path,handleClick,pathname, isShowPublish, changePublishState,isUpdateheadimg,isUpadatesex,changeHeadImg,changeSex,updateSex,sex} = props
 	return(
 		<IndexContainer>
-			<div className={isUpdateheadimg ? 'wrap' : ''} onClick={() => {changeHeadImg()}}></div>
+			<div className={isUpdateheadimg ? 'wrap' : ''} onClick={() => {changeHeadImg(sex)}}></div>
       <div className={isUpdateheadimg ? 'content' : 'nocontent'}>
 				<div className="headimg">
 					<img src={headimgbig} alt=""/>
@@ -41,28 +41,38 @@ export default (props) => {
 					<img src={gallery} alt=""/>
 					<p>图库</p>
 				</div>
-				<div className="cancel" onClick={() => {changeHeadImg()}}>
+				<div className="cancel" onClick={() => {changeHeadImg(sex)}}>
 					<p>取消</p>
 				</div>
 			</div>
-			<div className={isUpadatesex ? 'wrap' : ''} onClick={() => {changeSex()}}></div>
+			<div className={isUpadatesex ? 'wrap' : ''} onClick={() => {changeSex(sex)}}></div>
       <div className={isUpadatesex ? 'content sexcontent' : 'nocontent'}>
 				<div className="headimg">
 					<img src={headimgbig} alt=""/>
 				</div>
-				<div className="photograph">
+				<div className="photograph" onClick={() => {
+						updateSex('boy')
+						changeSex('boy')
+					 	// console.log(isUpdateheadimg,isUpadatesex)
+					 }}>
 					<img src={boy} alt=""/>
 					<p>男</p>
 				</div>
-				<div className="gallery">
+				<div className="gallery" onClick={() => {
+					updateSex('girl')
+					changeSex('girl')
+					}}>
 					<img src={girl} alt=""/>
 					<p>女</p>
 				</div>
-				<div className="gallery">
+				<div className="gallery" onClick={() => {
+					updateSex('secrecy')
+					changeSex('secrecy')
+					}}>
 					<img src={secrecy} alt=""/>
 					<p>保密</p>
 				</div>
-				<div className="cancel" onClick={() => {changeSex()}}>
+				<div className="cancel" onClick={() => {changeSex(sex)}}>
 					<p>取消</p>
 				</div>
 			</div>
@@ -87,7 +97,7 @@ export default (props) => {
 					<img src={msg} alt=""/>
 					<p>消息</p>
 				</div>
-				<div onClick={() => {changePublishState()}} className = {!isShowPublish ? 'activeP':''}>
+				<div onClick={() => {changePublishState(sex)}} className = {!isShowPublish ? 'activeP':''}>
 					<img src={isShowPublish ? publish : close} alt=""/>
 				</div>
 				<div className={pathname === '/index/dynamic' ? 'active' : ''} onClick={() => handleClick('/dynamic')}>

@@ -12,6 +12,8 @@ class IndexContainer extends Component {
      isUpadatesex = {this.props.isUpadatesex}
      changeHeadImg = {this.props.changeHeadImg}
      changeSex = {this.props.changeSex}
+     updateSex = {this.props.updateSex}
+     sex = {this.props.sex}
      changePublishState = {this.props.changePublishState}></IndexUI>
    )
  }
