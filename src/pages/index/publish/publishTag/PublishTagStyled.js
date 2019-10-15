@@ -5,6 +5,35 @@ const PublishTagContainer = styled.div`
     height:100%;
     display:flex;
     flex-direction: column;
+    .notify{
+        width:100%;
+        height:100%;
+        position: absolute;
+        background:rgba(93,92,92,1);
+        opacity:0.55;
+        z-index:555;
+        display:none;
+        &.active{
+            display:block;
+        }
+    }
+    .ntifyDetail{
+        position: absolute;
+        z-index:999;
+        color:#fff;
+        background:rgba(68,218,94,1);
+        box-shadow:0 .03rem .06rem rgba(0,0,0,0.16);
+        border-radius:.2rem;
+        display:none;
+        top: 3rem;
+        left: .8rem;
+        width: 2rem;
+        height: .6rem;
+        padding: .1rem;
+        &.active{
+            display:block;
+        }
+    }
     header{
         height:.64rem;
         display:flex;
@@ -35,6 +64,29 @@ const PublishTagContainer = styled.div`
             font-weight:bold;
             color:rgba(137,195,235,1);
             margin-bottom:.59rem;
+        }
+        ul{
+            width: 1rem;
+            height: 1rem;
+            background: rgba(255,255,255,1);
+            margin-left: 1.06rem;
+            box-shadow: 0 0.03rem 0.06rem rgba(112,112,112,0.16);
+            border-radius: .2rem;
+            font-size: .13rem;
+            padding: .1rem .2rem;
+            position: absolute;
+            top: 3.33rem;
+            color: #666;
+            display:none;
+            &.active{
+                display:block;
+            }
+            li{
+                &.active{
+                    font-weight: bold;
+                    color: rgba(137,195,235,1);
+                }
+            }
         }
         >div:last-child{
             width:1.6rem;
@@ -76,7 +128,7 @@ const ThreeInput = styled.div`
             font-family:PingFang SC;
             font-weight:600;
             line-height:.14rem;
-            color:#fff;
+            color:#666;
             padding-left: .15rem;
         }
     }
@@ -84,6 +136,10 @@ const ThreeInput = styled.div`
         width:.18rem;
         height:.18rem;
         margin:.11rem 0 .11rem .1rem;
+        display:none;
+        &.active{
+            display:block;
+        }
     }
 `
 export{
