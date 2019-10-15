@@ -7,11 +7,13 @@ class PublishDynamicContainer extends Component {
         flagCue:false,
         flagTag:false,
         flagAdd:false,
-        deleteImg:false
+        deleteImg:false,
+        SelectTag : '',
+        addTags:true
     }
     render(){
         return (
-            <PublishDynamicUI cancel={this.cancel} flag={this.state.flag} isShow={this.isShow} isShowCue={this.isShowCue} flagCue={this.state.flagCue} isShowTag={this.isShowTag} flagTag={this.state.flagTag} isShowAdd={this.isShowAdd} flagAdd={this.state.flagAdd} deleteImg={this.state.deleteImg} isDeleteImg={this.isDeleteImg}></PublishDynamicUI>
+            <PublishDynamicUI {...this.state} cancel={this.cancel} isShow={this.isShow} isShowCue={this.isShowCue}  isShowTag={this.isShowTag}  isShowAdd={this.isShowAdd}  isDeleteImg={this.isDeleteImg} clickTag={this.clickTag} addToTextarea={this.addToTextarea} changeValue={this.changeValue}></PublishDynamicUI>
         )
     }
     cancel=()=>{
@@ -29,7 +31,8 @@ class PublishDynamicContainer extends Component {
     }
     isShowTag=()=>{
         this.setState({
-            flagTag:!this.state.flagTag
+            flagTag:!this.state.flagTag,
+            addTags:!this.state.addTags
         })
     }
     isShowAdd=()=>{
@@ -41,7 +44,20 @@ class PublishDynamicContainer extends Component {
         this.setState({
             deleteImg:!this.state.deleteImg
         })
-        console.log(this.state.deleteImg)
+    }
+    clickTag=(event)=>{
+        event.persist()
+        this.setState({
+            SelectTag:event.target.innerHTML
+        })
+    }
+    addToTextarea=()=>{
+        this.setState({
+            addTags:!this.state.addTags
+        })
+    }
+    changeValue=(event)=>{
+        this.setState({SelectTag: event.target.value});
     }
 }
 

@@ -22,6 +22,16 @@ const PublishDynamicContainer = styled.div`
         flex:1;
         border-radius: .4rem .4rem 0 0;
         background:#fff;
+        .tags{
+            color: rgba(137,195,235,1);
+            position: absolute;
+            top: .75rem;
+            left: .2rem;
+            display:none;
+            &.active{
+                display:block;
+            }
+        }
         textarea{
             border:none;
             margin:.4rem .2rem;
