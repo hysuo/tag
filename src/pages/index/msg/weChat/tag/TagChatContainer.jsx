@@ -70,7 +70,7 @@ goNext=()=>{
   this.props.history.push('/tag/setwechat')
 }
 goback=()=>{
-  this.props.history.go(-1)
+  this.props.history.push('/index/home')
 }
 }
 export default TagChatContainer

@@ -70,7 +70,7 @@ export default (props)=>{
               <img src={go} alt=""/>
           </li>
           
-          <li>
+          <li onClick={()=>{props.gosearch()}}>
             <p>查找聊天记录</p>
             <img src={go} alt=""/>
           </li>

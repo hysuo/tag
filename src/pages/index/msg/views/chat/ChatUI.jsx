@@ -12,11 +12,11 @@ export default (props) => {
         <ChatContainer>
             <header>
                 <img onClick={()=>{props.props.history.go(-1)}} src={back} alt=""/>
-                <p>name</p>
+                <p>{props.data.length !==0 &&props.data[0].name}</p>
                 <img onClick={()=>{props.props.history.push('/msg/setchat')}} src={more} alt=""/>
             </header>
             <main>
-                <div className="show">
+                <div className="show" onClick={()=>{props.godynamic()}}>
                     <p>08-18  8:00 </p>
                     <div>
                         <p>最新动态</p>
@@ -27,7 +27,6 @@ export default (props) => {
                                 <span>7</span>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
                 <ul className="list">
@@ -45,15 +44,28 @@ export default (props) => {
                     }
                     {
                         props.list.map((value,index) => {
-                            return (
-                                <div key={index} className='own'>
-                                    <li>
-                                    <span>{value}</span>
-                                    <img src={headImg} alt=""/>
-                                </li>
-                                </div>
-                                
-                            )
+                            if(value.id === props.id){
+                                return (
+                                    <div key={index} className='own'>
+                                        <li>
+                                        <span>{value.data}</span>
+                                        <img src={headImg} alt=""/>
+                                    </li>
+                                    </div>
+                                    
+                                )
+                            }else{
+                                return (
+                                    <div key={index} className='data'>
+                                        <li>
+                                        <img src={props.data.length ===0 ?'':props.data[0].img} alt=""/>
+                                        <span>{value.data}</span>
+                                    </li>
+                                    </div>
+                                    
+                                )
+                            }
+                            
                             // if(index%2){
                             //     return (
                             //         <li key={index} className='right'>
