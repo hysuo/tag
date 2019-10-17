@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import {SwiperShow} from './SwiperStyled'
 import Swiper from 'swiper/js/swiper.js'
 import 'swiper/css/swiper.min.css'
 
 import banner1 from 'assets/img/home1/0135d65d2e93fba8012187f4e7dfef.jpg@1280w_1l_2o_100sh(1).png'
 import banner2 from 'assets/img/home1/0135d65d2e93fba8012187f4e7dfef.jpg@1280w_1l_2o_100sh(2).png'
 import banner3 from 'assets/img/home1/01679e5d2e9402a80120695cc3c92b.jpg@1280w_1l_2o_100sh.png'
+import {
+    SwiperShow
+  } from '../HomeStyled'
 
 export default class SwiperContainer extends Component{
     render(){

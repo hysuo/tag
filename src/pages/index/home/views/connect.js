@@ -3,8 +3,9 @@ import { connect } from 'react-redux'
 import { sagaTagListData } from '../actionCreator'
 
 const mapState = (state) => {
+  console.log(state.home.tagList)
   return {
-    list: state.home.list
+    tagList: state.home.tagList
   }
 }
 
