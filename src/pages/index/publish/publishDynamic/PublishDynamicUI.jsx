@@ -10,7 +10,7 @@ import hidden from 'assets/img/publish/dy/hidden (1).png'
 
 import Photo from 'components/photo/Photo'
 export default (props) => {
-    let {cancel, isShow, flag, isShowCue, flagCue, flagTag, isShowTag, isShowAdd, flagAdd, isDeleteImg, deleteImg} = props
+    let {cancel, isShow, flag, isShowCue, flagCue, flagTag, isShowTag, isShowAdd, flagAdd, isDeleteImg, deleteImg, clickTag, SelectTag, addTags,addToTextarea,changeValue} = props
     return(
         <PublishDynamicContainer>
             <Photo flagAdd={flagAdd} isShowAdd={isShowAdd}></Photo>
@@ -22,29 +22,30 @@ export default (props) => {
                 <div>发布</div>
             </header>
             <main>
+                <div className={addTags?'tags active':'tags'}>#{SelectTag}</div>
                 <textarea className={flagCue||flagTag ? 'active':''} name="" id="" cols="40" rows="20" placeholder='你的小秘密：'></textarea>
                 <div className={flagTag? 'addTag active' : 'addTag'}>
                     <div>
                         <div onClick={()=>{isShowTag()}}>取消</div>
                         <div>添加标签</div>
-                        <div>添加</div>
+                        <div onClick={()=>{addToTextarea();isShowTag()}}>添加</div>
                     </div>
                     <div>
-                        <input type="text" placeholder='#添加一个符合你自己的标签吧'/>
+                        <input type="text" placeholder='#添加一个符合你自己的标签吧' value={SelectTag} onChange={changeValue.bind(this)}/>
                     </div>
                     <div className='tuijianTag'>
                         <div>推荐标签</div>
                         <div>
-                            <div>柠檬精</div>
-                            <div>柠檬精</div>
-                            <div>柠檬精</div>
-                            <div>柠檬精</div>
+                            <div onClick={clickTag.bind(this)}>柠檬精</div>
+                            <div onClick={clickTag.bind(this)}>秃头少女</div>
+                            <div onClick={clickTag.bind(this)}>程序猿</div>
+                            <div onClick={clickTag.bind(this)}>2333333</div>
                         </div>
                     </div>
                 </div>
                 <div className={flagCue? 'cueOne active' : 'cueOne'}>
                     <div>
-                        <div onClick={()=>{isShowCue()}}>取消</div>
+                        <div onClick={()=>{isShowCue();addToTextarea()}}>取消</div>
                         <div>提醒谁看</div>
                         <div>确定</div>
                     </div>
@@ -66,10 +67,10 @@ export default (props) => {
                         </div>
                     </div>
                     <div>
-                        <div>
+                        <div onClick={()=>{isShowTag()}}>
                             #添加标签
                         </div>
-                        <div>
+                        <div onClick={()=>{isShowCue();addToTextarea()}}>
                             @Ta
                         </div>
                         <div>

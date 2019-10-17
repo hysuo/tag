@@ -6,6 +6,7 @@ import connect from './connect'
 class HomeContainder extends Component {
  render(){
   let { isShowPublish } = this.props
+  console.log(this.props)
    return (
      <HomeUI isShowPublish = {isShowPublish} publishDynamic = {this.publishDynamic} publishTag = {this.publishTag} weChat={this.weChat}
      cate={this.cate} account={this.account}></HomeUI>
@@ -25,6 +26,9 @@ class HomeContainder extends Component {
  }
  account=()=>{
    this.props.history.push('./profile/account')
+ }
+ componentDidMount(){
+  this.props.tagListData()
  }
 }
 export default HomeContainder

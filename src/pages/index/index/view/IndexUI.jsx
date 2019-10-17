@@ -1,8 +1,8 @@
 import React from 'react'
 import {
-    Route,
-    Redirect,
-    Switch
+	Route,
+	Redirect,
+	Switch
   } from 'react-router-dom'
 
 import {IndexContainer} from './IndexStyled'
@@ -14,15 +14,70 @@ import profile from 'assets/img/home/user@2x.png'
 import close from 'assets/img/home/组 47.png'
 import publishD from 'assets/img/publish/组 646.png'
 import publishT from 'assets/img/publish/组 647.png'
+import headimgbig from 'img/profile/headimgbig.png'
+import photograph from 'img/profile/photograph.png'
+import gallery from 'img/profile/gallery.png'
+import boy from 'img/profile/boy.png'
+import girl from 'img/profile/girl.png'
+import secrecy from 'img/profile/secrecy.png'
 
 import {Home} from 'pages/index/home/'
 import {Msg} from 'pages/index/msg/'
 import {Dynamic} from 'pages/index/dynamic/'
 import {Profile} from 'pages/index/profile/'
+
 export default (props) => {
-    let {path,handleClick,pathname, isShowPublish, changePublishState,publishTag,publishDynamic} = props
+    let {path,handleClick,pathname, isShowPublish, changePublishState,publishTag,publishDynamic,isUpdateheadimg,isUpadatesex,changeHeadImg,changeSex,updateSex,sex} = props
     return(
         <IndexContainer>
+				<div className={isUpdateheadimg ? 'wrap' : ''} onClick={() => {changeHeadImg(sex)}}></div>
+      <div className={isUpdateheadimg ? 'content' : 'nocontent'}>
+				<div className="headimg">
+					<img src={headimgbig} alt=""/>
+				</div>
+				<div className="photograph">
+					<img src={photograph} alt=""/>
+					<p>拍照</p>
+				</div>
+				<div className="gallery">
+					<img src={gallery} alt=""/>
+					<p>图库</p>
+				</div>
+				<div className="cancel" onClick={() => {changeHeadImg(sex)}}>
+					<p>取消</p>
+				</div>
+			</div>
+			<div className={isUpadatesex ? 'wrap' : ''} onClick={() => {changeSex(sex)}}></div>
+      <div className={isUpadatesex ? 'content sexcontent' : 'nocontent'}>
+				<div className="headimg">
+					<img src={headimgbig} alt=""/>
+				</div>
+				<div className="photograph" onClick={() => {
+						updateSex('boy')
+						changeSex('boy')
+					 	// console.log(isUpdateheadimg,isUpadatesex)
+					 }}>
+					<img src={boy} alt=""/>
+					<p>男</p>
+				</div>
+				<div className="gallery" onClick={() => {
+					updateSex('girl')
+					changeSex('girl')
+					}}>
+					<img src={girl} alt=""/>
+					<p>女</p>
+				</div>
+				<div className="gallery" onClick={() => {
+					updateSex('secrecy')
+					changeSex('secrecy')
+					}}>
+					<img src={secrecy} alt=""/>
+					<p>保密</p>
+				</div>
+				<div className="cancel" onClick={() => {changeSex(sex)}}>
+					<p>取消</p>
+				</div>
+			</div>
             <main>
                 <div className = {!isShowPublish ? 'activeM':''}></div>
                     <div className={!isShowPublish ? 'activeTD publishD':'publishD'} onClick={() => publishDynamic()}>
@@ -64,6 +119,5 @@ export default (props) => {
                 </div>  
             </footer>
         </IndexContainer>
-        
     )
 }

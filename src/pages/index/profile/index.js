@@ -1,4 +1,9 @@
 import Profile from './views/ProfileContainer'
-export{
-    Profile
+import reducer from './reducer.js'
+
+
+
+export {
+    Profile,
+    reducer
 }
