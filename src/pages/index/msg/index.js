@@ -7,6 +7,7 @@ import TagWeChat from './weChat/tag/TagChatContainer'
 import SetWeChat from './weChat/setWeChat/SetWeChatContainer'
 import SearchContent from './weChat/searchcontent/SearchContentContainer'
 import reducer from './reducer'
+import * as sagas from './saga'
 export{
     Msg,
     Chat,
@@ -16,5 +17,6 @@ export{
     TagWeChat,
     SetWeChat,
     SearchContent,
-    reducer
+    reducer,
+    sagas
 }

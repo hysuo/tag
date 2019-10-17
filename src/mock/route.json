@@ -1,4 +1,5 @@
 {
   "/api/chatlist": "/chatlist",
-  "/api/tagList": "/tagList"
+  "/api/tagList": "/tagList",
+  "/api/wechat/001": "/wechat001"
 }

@@ -44,6 +44,6 @@ gosearch=()=>{
   this.props.history.push('/tag/searchcontent')
 }
 clearcontent=()=>{
-   this.props.clearcontent()
+  //  this.props.clearcontent()
 }
 }

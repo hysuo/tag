@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import TagChatUI from './TagChatUI'
 import headImg from 'assets/img/msg/chat/headImg.PNG'
 import connect from './connect'
+import http from 'utils/http'
 @connect
  class TagChatContainer extends Component {
   // state={
@@ -34,9 +35,18 @@ import connect from './connect'
       
   //   ]
   // }
+  state={
+    name:'',
+    chatlist:[]
+  }
  render(){
+  // chatlist={this.props.list}
    return (
-     <TagChatUI chatlist={this.props.list} addMessage={this.addMessage} goNext={this.goNext} goback={this.goback}></TagChatUI>
+     <TagChatUI 
+     chatlist={this.props.list}  
+     addMessage={this.addMessage} 
+     goNext={this.goNext} 
+     goback={this.goback}></TagChatUI>
    )
  }
  addMessage=(value) => {
@@ -71,6 +81,16 @@ goNext=()=>{
 }
 goback=()=>{
   this.props.history.push('/index/home')
+}
+componentDidMount(){
+  // http.get({url:'/api/wechat/001'})
+  // .then((result) => {
+  //   console.log(result)
+  //   this.setState({
+  //     name:result.name,
+  //     chatlist:result.wechat
+  //   })
+  // })
 }
 }
 export default TagChatContainer

@@ -16,12 +16,12 @@ export default class MsgSearchContainer extends Component {
   this.setState({
     msglist:[{
       img:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2854956166,1658664264&fm=26&gp=0.jpg',
-      name:'热巴',
+      name:'皮卡',
       content:['最近可好']
     },
     {
       img:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2854956166,1658664264&fm=26&gp=0.jpg',
-      name:'热巴',
+      name:'皮卡',
       content:['最近可好']
     }
   ]

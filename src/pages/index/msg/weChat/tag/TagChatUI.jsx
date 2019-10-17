@@ -5,11 +5,12 @@ import Footer from './TagChatFooter'
 import back from 'assets/img/msg/chat/back.png'
 import more from 'assets/img/msg/chat/more.png'
 export default (props)=>{
+    console.log(props.chatlist)
     return (
        <TagChat>
            <header>
                <img src={back} onClick={()=>{props.goback()}} alt=""/>
-               <p>柠檬精</p>
+               <p>{props.name}</p>
                <img onClick={()=>{props.goNext()}} src={more} alt=""/>
            </header>
            <main>
@@ -38,7 +39,6 @@ export default (props)=>{
                                 )
                             }
                         }
-                        
                     })
                 }
            </main>

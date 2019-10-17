@@ -38,3 +38,8 @@ export const loadChatListtData = (data) => {
     data
   }
 }
+export const saga_load_chatlist = () => {
+  return {
+    type: 'saga_load_chatlist',
+  }
+}

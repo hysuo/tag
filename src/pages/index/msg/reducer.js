@@ -155,6 +155,10 @@ export default (state=defaultState, action) => {
               list:state.list,
               selfInfo:state.selfInfo
             }
+          case 'loadChatListtData':
+            return{
+              chatlist:action.data.chatlist
+            }
       default:
         return state
     }

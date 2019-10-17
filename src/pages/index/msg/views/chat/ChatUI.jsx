@@ -8,11 +8,12 @@ import headImg from 'assets/img/msg/chat/headImg.PNG'
 
 import Footer from './ChatFooter'
 export default (props) => {
+    console.log(props.data)
     return(
         <ChatContainer>
             <header>
                 <img onClick={()=>{props.props.history.go(-1)}} src={back} alt=""/>
-                <p>{props.data.length !==0 &&props.data[0].name}</p>
+                <p>{props.data.length !==0 && props.data[0].name}</p>
                 <img onClick={()=>{props.props.history.push('/msg/setchat')}} src={more} alt=""/>
             </header>
             <main>
@@ -31,7 +32,7 @@ export default (props) => {
                 </div>
                 <ul className="list">
                     {
-                        props.data.map((item,index)=>{
+                        props.data.length!==0 && props.data.map((item,index)=>{
                             return(
                                 <div key={index} className="data">
                                     <li>
@@ -43,7 +44,7 @@ export default (props) => {
                         })
                     }
                     {
-                        props.list.map((value,index) => {
+                         props.list.length!==0&&props.list.map((value,index) => {
                             if(value.id === props.id){
                                 return (
                                     <div key={index} className='own'>

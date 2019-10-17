@@ -21,6 +21,7 @@ class Chat extends Component {
    )
  }
  componentDidMount(){
+  //  this.props.
     this.socket = io('http://localhost:9999')
     this.socket.on('msg_from_server', (data)=> {
       this.props.addchat(data)
