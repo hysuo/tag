@@ -15,7 +15,8 @@ export default class setChatContainer extends Component {
         change1={this.change1}
         showcloak = {this.showcloak}
         hiddencloak = {this.hiddencloak}
-        // clearcontent = {this.clearcontent}
+        gosearch = {this.gosearch}
+        clearcontent = {this.clearcontent}
       ></SetChatUI>
    )
  }
@@ -39,7 +40,10 @@ hiddencloak=()=>{
       cloak:!this.state.cloak
    })
 }
-// clearcontent=()=>{
-//    this.props.clearcontent()
-// }
+gosearch=()=>{
+  this.props.history.push('/tag/searchcontent')
+}
+clearcontent=()=>{
+   this.props.clearcontent()
+}
 }

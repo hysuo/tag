@@ -32,3 +32,9 @@ export const addchat = (data) => {
     data
   }
 }
+export const loadChatListtData = (data) => {
+  return {
+    type: 'loadChatListtData',
+    data
+  }
+}

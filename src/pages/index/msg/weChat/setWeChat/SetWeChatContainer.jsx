@@ -27,6 +27,7 @@ class SetWeChatContainer extends Component {
      hiddencloak = {this.hiddencloak}
      clearcontent = {this.clearcontent}
      tohisdynamic = {this.tohisdynamic}
+     invite = {this.invite}
      ></SetWeChatUI>
    )
  }
@@ -74,6 +75,9 @@ class SetWeChatContainer extends Component {
  }
  clearcontent=()=>{
      this.props.clearcontent()
+ }
+ invite=()=>{
+     this.props.history.push('/profile/fan')
  }
 }
 export default SetWeChatContainer

@@ -50,7 +50,7 @@ export default (props)=>{
                                 if(props.showName){
                                     return (
                                         <li key={index}>
-                                            <img src={value.img} alt=""/>
+                                            <img onClick={()=>{props.tohisdynamic()}} src={value.img} alt=""/>
                                             <p>{value.name}</p>
                                         </li>
                                     )
@@ -64,7 +64,7 @@ export default (props)=>{
                             }
                         })
                     }
-                    <li>
+                    <li onClick={()=>{props.invite()}}>
                         <img src={add} alt=""/>
                         <p>添加</p>
                     </li>
