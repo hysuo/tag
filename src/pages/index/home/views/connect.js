@@ -1,9 +1,19 @@
 import { connect } from 'react-redux'
 
+import { sagaTagListData } from '../actionCreator'
+
 const mapState = (state) => {
   return {
-    isShowPublish: state.index.isShowPublish
+    list: state.home.list
   }
 }
 
-export default connect(mapState)
+const mapDispatch = (dispatch) => {
+  return {
+    tagListData() {
+      dispatch(sagaTagListData())
+    }
+  }
+}
+
+export default connect(mapState, mapDispatch)
