@@ -1,0 +1,33 @@
+{
+    "name":"皮卡丘2",
+    "signature":"临近毕业，真的好难",
+    "img":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1607159738,3001324563&fm=26&gp=0.jpg",
+    "attention":24,
+    "fans":425,
+    "dy":[
+        {
+            "id":"13",
+            "time":"2019-10-20 17:00",
+            "text":"苦涩的咖啡",
+            "img":"http://images.xuejuzi.cn/1801/1_180118163821_1.jpg",
+            "zan":56,
+            "praise":80
+        },
+        {
+            "id":"14",
+            "time":"2019-10-6 7:00",
+            "text":"有空约一波电影",
+            "img":"http://images.xuejuzi.cn/1503/1_150328092824_1.jpg",
+            "zan":35,
+            "praise":10
+        },
+        {
+            "id":"15",
+            "time":"2019-10-1 6:00",
+            "text":"白白丢了这么多",
+            "img":"http://images.xuejuzi.cn/1706/1_170615224547_1.jpg",
+            "zan":70,
+            "praise":50
+        }
+    ]
+}

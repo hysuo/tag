@@ -1,15 +1,19 @@
 import { connect } from 'react-redux'
-import { addwechatlist } from '../../actionCreator'
+import { addwechatlist ,sagawechatlist} from '../../actionCreator'
 
 const mapState = (state) => {
     return {
-      list: state.msg.list
+      list: state.msg.list,
+      name: state.msg.name
     }
   }
 const mapDispatch = (dispatch) => {
     return {
         addwechat(data) {
             dispatch(addwechatlist(data))
+        },
+        requestWe(data){
+          dispatch(sagawechatlist(data))
         }
     }
 }

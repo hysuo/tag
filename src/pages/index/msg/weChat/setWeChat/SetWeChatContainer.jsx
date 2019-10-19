@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import SetWeChatUI from './SetWeChatUI'
 import connect from './connect'
+import http from 'utils/http'
 @connect
 class SetWeChatContainer extends Component {
  state={
@@ -60,8 +61,8 @@ class SetWeChatContainer extends Component {
  searchContent=()=>{
     this.props.history.push('/tag/searchcontent')
  }
- tohisdynamic=()=>{
-    this.props.history.push('/otherdynamic')
+ tohisdynamic=(id)=>{
+    this.props.history.push('/otherdynamic/'+id)
  }
  showcloak=()=>{
     this.setState({
@@ -74,7 +75,9 @@ class SetWeChatContainer extends Component {
      })
  }
  clearcontent=()=>{
-     this.props.clearcontent()
+    //  this.props.clearcontent()
+    // http.post({url:'/api/wechat/001'},{})
+
  }
  invite=()=>{
      this.props.history.push('/profile/fan')

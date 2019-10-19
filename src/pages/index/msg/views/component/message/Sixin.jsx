@@ -49,5 +49,8 @@ import connent from './connent';
      </MessageContainer>
    )
  }
+//  componentDidMount(){
+//    this.props.laodchatdata()
+//  }
 }
 export default Sixin

@@ -50,7 +50,7 @@ export default (props)=>{
                                 if(props.showName){
                                     return (
                                         <li key={index}>
-                                            <img onClick={()=>{props.tohisdynamic()}} src={value.img} alt=""/>
+                                            <img onClick={()=>{props.tohisdynamic(value.id)}} src={value.img} alt=""/>
                                             <p>{value.name}</p>
                                         </li>
                                     )

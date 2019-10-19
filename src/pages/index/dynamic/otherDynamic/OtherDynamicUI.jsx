@@ -28,7 +28,7 @@ export default (props)=>{
             }
             {
                 props.showcloak2&&<div className='showbigpic'>
-                    <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=489703808,1101083043&fm=26&gp=0.jpg" alt=""/>
+                    <img src={props.data.img ? props.data.img : ''} alt=""/>
                     <p>保存至相册</p>
                 </div>
             }
@@ -38,85 +38,50 @@ export default (props)=>{
                     <img src={more} onClick={()=>{props.cloak()}} alt=""/>
                 </div>
                 <div className="info">
-                    <img onClick={()=>{props.cloak2()}} src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=489703808,1101083043&fm=26&gp=0.jpg" alt=""/>
-                    <p>皮卡丘</p>
-                    <p>爱旅行的吃货</p>
+                    <img onClick={()=>{props.cloak2()}} src={props.data.img ? props.data.img : ''} alt=""/>
+                    <p>{props.data.name}</p>
+                    <p>{props.data.signature}</p>
                 </div>
                 <div className="fans">
                     <div>
-                        <span>465</span>
+                        <span>{props.data.attention}</span>
                         <p>关注</p>
                     </div>
                     <div>
-                        <span>321</span>
+                        <span>{props.data.fans}</span>
                         <p>粉丝</p>
                     </div>
                 </div>
             </header>
             <main>
-                <div className="dynamic" onClick={()=>{props.godetail()}}>
+                {
+                    props.data.dy &&props.data.dy.map((item,index)=>{
+                        return(
+                            <div className="dynamic" onClick={()=>{props.godetail()}} key={index}>
                         <div className="xian">
                             <img src={circle} alt=""/>
                             <img src={xian} alt=""/>
                         </div>
                         <div className="all">
-                            <p className="time">2019-10-8 10:00</p>
-                            <p className='content'>想去旅行</p>
-                            <img className="pic" src={pic} alt=""/>
+                            <p className="time">{item.creattime}</p>
+                            <p className='content'>{item.text}</p>
+                            <img className="pic" src={item.img} alt=""/>
                             <div className="more">
                                 <div>
                                     <img src={zan} alt=""/>
-                                    <span>10</span>
+                                    <span>{item.zan}</span>
                                 </div>
                                 <div className="commit">
                                     <img src={commit} alt=""/>
-                                    <span>66</span>
+                                    <span>{item.praise}</span>
                                 </div>
                             </div>
                         </div>
                 </div>
-                <div className="dynamic" onClick={()=>{props.godetail()}}>
-                        <div className="all">
-                            <p className="time">2019-10-8 10:00</p>
-                            <p className='content'>想去旅行</p>
-                            <img className="pic" src={pic} alt=""/>
-                            <div className="more">
-                                <div>
-                                    <img src={zan} alt=""/>
-                                    <span>10</span>
-                                </div>
-                                <div className="commit">
-                                    <img src={commit} alt=""/>
-                                    <span>66</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="xian">
-                            <img src={circle} alt=""/>
-                            <img src={xian} alt=""/>
-                        </div>
-                </div>
-                <div className="dynamic" onClick={()=>{props.godetail()}}>
-                        <div className="all">
-                            <p className="time">2019-10-8 10:00</p>
-                            <p className='content'>想去旅行</p>
-                            <img className="pic" src={pic} alt=""/>
-                            <div className="more">
-                                <div>
-                                    <img src={zan} alt=""/>
-                                    <span>10</span>
-                                </div>
-                                <div className="commit">
-                                    <img src={commit} alt=""/>
-                                    <span>66</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="xian">
-                            <img src={circle} alt=""/>
-                            <img src={xian} alt=""/>
-                        </div>
-                </div>
+                        )
+                    })
+                }
+               
             </main>
             </div>
             <footer>

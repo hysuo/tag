@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import MsgUI from './MsgUI'
+// import io from 'socket.io-client'
 export default class Msgcontainer extends Component {
  render(){
    return (
@@ -8,5 +9,8 @@ export default class Msgcontainer extends Component {
  }
  handleClick=(value) => {
   this.props.history.push(this.props.match.path + value)
+ }
+ componentDidMount(){
+  // this.socket = io('http://localhost:9999')
  }
 }

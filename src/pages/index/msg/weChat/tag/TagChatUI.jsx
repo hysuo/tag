@@ -9,7 +9,7 @@ export default (props)=>{
        <TagChat>
            <header>
                <img src={back} onClick={()=>{props.goback()}} alt=""/>
-               <p>柠檬精</p>
+               <p>{props.name}</p>
                <img onClick={()=>{props.goNext()}} src={more} alt=""/>
            </header>
            <main>
@@ -18,7 +18,7 @@ export default (props)=>{
                     <span>说了你又不懂，懂了你又不做</span>
                 </li> */}
                 {
-                    props.chatlist.map((value,index) => {
+                   props.chatlist.map((value,index) => {
                         if(value.content){
                             if(value.id === 1){
                                 return(
@@ -32,13 +32,12 @@ export default (props)=>{
                             }else{
                                 return(
                                     <li key={index}>
-                                        <img src={value.img} alt=""/>
+                                        <img src={value.img} onClick={()=>{props.godynamic(value.id)}} alt=""/>
                                         <span>{value.content}</span>
                                     </li>
                                 )
                             }
                         }
-                        
                     })
                 }
            </main>

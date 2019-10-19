@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import OtherDynamicUI from './OtherDynamicUI'
+import http from 'utils/http'
 export default class OtherDynamicContainer extends Component {
   state={
     showcloak:false,
-    showcloak2:false
+    showcloak2:false,
+    data:{}
   }
  render(){
    return (
@@ -16,6 +18,14 @@ export default class OtherDynamicContainer extends Component {
       {...this.state}
       ></OtherDynamicUI>
    )
+ }
+ componentDidMount(){
+    http.get({url:'/tag/otherdynamic/'+this.props.match.params.id}).then((res)=>{
+      this.setState({
+        data:res
+      })
+    })
+   
  }
  goback=()=>{
    this.props.history.go(-1)

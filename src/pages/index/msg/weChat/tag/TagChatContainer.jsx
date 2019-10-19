@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import TagChatUI from './TagChatUI'
-import headImg from 'assets/img/msg/chat/headImg.PNG'
+// import headImg from 'assets/img/msg/chat/headImg.PNG'
 import connect from './connect'
+// import http from 'utils/http'
 @connect
  class TagChatContainer extends Component {
   // state={
@@ -34,9 +35,20 @@ import connect from './connect'
       
   //   ]
   // }
+  state={
+    name:'',
+    chatlist:[]
+  }
  render(){
+  // chatlist={this.props.list}
    return (
-     <TagChatUI chatlist={this.props.list} addMessage={this.addMessage} goNext={this.goNext} goback={this.goback}></TagChatUI>
+     <TagChatUI 
+     chatlist={this.props.list}  
+     name={this.props.location.state.name}  
+     addMessage={this.addMessage} 
+     goNext={this.goNext} 
+     godynamic={this.godynamic} 
+     goback={this.goback}></TagChatUI>
    )
  }
  addMessage=(value) => {
@@ -59,12 +71,15 @@ import connect from './connect'
     this.props.addwechat(
         {
          id:1,
-         img:headImg,
+         img:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1666966895,993299225&fm=26&gp=0.jpg',
          content:value,
          time:nowDate
        }
     )
   }
+}
+godynamic=(id)=>{
+  this.props.history.push('/otherdynamic/'+id)
 }
 goNext=()=>{
   this.props.history.push('/tag/setwechat')
@@ -73,7 +88,16 @@ goback=()=>{
   this.props.history.push('/index/home')
 }
 componentDidMount(){
-  console.log(this.props.location.state.id,this.props.location.state.name)
+  // console.log(this.props)
+  this.props.requestWe(this.props.location.state.id)
+  // http.get({url:'/api/wechat/001'})
+  // .then((result) => {
+  //   console.log(result)
+  //   this.setState({
+  //     name:result.name,
+  //     chatlist:result.wechat
+  //   })
+  // })
 }
 }
 export default TagChatContainer

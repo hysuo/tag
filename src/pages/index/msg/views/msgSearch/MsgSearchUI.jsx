@@ -26,7 +26,7 @@ export default (props) => {
                 {
                     props.msglist.map((value,index) => {
                         return (
-                            <Item key={index} value={value}></Item>
+                            <Item key={index} list={value}></Item>
                         )
                     })
                 }
