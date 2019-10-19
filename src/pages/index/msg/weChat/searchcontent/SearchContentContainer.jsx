@@ -22,7 +22,7 @@ import connect  from './connect';
   this.props.history.push(this.props.match.path + value)
  }
  goBack=()=>{
-  this.props.history.push('/tag/wechat')
+  this.props.history.push('/index')
  }
  search=(value)=>{
    this.props.list.forEach((item,index)=>{

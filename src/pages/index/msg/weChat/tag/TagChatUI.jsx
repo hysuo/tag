@@ -18,7 +18,7 @@ export default (props)=>{
                     <span>说了你又不懂，懂了你又不做</span>
                 </li> */}
                 {
-                   props.chatlist.map((value,index) => {
+                      props.chatlist &&props.chatlist.length!==0 && props.chatlist.map((value,index) => {
                         if(value.content){
                             if(value.id === 1){
                                 return(

@@ -36,7 +36,7 @@ import connect from './connect'
   //   ]
   // }
   state={
-    name:'',
+    name:this.props.location.state.name,
     chatlist:[]
   }
  render(){
@@ -44,7 +44,7 @@ import connect from './connect'
    return (
      <TagChatUI 
      chatlist={this.props.list}  
-     name={this.props.location.state.name}  
+     name={this.state.name}  
      addMessage={this.addMessage} 
      goNext={this.goNext} 
      godynamic={this.godynamic} 
