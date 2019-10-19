@@ -44,7 +44,7 @@ import connect from './connect'
    return (
      <TagChatUI 
      chatlist={this.props.list}  
-     name={this.props.name}  
+     name={this.props.localtion.state.name}  
      addMessage={this.addMessage} 
      goNext={this.goNext} 
      godynamic={this.godynamic} 
@@ -88,7 +88,7 @@ goback=()=>{
   this.props.history.push('/index/home')
 }
 componentDidMount(){
-  this.props.requestWe("0001")
+  this.props.requestWe(this.props.localtion.state.id)
   // http.get({url:'/api/wechat/001'})
   // .then((result) => {
   //   console.log(result)
