@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import{withRouter} from 'react-router-dom'
 import {Register as Pagestyle} from '../../../login/index/StyledIndex.js' 
 import Input from 'components/input/Input'
 import rt from 'images/rig/dui.svg' 
@@ -7,12 +8,12 @@ import shouji from 'images/tel/ziyuan.svg'
 import validateimg from 'images/tel/yanzhengma.svg'
 import ResetButton from './ResetButton.jsx'
 import wg from 'images/rig/cuo.svg'
-const margin ="30px 16px 0 24px"
+const margin =".3rem .16rem 0 .24rem"
 const other ="10px 16px 0 24px"
 const padding ="0 29px 0 20px"
-const getValidatePadding ='0 .1rem 0 .06rem'
+const getValidatePadding ='0 .1rem 0 .2rem'
 
-export default class Page extends PureComponent {
+class Page extends PureComponent {
   constructor(props){
     super(props)
     this.state={
@@ -89,7 +90,7 @@ export default class Page extends PureComponent {
       
     }
   }
- handleResetPassword (){
+ handleResetPassword= (e)=>{
    const user={
     account:this.state.account,
     validatenum :this.state.validatenum,
@@ -97,8 +98,22 @@ export default class Page extends PureComponent {
     password:this.state.password,
     repassword:this.state.repassword
    }
-   console.log(user)
- } handlebuttont(){
+   e.preventDefault();
+   fetch('http://localhost:9002/user?account='+`${user.account}`,{
+                 method: "POST",
+                //  body: users,
+                body: JSON.stringify(user),
+                 headers: {
+                     'Content-type': 'application/json'
+                 }
+             }).then(
+                 this.props.history.push("./login")
+             )
+             .catch(()=>{
+                 //错误
+             })
+ } 
+ handlebuttont(){
   // setTimeout(function(){
   //   code.css("opacity","0.8");
   // },1000)
@@ -118,3 +133,4 @@ export default class Page extends PureComponent {
   }, 60000);
 }
 }
+export default withRouter(Page)

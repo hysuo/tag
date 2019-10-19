@@ -15,7 +15,7 @@ display:flex;
 flex-direction:column;
 div.div{
     height:2.23rem;
-    width:3.75rem;
+    width:100%;
     background:url(${bg}) no-repeat;
     overflow-y:hidden;
 }

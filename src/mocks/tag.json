@@ -1,0 +1,89 @@
+{
+    "hotname":"热词霸主",
+    "hot":[
+        
+        {
+            "id":0,
+            "titletag":"小仙女",
+            "little":99
+
+        },
+        {
+            "id":1,
+            "titletag":"卧槽",
+            "little":99
+
+        },
+        {
+            "id":2,
+            "titletag":"卧槽",
+            "little":99
+
+        },
+        {
+            "id":3,
+            "titletag":"卧槽",
+            "little":99
+
+        },
+        {
+            "id":4,
+            "titletag":"卧槽",
+            "little":99
+
+        },
+        {
+            "id":5,
+            "titletag":"卧槽",
+            "little":99
+
+        },
+        {
+            "id":6,
+            "titletag":"卧槽",
+            "little":11
+        }
+    ],
+    "premirename":"请你赞扬",
+    "premire":[
+        {
+            "id":0,
+            "titletag":"卧槽",
+            "little":99
+
+        },
+        {
+            "id":1,
+            "titletag":"卧槽",
+            "little":99
+
+        }
+    ],
+    "chatname": "真的自嘈",
+    "chat":[
+        {
+            "id":0,
+            "titletag":"卧槽1232323",
+            "little":99
+        },
+        {
+            "id":1,
+            "titletag":"卧槽23232323",
+            "little":99
+        }
+    ]
+    ,
+    "backname": "复古主义",
+    "back":[
+        {
+            "id":0,
+            "titletag":"卧槽",
+            "little":99
+        },
+        {
+            "id":1,
+            "titletag":"卧槽",
+            "little":99
+        }
+    ]
+}

@@ -26,6 +26,8 @@ class Page extends PureComponent {
     change1:'',
     account:"",
     password: "",
+    logaccount: JSON.parse(localStorage.getItem("gf")).account,
+    // logaccount: JSON.parse(localStorage.getItem("gf")).password
    }
    this.handleReg=this.handleReg.bind(this)
    this.handleLog= this.handleLog.bind(this);
@@ -41,7 +43,7 @@ class Page extends PureComponent {
     return (
         <Pagestyle>
           <ul><li className={this.state.change0} onClick={this.handleLog} >登陆</li>|<li className={this.state.change1} onClick={this.handleReg}>注册</li></ul>
-          <Input iconbeforebg={forw} iconlastbg={this.state.accountvalidateimg} placeholder={userPlaceholder} margin={margin} padding={padding} onChange={this.handleAcc}></Input>
+          <Input iconbeforebg={forw} iconlastbg={this.state.accountvalidateimg} placeholder={this.state.logaccount||userPlaceholder} margin={margin} padding={padding} onChange={this.handleAcc}></Input>
           <Input iconbeforebg={pas} iconlastbg={this.state.type?ey:eye} placeholder={passPlaceholder} margin={margin} padding={padding} type={this.state.type?"password":"text"} onChange={this.handlePassword} onClick={this.handlePass}></Input>
           <nav>
             <Tip onClick={this.handleSave}></Tip>
@@ -93,26 +95,36 @@ class Page extends PureComponent {
   }
   handleLogin(e){
     let log={
-      account:this.state.account,
+      account:this.state.logaccount || this.state.account,
       password:this.state.password,
     }
-  console.log(log)
-    e.preventDefault();
-    fetch('www.baidu.com',{
-        method: "POST",
-        body: JSON.stringify(log),
-        headers: {
-            'content-type': 'application/json'
-        }
-    }).then(
-        (data)=>{
-            console.log(data);
-        }
-    )
+  console.log(log.account)
+  e.preventDefault();
+             fetch('http://localhost:9002/user?account='+log.account
+             ,{
+                 method: "GET",
+                //  mode: "no-cors",
+                //  body: users,
+                //  body: JSON.stringify(log),
+                 headers: {
+                     'Content-type': 'application/x-www-form-urlencoded'
+                 }
+             }  
+             ).then(
+              (data)=> {
+                return data.json()
+              }).then(
+                (data)=> {
+                  if(data[0].password=== log.password){
+                    let obj= {"account": data[0].account,"password": data[0].password}
+                    localStorage.setItem("gf",JSON.stringify(obj))
+                    this.props.history.push("/index")
+                  }
+                }
+              )
     .catch(()=>{
         //错误
     })
-    this.props.history.push('/index')
 }
   
 
