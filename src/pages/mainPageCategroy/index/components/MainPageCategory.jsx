@@ -8,40 +8,46 @@ class MainPageCategory extends Component {
         super(props)
         this.state={
         hide:true,
-         datatag:[{id:0,titletag:'退役熬夜运动员',little:'999位成员已参加'}
-                       ,{id:1,titletag:'o',little:'999位成员已参加'}
-                       ,{id:2,titletag:'你是谁',little:'999位成员已参加'}
-                       ,{id:3,titletag:'账号没了',little:'999位成员已参加'}
-                       ,{id:4,titletag:'QQ',little:'999位成员已参加'}
-                       ,{id:5,titletag:'很爱',little:"rgfgfhn加密"}
-                       ,{id:6,titletag:'额外y',little:'热发反反复复反反复复反反复复t'}
-                       ,{id:7,titletag:'熬',little:'依赖'}
-                    ],
+         datatag:[],
         keyword:'e',
-        searchs:[]
+        searchs:[],
+        jack:'',
+        tagtag:''
                     }
         this.handleSearchTag =this.handleSearchTag.bind(this) // click bg visible
         this.handleBack = this.handleBack.bind(this) // click anywhere bg 
         this.handleSearchFromTag = this.handleSearchFromTag.bind(this) // 查找
         this.handleTag= this.handleTag.bind(this)
+        this.jus= this.jus.bind(this)
     }
     UNSAFE_componentWillMount(){
+        let ip= this.props.location.state.id
+        this.setState({jack:this.jus(ip)})
         fetch('http://localhost:9002/tag',{
                  method: "GET",
-                //  headers: {
-                //      'Content-type': 'application/json'
-                //  }
              }).then(
                  (res)=> {
                      return res.json()
                  }
              ).then(
                  (res)=>{
-                     console.log(res.chat)
-                    //  console.log(this)
-                    this.setState({datatag:res.chat
+                     let chat=[] 
+                      if(this.state.jack==='hot'){
+                        chat=res.hot
+                      }else if(this.state.jack==='premire')
+                      {
+                        chat=res.premire
+                      }
+                      else if(this.state.jack==='chat')
+                      {
+                        chat=res.chat
+                      }else if(this.state.jack==='back'){
+                        chat=res.back
+                        console.log(chat)
+                      }
+
+                    this.setState({datatag:chat
                     })
-                    // console.log(this.datatag)
                  }
              )
              .catch(()=>{
@@ -53,7 +59,7 @@ class MainPageCategory extends Component {
     <IndexContainer {...this.state}>
             <Search controllervisible={this.handleBack} searchFromKeywords={this.handleSearchFromTag} datatag={this.state.datatag} searchs={this.state.searchs} keywords={this.state.keyword} hide={this.state.hide} tag="na,只有这么多"></Search>
     <div className="div"></div>
-    <header><span>真的自嘈</span>
+    <header><span>{this.state.tagtag}</span>
     <div className="searchbox0" onClick={this.handleSearchTag}></div></header>
     <section>
         <div>
@@ -97,6 +103,22 @@ class MainPageCategory extends Component {
  }
  handleTag(e){console.log(this.props)
      this.props.history.push('/tag/wechat')
+ }
+ jus(ip){
+     console.log(typeof(ip));
+     
+    if(ip==='001'){
+        this.setState({tagtag:'热词霸主'})
+         return 'hot'
+    }else if(ip==='002'){
+        this.setState({tagtag:'请你赞扬'})
+        return 'premire'
+    }else if(ip==='003'){
+        this.setState({tagtag:'真的自嘈'})
+          return 'premire'
+    }else{
+        this.setState({tagtag:'复古主义'})
+        return "back"}
  }
 }
     export default withRouter(MainPageCategory) 
