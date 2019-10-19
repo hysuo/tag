@@ -1,6 +1,6 @@
 import { takeEvery, put } from 'redux-saga/effects'
 
-import { loadChatListtData} from './actionCreator'
+import { loadChatListtData,loadWeData} from './actionCreator'
 import http from 'utils/http'
 
 function loadChatListDataSaga() {
@@ -9,6 +9,13 @@ function loadChatListDataSaga() {
     yield put(loadChatListtData(result))
   })
 }
+function loadWeDataSaga() {
+  return takeEvery('saga_wechatlist', function* (action) {
+    let result = yield http.get({url: '/api/wechat/'+action.data})
+    yield put(loadWeData(result))
+  })
+}
 export {
-    loadChatListDataSaga
+    loadChatListDataSaga,
+    loadWeDataSaga
   }

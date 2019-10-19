@@ -25,7 +25,7 @@ class Item extends Component {
         this.props.history.push({pathname:'/msg/chat/'+this.props.list.id})
  }
  toDynamic=()=>{
-    this.props.history.push('/otherdynamic')
+    this.props.history.push('/otherdynamic/'+this.props.list.id)
  }
 }
 export default withRouter(Item)

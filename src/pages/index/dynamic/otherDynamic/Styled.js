@@ -165,6 +165,7 @@ const OtherDynamic = styled.div`
                 .pic{
                     width:2.6rem;
                     height:1.56rem;
+                    border-radius:.1rem
                 }
                 .more{
                     margin-top:.1rem;

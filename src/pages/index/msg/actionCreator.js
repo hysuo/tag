@@ -43,3 +43,15 @@ export const saga_load_chatlist = () => {
     type: 'saga_load_chatlist',
   }
 }
+export const sagawechatlist = (data) => {
+  return {
+    type: 'saga_wechatlist',
+    data
+  }
+}
+export const loadWeData = (data) => {
+  return {
+    type: 'loadWeData',
+    data
+  }
+}

@@ -5,7 +5,6 @@ import Footer from './TagChatFooter'
 import back from 'assets/img/msg/chat/back.png'
 import more from 'assets/img/msg/chat/more.png'
 export default (props)=>{
-    console.log(props.chatlist)
     return (
        <TagChat>
            <header>
@@ -19,7 +18,7 @@ export default (props)=>{
                     <span>说了你又不懂，懂了你又不做</span>
                 </li> */}
                 {
-                    props.chatlist.map((value,index) => {
+                   props.chatlist.map((value,index) => {
                         if(value.content){
                             if(value.id === 1){
                                 return(
@@ -33,7 +32,7 @@ export default (props)=>{
                             }else{
                                 return(
                                     <li key={index}>
-                                        <img src={value.img} alt=""/>
+                                        <img src={value.img} onClick={()=>{props.godynamic(value.id)}} alt=""/>
                                         <span>{value.content}</span>
                                     </li>
                                 )

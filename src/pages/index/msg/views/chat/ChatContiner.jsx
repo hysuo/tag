@@ -22,7 +22,7 @@ class Chat extends Component {
  }
  componentDidMount(){
   //  this.props.
-    this.socket = io('http://localhost:9999')
+    this.socket = io('http://192.168.43.93:9999')
     this.socket.on('msg_from_server', (data)=> {
       this.props.addchat(data)
     })
@@ -36,6 +36,10 @@ class Chat extends Component {
     })
  }
  addMessage=(value) => {
+  // this.socket = io('http://localhost:9999')
+  // this.socket.on('msg_from_server', (data)=> {
+  //   this.props.addchat(data)
+  // })
    if(value){
     this.socket.emit('msg_from_client',{
       id:this.state.id,
@@ -44,7 +48,7 @@ class Chat extends Component {
    }
  }
  godynamic=()=>{
-   this.props.history.push('/otherdynamic')
+   this.props.history.push('/otherdynamic/1')
  }
 }
 export default Chat
