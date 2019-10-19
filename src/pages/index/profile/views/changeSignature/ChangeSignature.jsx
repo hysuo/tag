@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 import {
 	ChangeusrContainer
@@ -32,8 +33,19 @@ class ChangeUsr extends Component {
 			value: signature
 		})
 	}
-	handleClick = (value) => {
+	handleClick = async (value) => {
 		this.props.changesnt(value)
+		let name = this.props.usrname
+
+		let data = await axios.get('/data/?usrname=' + name)
+		.then((res) => {
+			return res.data[0].id
+		})
+		axios.patch((('/data/' + Number(data))),{
+			signature: this.state.value
+		}).then((res)=>{
+			console.log(res)
+		})
 		this.props.history.go(-1)
 	}
 }

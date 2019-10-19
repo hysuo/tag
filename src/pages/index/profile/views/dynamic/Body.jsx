@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import axios from 'axios'
 
 import {
 	withRouter
@@ -10,6 +11,7 @@ import {
 
 import dynamic1 from '../../../../../assets/img/profile/dynamic-1.png'
 import dynamic2 from '../../../../../assets/img/profile/dynamic-2.png'
+import connect from '../connect'
 
 const dynamicList = [
   {
@@ -31,7 +33,14 @@ const dynamicList = [
     txt: '今日份可爱，额嗯嗯呢'
   },
 ]
+@connect 
 class Body extends PureComponent {
+  constructor(props){
+    super(props)
+    this.state = {
+      dynamicList: []
+    }
+  }
 	render() {
 		return (
       <BodyContainer>
@@ -56,7 +65,20 @@ class Body extends PureComponent {
         
       </BodyContainer>
     )
-	}
+  }
+  async componentDidMount(){
+    let result = await axios.get('/data')
+    let usrList = result.data
+    for(var i = 0, usr; i < usrList.length; i++){
+      if(usrList[i].usrname === this.props.usrname){
+        usr = usrList[i]
+      }
+    }
+    this.setState({
+      dynamicList: usr.dynamic.items
+    })
+    console.log(this.state.dynamicList)
+  }
 }
 
 export default withRouter(Body)

@@ -15,6 +15,9 @@ const FllowContainer = styled.div `
       justify-content: space-between;
       align-items: center;
       padding-top: .4rem;
+      span {
+        margin-left: .1rem;
+      }
       .title {
         font-size: .18rem;
       }

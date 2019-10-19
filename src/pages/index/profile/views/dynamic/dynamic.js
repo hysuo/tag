@@ -55,15 +55,24 @@ const Main = styled.div `
     flex-direction: column;
     align-items: center;
     color: #fff;
+    .headimg{
+      width: .6rem;
+      height: .6rem;
+      border-radius: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
     .usrname {
       font-size: .14rem;
       position: relative;
-      top: -.1rem;
+      /* top: -.1rem; */
     }
     .signature {
       font-size: .12rem;
       position: relative;
-      top: -.1rem;
+      /* top: -.1rem; */
     }
     .label {
       background: #CFE9FC;
@@ -105,6 +114,15 @@ const BodyContainer = styled.div `
     color: #707070;
     border-radius: .2rem;
     box-shadow: 0 .04rem .06rem rgba(0,0,0,0.16);
+    .dynamicimg {
+      width: 3.53rem;
+      height:1.96rem;
+      border-radius: .2rem;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
     .date {
       .left {
         margin-left: .2rem;

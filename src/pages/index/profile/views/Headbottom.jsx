@@ -7,6 +7,9 @@ import {
   withRouter
 } from 'react-router-dom'
 
+import connect from './connect.js'
+import axios from 'axios'
+
 const tabList = [
 		{
 				num: '213',
@@ -27,8 +30,14 @@ const tabList = [
         path: '/profile/dynamic'
 		},
 ]
+@connect
 class Head extends Component {
-	 
+	 constructor(props){
+		 super(props)
+		 this.state = {
+			 usrItem: []
+		 }
+	 }
 	render() {
 		return (
 			<Headbottom>
@@ -44,7 +53,23 @@ class Head extends Component {
 					}
 			</Headbottom>
 		)
-  }
+	}
+	async componentDidMount(){
+		let result = await axios.get('/data')
+    
+    let usrList = result.data
+    for(var i = 0, usr; i < usrList.length; i++){
+      if(usrList[i].usrname === this.props.usrname){
+        usr = usrList[i]
+      }
+    }
+    this.setState({
+      usrItem: usr
+		})
+		tabList[0].num = this.state.usrItem.follow
+		tabList[1].num = this.state.usrItem.fan
+		tabList[2].num = this.state.usrItem.dynamic.dynum
+	}
   handleClick(path) {
     this.props.history.push(path)
   }

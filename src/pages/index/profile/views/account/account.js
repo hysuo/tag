@@ -7,6 +7,7 @@ const AccountContainer = styled.div `
   display: flex;
   background: #f7f7f7;
   align-items: center;
+  overflow-y: scroll;
   flex-direction: column;
   .main {
     margin-top: .14rem;
@@ -15,11 +16,13 @@ const AccountContainer = styled.div `
 
 const Usr = styled.div `
 	width: 3.36rem;
-  height: .78rem;
+  height: .6rem;
   display: flex;
+  margin-bottom: .1rem;
   .left {
-    width: .78rem;
-    height: .78rem;
+    width: .6rem;
+    height: .6rem;
+    margin-right: .1rem;
     img {
       width: 100%;
       height: 100%;

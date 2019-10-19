@@ -15,4 +15,9 @@ module.exports = function(app) {
       '^/tag': ''
     }
   }))
+  app.use('/data', proxy({
+    target: 'http://localhost:9003',
+    changeOrigin: true,
+  }))
+ 
 }

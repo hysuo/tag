@@ -21,13 +21,26 @@ const Head = styled.div `
 	left: .12rem;
 	top: .84rem;
 	display: flex;
+	align-items: center;
 	.headLeft {
-		width: .78rem;
-		height: .78rem;
+		/* width: .78rem;
+		height: .78rem; */
 		position: relative;
-		img {
-			width: 100%;
-			height: 100%;
+		div	{
+			width: .6rem;
+      height: .6rem;
+			margin-left: .1rem;
+			margin-top: .1rem;
+      border-radius: 50%;
+       /* background: #fff; */
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+			img {
+				width: 100%;
+				height: 100%;
+			}
 		}
 		.sex {
 			width: .18rem;
@@ -35,8 +48,8 @@ const Head = styled.div `
 			border-radius: 50%;
 			background: #fff;
 			position: absolute;
-			left: .5rem;
-			top: .45rem;
+			left: .4rem;
+			top: .4rem;
 			img {
 				width: 100%;
 				height: 100%;
@@ -48,7 +61,7 @@ const Head = styled.div `
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		margin-left:.02rem;
+		margin-left:.1rem;
 		.username {
 			font-size: .18rem;
 			color: #fff;
