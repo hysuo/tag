@@ -25,6 +25,29 @@ class MainPageCategory extends Component {
         this.handleSearchFromTag = this.handleSearchFromTag.bind(this) // 查找
         this.handleTag= this.handleTag.bind(this)
     }
+    UNSAFE_componentWillMount(){
+        fetch('http://localhost:9000/tag',{
+                 method: "GET",
+                //  headers: {
+                //      'Content-type': 'application/json'
+                //  }
+             }).then(
+                 (res)=> {
+                     return res.json()
+                 }
+             ).then(
+                 (res)=>{
+                     console.log(res.chat)
+                    //  console.log(this)
+                    this.setState({datatag:res.chat
+                    })
+                    // console.log(this.datatag)
+                 }
+             )
+             .catch(()=>{
+                 //错误
+             })
+    }
      render(){
       return (
     <IndexContainer {...this.state}>

@@ -11,7 +11,7 @@ import validateimg from 'images/tel/yanzhengma.svg'
 import RegisterButton from './RegisterButton'
 const margin =".3rem .16rem 0 .24rem"
 const other =".1rem .16rem 0 .24rem"
-const getValidatePadding ='0 .1rem 0 .06rem'
+const getValidatePadding ='0 .1rem 0 .2rem'
 const padding ="0 .29rem 0 .2rem"
  class Page extends React.Component{
   constructor(props){
@@ -124,19 +124,32 @@ const padding ="0 .29rem 0 .2rem"
       this.setState({repasswordvalidate:wg})
     }
   }
-    handleRegister=()=>{
+    handleRegister=(e)=>{
            console.log(this.state.account)  
              const users = {
                 account:this.state.account,
-                validatenum :this.state.validatenum,
+                // validatenum :this.state.validatenum,
                 name:this.state.name,
                 password:this.state.password,
-                repassword:this.state.repassword
+                // repassword:this.state.repassword
 
       //   axios.post('/api/users/register',newUser)
 
              }
-             console.log(users)
+             e.preventDefault();
+             fetch('http://localhost:9000/user',{
+                 method: "POST",
+                //  body: users,
+                 body: JSON.stringify(users),
+                 headers: {
+                     'Content-type': 'application/json'
+                 }
+             }).then(
+                 this.props.history.push("./login")
+             )
+             .catch(()=>{
+                 //错误
+             })
   }
   handlebuttont(){
     // setTimeout(function(){
