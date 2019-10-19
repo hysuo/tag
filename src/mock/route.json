@@ -1,4 +1,6 @@
 {
   "/api/chatlist": "/chatlist",
-  "/api/tagList": "/tagList"
+  "/api/tagList": "/tagList",
+  "/api/tags": "/tags",
+  "/api/dynamicList":"/dynamicList"
 }

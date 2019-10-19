@@ -7,84 +7,95 @@ const DynamicDetailContainer = styled.div`
     main{
         flex:1;
         padding:.2rem .2rem 0 .2rem;
-        >div:first-child{
+        >div{
             >div:first-child{
-                display:flex;
-                >img{
-                    width:.46rem;
-                    height:.46rem;
-                    background:rgba(0,0,0,0);
-                    border-radius:50%;
-                    margin-right:.14rem;
-                }
-                >div{
-                    >p:first-child{
-                        color:rgba(137,195,235,1);
-                        font-size:.14rem;
-                    }
-                    >p:nth-child(2){
-                        color:rgba(9,9,9,1);
-                        font-size:.12rem;
-                        margin: .04rem 0 .06rem 0;
+                >div:first-child{
+                    display:flex;
+                    width:2.52rem;
+                    >img{
+                        height:.46rem;
+                        background:rgba(0,0,0,0);
+                        border-radius:50%;
+                        margin-right:.14rem;
                     }
                     >div{
-                        justify-content: space-between;
-                        display:flex;
-                        margin-top:.1rem;
                         >p:first-child{
-                            color:rgba(112,112,112,1);
-                            font-size:.2rem;
-                            transform: scale(0.5);
-                            margin-left: -.4rem;
+                            color:rgba(137,195,235,1);
+                            font-size:.14rem;
+                        }
+                        >p:nth-child(2){
+                            color:rgba(9,9,9,1);
+                            font-size:.12rem;
+                            margin: .04rem 0 .06rem 0;
+                        }
+                        img{
+                            width:2.52rem;
+                            height:1.57rem;
+                            border-radius: 12%;
                         }
                         >div{
+                            justify-content: space-between;
                             display:flex;
-                            align-items:center;
-                            >p{
+                            margin-top:.1rem;
+                            >p:first-child{
                                 color:rgba(112,112,112,1);
-                                font-size:.12rem;
+                                font-size:.2rem;
+                                transform: scale(0.5);
+                                margin-left: -.2rem;
                             }
-                            img{
-                                width:.14rem;
-                                height:.14rem;
+                            >div{
+                                display:flex;
+                                align-items:center;
+                                >p{
+                                    color:rgba(112,112,112,1);
+                                    font-size:.12rem;
+                                    &:nth-child(2){
+                                        margin-right:.1rem;
+                                    }
+                                }
+                                img{
+                                    width:.14rem;
+                                    height:.14rem;
+                                    margin-right:.04rem;
+                                }
                             }
                         }
                     }
                 }
             }
-        }
-        >div:last-child{
-            width:3.35rem;
-            background:rgba(247,247,247,1);
-            border-radius:.1rem;
-            padding:.27rem .16rem .2rem .2rem;
-            >div{
-                display:flex;
-                img{
-                    width:.26rem;
-                    height:.26rem;
-                    border-radius:50%;
-                }
+            >div:last-child{
+                width:3.35rem;
+                background:rgba(247,247,247,1);
+                border-radius:.1rem;
+                padding:.27rem .16rem .2rem .2rem;
                 >div{
-                    flex:1;
-                    margin-left:.06rem;
-                    >p:first-child{
-                        color:rgba(137,195,235,1);
-                        font-size:.12rem;
+                    display:flex;
+                    img{
+                        width:.26rem;
+                        height:.26rem;
+                        border-radius:50%;
                     }
-                    >p:last-child{
-                        font-size:.2rem;
-                        color:rgba(25,25,25,1);
-                        transform: scale(0.5); 
-                        margin-left: -.67rem;
-                        margin-top: -.05rem;
+                    >div{
+                        flex:1;
+                        margin-left:.06rem;
+                        >p:first-child{
+                            color:rgba(137,195,235,1);
+                            font-size:.12rem;
+                        }
+                        >p:last-child{
+                            font-size:.2rem;
+                            color:rgba(25,25,25,1);
+                            transform: scale(0.5); 
+                            margin-left: -.8rem;
+                            margin-top: -.05rem;
+                        }
                     }
-                }
-                >p{
-                    color: rgba(112,112,112,1);
-                    font-size: .12rem;
-                    transform: scale(0.85);
-                    margin-left: -.4rem;
+                    >p{
+                        color: rgba(112,112,112,1);
+                        font-size: .12rem;
+                        transform: scale(0.85);
+                        margin-left: -.2rem;
+                    }
                 }
             }
         }

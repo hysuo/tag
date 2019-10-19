@@ -72,5 +72,8 @@ goNext=()=>{
 goback=()=>{
   this.props.history.push('/index/home')
 }
+componentDidMount(){
+  console.log(this.props.location.state.id,this.props.location.state.name)
+}
 }
 export default TagChatContainer

@@ -52,6 +52,7 @@ const HomeContainer = styled.div`
                 color:#191919;
                 font-weight:bold;
                 margin-left:.23rem;
+                margin-bottom: .1rem;
             }
             >div:last-child{
                 display:flex;
@@ -59,8 +60,12 @@ const HomeContainer = styled.div`
                 margin-left:.14rem;
                 >div{
                     display:flex;
-                    img{
+                    margin-bottom: .15rem;
+                    >img{
                         z-index:1;
+                        width:.8rem;
+                        height:.8rem;
+                        border-radius: 20%;
                     }
                     >div{
                         display:flex;

@@ -1,14 +1,15 @@
 import React from 'react'
 import {DynamicContainer,UserList, DynamicList} from './DynamicStyled'
-import cat from 'assets/img/dynamic/e85555c5e7440afedc20db0dad77bf2a.png'
 import add from 'assets/img/dynamic/add.png'
 import more from 'assets/img/dynamic/more.png'
 import comment from 'assets/img/dynamic/51568880997_.pic.png'
-import zan from 'assets/img/dynamic/61568880998_.pic.png'
-import Header from 'pages/index/dynamic/components/header/Header'
+import Header from '../components/header/Header'
+import zan from 'assets/img/dynamic/zan.png'
+// import ZanImg from '../components/Zan'
 
 export default (props) => {
-    let {flagM, isShowMore, goToDetail, title, marginLeft} = props;
+    let {flagM, isShowMore, goToDetail, title, marginLeft,dynamicList, zanActive, zanList} = props;
+    console.log(zanList)
     return(
         <DynamicContainer>
             <div className={flagM ? 'meng active':'meng'} onClick={()=>{isShowMore()}}>
@@ -17,92 +18,53 @@ export default (props) => {
             <main>
                 <UserList>
                     <div>
-                        <img src={cat} alt=""/>
+                        <img src='http://img2.imgtn.bdimg.com/it/u=3491810421,3895861461&fm=26&gp=0.jpg' alt=""/>
                         <img src={add} alt=""/>
                     </div>
                     <div>
-                        <img src={cat} alt=""/>
+                        <img src='http://img1.imgtn.bdimg.com/it/u=3909157488,3343575893&fm=26&gp=0.jpg' alt=""/>
                     </div>
                     <div>
-                        <img src={cat} alt=""/>
+                        <img src='http://img4.imgtn.bdimg.com/it/u=3716230226,2248259520&fm=15&gp=0.jpg' alt=""/>
                     </div>
                     <div>
-                        <img src={cat} alt=""/>
+                        <img src='http://img2.imgtn.bdimg.com/it/u=3515511970,1780882868&fm=26&gp=0.jpg' alt=""/>
                     </div>
                 </UserList>
 
                 <DynamicList>
-                    <div>
-                        <div>
-                            <img src={cat} alt=""/>
+                {
+                    dynamicList.map((value, index) => (
+                        <div key={value.id}>
                             <div>
-                                <p>羊驼</p>
-                                <p>1分钟前</p>
+                                <img src={value.headImg} alt=""/>
+                                <div>
+                                    <p>{value.userName}</p>
+                                    <p>{value.creatTime}</p>
+                                </div>
+                                <img src={more} onClick={isShowMore.bind(this, value.id)} alt=""/>
                             </div>
-                            <img src={more} onClick={()=>{isShowMore()}} alt=""/>
-                        </div>
-                        <div onClick={()=>{goToDetail()}}>
-                            <p>#铲屎官#</p>
-                            <p>我家主子今天太可爱了，萌出鼻血哈哈！一定要奖
-励小鱼干。</p>
-                            <img src={cat} alt=""/>
-                        </div>
-                        <div>
-                            <img src={zan} alt=""/>
-                            <p>赞</p>
-                            <img src={comment} alt=""/>
-                            <p>评论</p>
-                        </div>
-                        <div className={flagM ? 'mengShow active':'mengShow'} >
-                            <p>关注用户</p>
-                            <p>屏蔽用户</p>
-                            <p>给他私信</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <img src={cat} alt=""/>
+                            <div onClick={()=>{goToDetail(value.id)}}>
+                                <p>#{value.tag}#</p>
+                                <p>{value.text}</p>
+                                <img src={value.img} alt=""/>
+                            </div>
                             <div>
-                                <p>羊驼</p>
-                                <p>1分钟前</p>
+                                {/* <ZanImg zanList={zanList} onClick={()=>{zanActive(value.id)}} id={value.id}></ZanImg> */}
+                                
+                                <img src={zan} alt=""/>
+                                <p>赞</p>
+                                <img src={comment} alt=""/>
+                                <p>评论</p>
                             </div>
-                            <img src={more} alt=""/>
-                        </div>
-                        <div>
-                            <p>#铲屎官#</p>
-                            <p>我家主子今天太可爱了，萌出鼻血哈哈！一定要奖
-励小鱼干。</p>
-                            <img src={cat} alt=""/>
-                        </div>
-                        <div>
-                            <img src={zan} alt=""/>
-                            <p>赞</p>
-                            <img src={comment} alt=""/>
-                            <p>评论</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <img src={cat} alt=""/>
-                            <div>
-                                <p>羊驼</p>
-                                <p>1分钟前</p>
+                            <div className={flagM==value.id ? 'mengShow active':'mengShow'} >
+                                <p>关注用户</p>
+                                <p>屏蔽用户</p>
+                                <p>给他私信</p>
                             </div>
-                            <img src={more} alt=""/>
                         </div>
-                        <div>
-                            <p>#铲屎官#</p>
-                            <p>我家主子今天太可爱了，萌出鼻血哈哈！一定要奖
-励小鱼干。</p>
-                            <img src={cat} alt=""/>
-                        </div>
-                        <div>
-                            <img src={zan} alt=""/>
-                            <p>赞</p>
-                            <img src={comment} alt=""/>
-                            <p>评论</p>
-                        </div>
-                    </div>
+                    ))
+                }
                 </DynamicList>
             </main>
         </DynamicContainer>

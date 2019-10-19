@@ -68,7 +68,8 @@ const DynamicList = styled.div`
                 opacity:1;
             }
             >div{
-                margin:0 1.75rem 0 .1rem;
+                width:.8rem;
+                margin:0 1.5rem 0 .1rem;
                 text-align:center;
                 p:first-child{
                     font-size:.14rem;
@@ -98,7 +99,8 @@ const DynamicList = styled.div`
             }
             img{
                 width:2.95rem;
-                height:2.36rem;
+                height:1.84rem;
+                border-radius: 5%;
             }
         }
         >div:nth-child(3){
@@ -156,9 +158,13 @@ const DynamicList = styled.div`
         }
     }
 `
+const ZanContainer = styled.div`
+
+`
 
 export {
     DynamicContainer,
     UserList,
-    DynamicList
+    DynamicList,
+    ZanContainer
 }
