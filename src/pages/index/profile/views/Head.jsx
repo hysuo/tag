@@ -30,22 +30,24 @@ class Header extends PureComponent {
     return (
       <Head>
         <div className="headLeft">
-          <img src={HeadImg} alt="" onClick={() => {
-            this.props.changeHeadImg(this.props.sex)
-          }} />
+          <div className="head_img">
+            <img src={this.props.img} alt="" onClick={() => {
+              this.props.changeHeadImg(this.props.sex,this.props.img)
+            }} />
+          </div>
+          
           <div className="sex">
             {
               <img src={this.state[this.props.sex]} alt="" onClick={() => {
-                this.props.changeSex(this.props.sex)
-                console.log(this.props.sex)
+                this.props.changeSex(this.props.sex,this.props.img)
               }} />
             }
             
           </div>
         </div>
         <div className="headRight">
-          <div className="username" onClick={() => this.handleClick('/profile/username')}>{this.props.usr}</div>
-          <div className="signature" onClick={() => this.handleClick('/profile/signature')}>{this.props.snt}</div>
+          <div className="username" onClick={() => this.handleClick('/profile/username')}>{this.props.data.usrname}</div>
+          <div className="signature" onClick={() => this.handleClick('/profile/signature')}>{this.props.data.signature}</div>
         </div>
       </Head>
     )

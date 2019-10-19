@@ -1,29 +1,40 @@
-export const changePublishState = (data) => {
+export const changePublishState = (data,img) => {
     return {
       type: 'changePublishState',
-      data
+      data,
+      img
     }
   }
 
-export const changeHeadImg = (data) => {
+export const changeHeadImg = (data,img) => {
   return {
     type: 'changeHeadImg',
-    data
+    data,
+    img
   }
 }
 
-export const changeSex = (data) => {
+export const changeSex = (data,img) => {
   return {
     type: 'changeSex',
-    data
+    data,
+    img
   }
 }
 
-export const updateSex = (data) => {
+export const updateSex = (data,img) => {
   return {
     type: 'updateSex',
-    data
+    data,
+    img
   }
 }
 
+export const changImg = (data,img) => {
+  return {
+    type: 'changImg',
+    data,
+    img
+  }
+}
   

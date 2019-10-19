@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import cancelImg from '../../../../../assets/img/profile/cancel.png'
 import backImg from '../../../../../assets/img/profile/back.png'
 
@@ -56,8 +57,18 @@ class ChangeUsr extends Component {
 			value: value
 		})
 	}
-	handleClick = () => {
+	handleClick = async () => {
 		this.props.changeusr(this.state.value)
+		let name = this.props.usrname
+		let data = await axios.get('/data/?usrname=' + name)
+		.then((res) => {
+			return res.data[0].id
+		})
+		axios.patch((('/data/' + Number(data))),{
+			usrname: this.state.value
+		}).then((res)=>{
+			console.log(res)
+		})
 		this.props.history.push('/index/profile')
 	}
 	backClick(){

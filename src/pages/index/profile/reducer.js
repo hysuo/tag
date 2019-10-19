@@ -1,6 +1,6 @@
 const defaultState = {
   usrname: 'KUOLUO',
-  signature: '我阔落要加冰啊'
+  signature: ''
 }
 
 export default (state=defaultState, action) => {
