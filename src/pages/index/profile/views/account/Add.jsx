@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import {
+	withRouter
+} from 'react-router-dom'
 
 import {
 	Add
@@ -7,11 +10,13 @@ import {
 import addImg from '../../../../../assets/img/profile/addImg.png'
 
 
-export default class Addaccount extends Component {
+class Addaccount extends Component {
 	render() {
 		return (
 			<Add>
-				<div className="addImg">
+				<div className="addImg" onClick={() => {
+					this.props.history.push('/register')
+				}}>
           <img src={addImg} alt=""/>
 				</div>
 				<div className="addtxt">
@@ -21,3 +26,5 @@ export default class Addaccount extends Component {
 		)
 	}
 }
+
+export default withRouter(Addaccount)

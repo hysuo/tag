@@ -110,17 +110,25 @@ const BodyContainer = styled.div `
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    /* justify-content: center; */
     font-size: .14rem;
     color: #707070;
     border-radius: .2rem;
     box-shadow: 0 .04rem .06rem rgba(0,0,0,0.16);
     .dynamicimg {
       width: 3.53rem;
-      height:1.96rem;
+      height:1.86rem;
       border-radius: .2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       img{
-        width: 100%;
-        height: 100%;
+        /* width: 100%;
+        height: 100%; */
+        display: block;
+        width: 3.33rem;
+        height: 1.76rem;
+        border-radius: .2rem;
       }
     }
     .date {

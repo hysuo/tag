@@ -48,16 +48,16 @@ class IndexContainer extends Component {
     img: this.props.img
   })
  }
-  upload = (c) => {
-    let $c = document.querySelector(c)
-    let file = $c.files[0]
-    let reader = new FileReader()
-    reader.readAsDataURL(file)
-    reader.onload = (e) => {
-      this.setState({
-        img: e.target.result
-      })
-    }
+upload = (c) => {
+  let $c = document.querySelector(c)
+  let file = $c.files[0]
+  let reader = new FileReader()
+  reader.readAsDataURL(file)
+  reader.onload = (e) => {
+    this.setState({
+      img: e.target.result
+    })
+  }
     // const or = getImageTag(file, 'Orientation')
     // // reader.readAsDataURL(file)
     // reader.onloadend = function () {

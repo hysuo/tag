@@ -15,36 +15,38 @@ const AccountContainer = styled.div `
 `
 
 const Usr = styled.div `
-	width: 3.36rem;
-  height: .6rem;
-  display: flex;
-  margin-bottom: .1rem;
-  .left {
-    width: .6rem;
+  .usr {
+    width: 3.36rem;
     height: .6rem;
-    margin-right: .1rem;
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-  .right {
-    flex: 1;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    p:first-child {
-      font-size: .14rem;
-      color: #191919;
-      font-weight: 500;
+    margin-bottom: .1rem;
+    .left {
+      width: .6rem;
+      height: .6rem;
+      margin-right: .1rem;
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
-    p:last-child {
-      font-size: .2rem;
-      color: #707070;
-      transform: scale(.5);
-      position: relative;
-      left: -25%;
-      top: -10%;
+    .right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      p:first-child {
+        font-size: .14rem;
+        color: #191919;
+        font-weight: 500;
+      }
+      p:last-child {
+        font-size: .2rem;
+        color: #707070;
+        transform: scale(.5);
+        position: relative;
+        left: -25%;
+        top: -10%;
+      }
     }
   }
 `

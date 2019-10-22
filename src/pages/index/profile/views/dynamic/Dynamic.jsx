@@ -38,12 +38,7 @@ class Dynamic extends PureComponent {
     )
   }
   async componentDidMount(){
-    // let result = await http.get({
-    //   url: '/data's
-    // })
-    // console.log(usrList)
     let result = await axios.get('/data')
-    
     let usrList = result.data
     for(var i = 0, usr; i < usrList.length; i++){
       if(usrList[i].usrname === this.props.usrname){

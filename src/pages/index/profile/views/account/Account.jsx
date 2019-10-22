@@ -17,9 +17,9 @@ const UsrList = [
 		label: '我阔落要加冰啊'
 	},
 	{
-		name: 'WANGXU',
+		name: '小高',
 		img: headImg,
-		label: '我还是个孩子'
+		label: '嘻嘻嘻'
 	}
 ]
 

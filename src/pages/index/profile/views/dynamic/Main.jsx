@@ -45,10 +45,10 @@ class Mainer extends PureComponent {
             <img src={headImg} alt=""/>
           </div>
           <div className="usrname">
-            <p>KUOLUO</p>
+            <p>{this.state.usrItem.usrname}</p>
           </div>
           <div className="signature">
-            <p>我阔落要加冰啊</p>
+            <p>{this.state.usrItem.signature}</p>
           </div>
           {
             labelList.map((value, index) => {

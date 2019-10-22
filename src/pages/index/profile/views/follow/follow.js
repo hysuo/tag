@@ -4,9 +4,13 @@ const FllowContainer = styled.div `
 	height: 100%;
   width: 100%;
   font-family: "PingFang SC";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   header {
     width: 100%;
-    height: .64rem;
+    height: 1rem;
     background: #fff;
     div {
       width: 100%;
@@ -28,12 +32,12 @@ const FllowContainer = styled.div `
   }
 `
 const Input = styled.div `
-  width: 100%;;
+  width: 3.36rem;
   height: .4rem;
   margin-top: .1rem;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   .search {
     width: 3.36rem;
     height: 100%;
@@ -67,7 +71,9 @@ const Input = styled.div `
 const UsrList = styled.div `
   width: 100%;
   margin-top: .1rem;
-  height: 100%;
+  /* display: flex;
+  flex: 1;
+  flex-direction: column; */
   overflow-y: scroll;
   .usr_content {
     width: 100%;
@@ -83,9 +89,19 @@ const UsrList = styled.div `
       align-items: center;
       margin-bottom: .1rem;
       .img {
+        width: .4rem;
+        height: .4rem;
+        border-radius: 50%;
         margin-left: .1rem;
+        img {
+          width: .4rem;
+          height: .4rem;
+          border-radius: 50%;
+          display: block;
+        }
       }
       .usr_right {
+        flex: 1;
         height: .4rem;
         margin-left: .1rem;
         .usrname {
@@ -93,6 +109,7 @@ const UsrList = styled.div `
           color: #191919;
         }
         .signature {
+          width: 100%;
           display: inline-block;
           font-size: .2rem;
           color: #707070;
@@ -102,7 +119,7 @@ const UsrList = styled.div `
         }
       }
       .next {
-        margin-left: 1rem;
+        margin-right: .2rem;
       }
     }
 

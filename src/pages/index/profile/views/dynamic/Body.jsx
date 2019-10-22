@@ -45,7 +45,8 @@ class Body extends PureComponent {
 		return (
       <BodyContainer>
         {
-          dynamicList.map((value, index) => {
+          
+          this.state.dynamicList.length && this.state.dynamicList.map((value, index) => {
             return <div
               key={value.date} 
               className="dynamic_item">
@@ -74,10 +75,9 @@ class Body extends PureComponent {
         usr = usrList[i]
       }
     }
-    this.setState({
-      dynamicList: usr.dynamic.items
-    })
-    console.log(this.state.dynamicList)
+    this.setState({dynamicList: usr.dynamic.items})
+    
+    console.log(this.state.dynamicList.length)
   }
 }
 
