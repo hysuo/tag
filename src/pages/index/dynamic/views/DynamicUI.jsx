@@ -8,8 +8,7 @@ import zan from 'assets/img/dynamic/zan.png'
 // import ZanImg from '../components/Zan'
 
 export default (props) => {
-    let {flagM, isShowMore, goToDetail, title, marginLeft,dynamicList, zanActive, zanList} = props;
-    console.log(zanList)
+    let {flagM, isShowMore, goToDetail, title, marginLeft,dynamicList, zanActive, zanList, chatForOne, focusOn} = props;
     return(
         <DynamicContainer>
             <div className={flagM ? 'meng active':'meng'} onClick={()=>{isShowMore()}}>
@@ -58,9 +57,9 @@ export default (props) => {
                                 <p>评论</p>
                             </div>
                             <div className={flagM==value.id ? 'mengShow active':'mengShow'} >
-                                <p>关注用户</p>
+                                <p onClick={()=>{focusOn()}}>关注用户</p>
                                 <p>屏蔽用户</p>
-                                <p>给他私信</p>
+                                <p onClick={()=>{chatForOne(value.userID, value.userName)}}>给他私信</p>
                             </div>
                         </div>
                     ))

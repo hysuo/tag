@@ -12,7 +12,8 @@ export default class DynamicContainer extends Component {
   }
  render(){
    return (
-     <DynamicUI flagM={this.state.flagM} isShowMore={this.isShowMore} goToDetail={this.goToDetail} {...this.state} zanActive={this.zanActive}></DynamicUI>
+     <DynamicUI flagM={this.state.flagM} isShowMore={this.isShowMore} goToDetail={this.goToDetail} {...this.state} zanActive={this.zanActive}
+     chatForOne={this.chatForOne} focusOn={this.focusOn}></DynamicUI>
    )
  }
   isShowMore=(id)=>{
@@ -36,16 +37,24 @@ export default class DynamicContainer extends Component {
     this.setState({
       zanList:zans
     })
-    console.log(this.state.zanList)
+  }
+  chatForOne=(id, name)=>{
+    this.props.history.push('/msg/chat/'+ id, {name})
+  }
+  focusOn=()=>{
+    this.setState({
+      flagM:''
+    })
   }
   async componentDidMount(){
     let dynamicList = await http.get({
       url: '/api/dynamicList'
     })
+    dynamicList = dynamicList.reverse()
     this.setState({
-      dynamicList:dynamicList.data
+      dynamicList:dynamicList
     })
-    let dynamics = dynamicList.data
+    let dynamics = dynamicList
     let zans = []
     for(let i = 0; i<dynamics.length; i++){
       let zan = {
@@ -61,5 +70,4 @@ export default class DynamicContainer extends Component {
       zanList:zans
     })
    }
-
 }

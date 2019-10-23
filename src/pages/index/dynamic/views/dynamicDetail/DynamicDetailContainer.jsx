@@ -6,26 +6,40 @@ export default class DynamicDetailContainer extends Component {
   state={
     title:'动态详情',
     marginLeft:'1.16rem',
-    dynamic:[]
+    dynamic:[],
+    commentInput:'',
+    commentList:[]
   }
  render(){
-   console.log(this.props.location.state.id)
    return (
-        <DynamicDetailUI {...this.state}></DynamicDetailUI>
+        <DynamicDetailUI {...this.state} handleInput={this.handleInput} handleClick={this.handleClick}></DynamicDetailUI>
    )
  }
  async componentDidMount(){
   let dynamicList = await http.get({
-    url: '/api/dynamicList'
+    url: '/api/dynamicList?_sort=id&_order=DESC'
   })
-  console.log(dynamicList)
   let id = this.props.location.state.id
-  let result = dynamicList.data.filter(function(value){
+  let result = dynamicList.filter(function(value){
     return value.id == id
   })
-  console.log(result)
   this.setState({
     dynamic:result
+  })
+ }
+ handleInput=(e)=>{
+   this.setState({
+    commentInput:e.target.value
+   })
+ }
+ handleClick=()=>{
+  let list = this.state.commentList
+  list.push(this.state.commentInput)
+  this.setState({
+    commentList:list
+  })
+  this.setState({
+    commentInput:''
   })
  }
 }
