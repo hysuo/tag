@@ -35,7 +35,7 @@ class IndexContainer extends Component {
    this.props.history.push(this.props.match.path + value)
  }
  componentDidMount(){
-  //  console.log(this.props)
+   console.log(this.props)
  }
  publishDynamic=()=>{
   this.props.history.push('/publishDynamic')

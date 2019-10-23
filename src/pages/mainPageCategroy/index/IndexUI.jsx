@@ -37,6 +37,6 @@ export default (props)=>{
         //     </article>
         //     </section>
         // </IndexContainer>
-        <MainPageCategory></MainPageCategory>
+        <MainPageCategory datatag={props.data}></MainPageCategory>
     )
 }

@@ -4,37 +4,37 @@
         
         {
             "id":0,
-            "titletag":"小仙女",
+            "titletag":"烈酒敬往事",
             "little":99
 
         },
         {
             "id":1,
-            "titletag":"卧槽",
-            "little":99
+            "titletag":"永爱胖迪",
+            "little":9999
 
         },
         {
             "id":2,
-            "titletag":"卧槽",
+            "titletag":"倾城笑眸",
             "little":99
 
         },
         {
             "id":3,
-            "titletag":"卧槽",
+            "titletag":"烟味少nian",
             "little":99
 
         },
         {
             "id":4,
-            "titletag":"卧槽",
+            "titletag":"Dearひ不准嚣张",
             "little":99
 
         },
         {
             "id":5,
-            "titletag":"卧槽",
+            "titletag":"都不是小仙女",
             "little":99
 
         },
@@ -48,13 +48,102 @@
     "premire":[
         {
             "id":0,
-            "titletag":"卧槽",
+            "titletag":"不忘初心",
             "little":99
 
         },
         {
             "id":1,
-            "titletag":"卧槽",
+            "titletag":"陌上烟雨",
+            "little":99
+
+        },
+        {
+            "id":2,
+            "titletag":"南岸初晴",
+            "little":9999
+
+        },
+        {
+            "id":3,
+            "titletag":"落蝶",
+            "little":99
+
+        },
+        {
+            "id":4,
+            "titletag":"柚子yoki",
+            "little":99
+
+        },
+        {
+            "id":5,
+            "titletag":"喜欢的蓝色",
+            "little":99
+
+        },
+        {
+            "id":6,
+            "titletag":"青春旳沙漏",
+            "little":99
+
+        },{
+            "id":7,
+            "titletag":"我们『范2°的青春",
+            "little":9999
+
+        },
+        {
+            "id":8,
+            "titletag":"忘不掉的ヤ壹切",
+            "little":99
+
+        },
+        {
+            "id":9,
+            "titletag":"旧日时光里的一抹微笑",
+            "little":99
+
+        },
+        {
+            "id":10,
+            "titletag":"回忆如烟烟如梦",
+            "little":99
+
+        },
+        {
+            "id":11,
+            "titletag":"想死问过涐滴意见没",
+            "little":99
+
+        },
+        {
+            "id":12,
+            "titletag":"人心是善变的",
+            "little":9999
+
+        },
+        {
+            "id":13,
+            "titletag":"霸占你的吣",
+            "little":99
+
+        },
+        {
+            "id":14,
+            "titletag":"说我很邪恶°",
+            "little":99
+
+        },
+        {
+            "id":15,
+            "titletag":"仰你教的背",
+            "little":99
+
+        },
+        {
+            "id":19,
+            "titletag":"都不是小仙女",
             "little":99
 
         }
@@ -63,27 +152,110 @@
     "chat":[
         {
             "id":0,
-            "titletag":"卧槽1232323",
+            "titletag":"怦然心动",
             "little":99
         },
         {
             "id":1,
-            "titletag":"卧槽23232323",
+            "titletag":"選擇忘記",
+            "little":90
+        },
+        {
+            "id":2,
+            "titletag":"回忆如烟烟如梦",
             "little":99
+
+        },
+        {
+            "id":3,
+            "titletag":"想死问过涐滴意见没",
+            "little":99
+
+        },
+        {
+            "id":4,
+            "titletag":"人心是善变的",
+            "little":9999
+
+        },
+        {
+            "id":5,
+            "titletag":"霸占你的吣",
+            "little":99
+
+        },
+        {
+            "id":6,
+            "titletag":"说我很邪恶°",
+            "little":90
+
+        },
+        {
+            "id":7,
+            "titletag":"仰你教的背",
+            "little":365
+
+        },
+        {
+            "id":8,
+            "titletag":"都不是小仙女",
+            "little":23
+
         }
-    ]
-    ,
+    ],
     "backname": "复古主义",
     "back":[
         {
             "id":0,
-            "titletag":"卧槽",
-            "little":99
+            "titletag":"牛逼不需要装逼",
+            "little":45
         },
         {
             "id":1,
             "titletag":"卧槽",
+            "little":78
+        },
+        {
+            "id":2,
+            "titletag":"回忆如烟烟如梦",
+            "little":99887
+
+        },
+        {
+            "id":5,
+            "titletag":"想死问过涐滴意见没",
+            "little":65
+
+        },
+        {
+            "id":4,
+            "titletag":"人心是善变的",
+            "little":9999
+
+        },
+        {
+            "id":3,
+            "titletag":"霸占你的吣",
+            "little":95
+
+        },
+        {
+            "id":9,
+            "titletag":"说我很邪恶°",
+            "little":656
+
+        },
+        {
+            "id":98,
+            "titletag":"仰你教的背",
+            "little":39
+
+        },
+        {
+            "id":50,
+            "titletag":"都不是小仙女",
             "little":99
+
         }
     ]
 }

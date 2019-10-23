@@ -30,6 +30,7 @@ const padding ="0 .29rem 0 .2rem"
     name: "",
     password: "",
     repassword: "",
+    tag:true
   }    
   this.handleAcc=this.handleAcc.bind(this)
   this.handleValida=this.handleValida.bind(this)
@@ -48,7 +49,7 @@ const padding ="0 .29rem 0 .2rem"
           <ul><li className={this.state.change0} onClick={this.handleLog}>登陆</li>|<li className={this.state.change1} onClick={this.handleReg}>注册</li></ul>
           <form>
           <Input iconbeforebg={shouji} iconlastbg={this.state.accountvalidateimg} placeholder="账号（手机号）" id='user' margin={margin} padding={padding} onChange={this.handleAcc}></Input>
-          <Input iconbeforebg={validateimg} iconlastbg={this.state.accountvalidateimg} handle={this.state.handlet} placeholder="验证码" getValidate="1" margin ={other} padding={getValidatePadding} onChange={this.handleValida} onClick={this.handleGetvalidate}></Input>
+          <Input iconbeforebg={validateimg} iconlastbg={this.state.accountvalidateimg} handle={this.state.handlet} placeholder="验证码" getValidate="1" margin ={other} padding={getValidatePadding} onChange={this.handleValida} onClick={this.state.tag===true?this.handleGetvalidate:void(0)}></Input>
           <Input iconbeforebg={forw} iconlastbg={this.state.namevalidate} placeholder="设置昵称" margin ={other} padding={padding} onChange={this.handleName}></Input>
           <Input iconbeforebg={pas} iconlastbg={this.state.passwordvalidate} placeholder="设置密码" margin ={other} padding={padding} onChange={this.handlePassword}></Input>
           <Input iconbeforebg={pas} iconlastbg={this.state.repasswordvalidate} placeholder="再次 输入密码" margin ={other} padding={padding} onChange={this.handleRepassword}></Input>
@@ -128,18 +129,13 @@ const padding ="0 .29rem 0 .2rem"
            console.log(this.state.account)  
              const users = {
                 account:this.state.account,
-                // validatenum :this.state.validatenum,
                 name:this.state.name,
                 password:this.state.password,
-                // repassword:this.state.repassword
-
-      //   axios.post('/api/users/register',newUser)
-
+ 
              }
              e.preventDefault();
              fetch('http://localhost:9002/user',{
                  method: "POST",
-                //  body: users,
                  body: JSON.stringify(users),
                  headers: {
                      'Content-type': 'application/json'
@@ -148,27 +144,38 @@ const padding ="0 .29rem 0 .2rem"
                  this.props.history.push("./login")
              )
              .catch(()=>{
-                 //错误
              })
   }
   handlebuttont(){
-    // setTimeout(function(){
-    //   code.css("opacity","0.8");
-    // },1000)
+    // let mobile=this.state.account
+    // e.preventDefault();
+    //          fetch('http://xx.com/api/register/sendSms',{
+    //              method: "POST",
+    //              body: mobile,
+    //             //  headers: {
+    //             //      'Content-type': 'application/json'
+    //             //  }
+    //          }).then(
+    //             (res)=>(res.json())
+    //          ).then((res)=>{
+    //            console.log(res.message)
+    //          })
+    //          .catch(()=>{
+    //          })
+    this.setState({tag:false})
     var time = 60;
-    console.log(1)
     var set=setInterval(function(){
     --time
-     console.log(time);
      this.setState({
        handlet:time +"秒后重新获取"
      })
 
     }.bind(this), 1000);
     setTimeout(function(){
-    // code.attr("disabled",false).val("重新获取验证码");
+    this.setState({handlet:"重新获取验证"})
     clearInterval(set);
-    }, 60000);
+    this.setState({tag:true})
+    }.bind(this), 60000);
   }
 }
   export default  withRouter(Page)
