@@ -20,7 +20,7 @@ export default class OtherDynamicContainer extends Component {
    )
  }
  componentDidMount(){
-    http.get({url:'/tag/otherdynamic/'+this.props.match.params.id}).then((res)=>{
+    http.get({url:`/api/dy${this.props.match.params.id}`}).then((res)=>{
       this.setState({
         data:res
       })

@@ -68,7 +68,7 @@ function App() {
         <Route path="/chat" component={Chat}></Route>
         <Route path="/cate" component={MainPageCategoryContainer}></Route>
         <Route path="/otherdynamic/:id" component={OtherDynamic}></Route>
-        <Redirect from="/" to="/index" exact></Redirect>
+        <Redirect from="/" to="/login" exact></Redirect>
     </Switch>
   );
 }

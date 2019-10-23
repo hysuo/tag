@@ -22,7 +22,7 @@ class Chat extends Component {
  }
  componentDidMount(){
   //  this.props.
-    this.socket = io('http://192.168.43.93:9999')
+    this.socket = io('http://47.102.134.110:9999')
     this.socket.on('msg_from_server', (data)=> {
       this.props.addchat(data)
     })

@@ -8,13 +8,13 @@ module.exports = function(app) {
       '^/api': ''
     }
   }))
-  app.use('/tag', proxy({
-    target: 'http://localhost:9001',
-    changeOrigin: true,
-    pathRewrite: {
-      '^/tag': ''
-    }
-  }))
+  // app.use('/tagchat', proxy({
+  //   target: 'http://localhost:9001',
+  //   changeOrigin: true,
+  //   pathRewrite: {
+  //     '^/tagchat': ''
+  //   }
+  // }))
   app.use('/data', proxy({
     target: 'http://localhost:9003',
     changeOrigin: true,

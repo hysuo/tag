@@ -3,13 +3,13 @@
   "/api/chatlist": "/chatlist",
   "/api/tags": "/tags",
   "/api/dynamicList":"/dynamicList",
-  "/api/wechat/0001": "/wechat0001",
-  "/api/wechat/0002": "/wechat0002",
-  "/api/otherdynamic/0": "/dy0",
-  "/api/otherdynamic/2": "/dy2",
-  "/api/otherdynamic/3": "/dy3",
-  "/api/otherdynamic/002": "/dy002",
-  "/api/otherdynamic/003": "/dy003",
-  "/api/otherdynamic/10": "/dy10",
-  "/api/otherdynamic/11": "/dy11"
+  "/api/wechat0001": "/wechat0001",
+  "/api/wechat0002": "/wechat0002",
+  "/api/dy0": "/dy0",
+  "/api/dy2": "/dy2",
+  "/api/dy3": "/dy3",
+  "/api/dy002": "/dy002",
+  "/api/dy003": "/dy003",
+  "/api/dy10": "/dy10",
+  "/api/dy11": "/dy11"
 }

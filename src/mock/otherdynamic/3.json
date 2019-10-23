@@ -6,7 +6,7 @@
     "fans":123,
     "dy":[
         {
-            "id":"07",
+            "id":"00107",
             "time":"2019-10-20 17:00",
             "text":"保养皮肤，开始！",
             "img":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1494455068,1252519609&fm=26&gp=0.jpg",
@@ -14,7 +14,7 @@
             "praise":80
         },
         {
-            "id":"08",
+            "id":"00108",
             "time":"2019-10-8 10:00",
             "text":"想养一只猫",
             "img":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3930436285,1263327733&fm=26&gp=0.jpg",
@@ -22,7 +22,7 @@
             "praise":10
         },
         {
-            "id":"09",
+            "id":"00109",
             "time":"2019-10-1 6:00",
             "text":"啥也不说上图",
             "img":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2630601354,3781455650&fm=26&gp=0.jpg",
