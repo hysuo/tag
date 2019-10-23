@@ -15,4 +15,11 @@ module.exports = function(app) {
       '^/tag': ''
     }
   }))
+  app.use('/alarpi', proxy({
+    target: 'http://localhost:9002',
+    changeOrigin: true,
+    pathRewrite: {
+      '^/alarpi': ''
+    }
+  }))
 }

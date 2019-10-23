@@ -99,7 +99,7 @@ class Page extends PureComponent {
     repassword:this.state.repassword
    }
    e.preventDefault();
-   fetch('http://localhost:9002/user?account='+`${user.account}`,{
+   fetch('/alarpi/user?account='+`${user.account}`,{
                  method: "POST",
                 //  body: users,
                 body: JSON.stringify(user),
