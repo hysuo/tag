@@ -9,7 +9,6 @@ import Banner from './components/Swiper'
 
 export default (props) => {
     let {weChat,cate,account, tagList, tags} = props
-    console.log(tagList)
     return(
         <HomeContainer>
            <header>

@@ -27,7 +27,7 @@ class Page extends PureComponent {
       validatenum:"",
       name: "",
       password: "",
-      repassword: "",
+      repassword: "",tag:true
     }
     this.handleAcc=this.handleAcc.bind(this)
     this.handleValida=this.handleValida.bind(this)
@@ -42,7 +42,7 @@ class Page extends PureComponent {
         <Pagestyle>
           <ul><li>找回密码</li></ul>
           <Input iconbeforebg={shouji} iconlastbg={this.state.accountvalidateimg} placeholder="账号（手机号）" margin={margin} padding={padding}  onChange={this.handleAcc}></Input>
-          <Input iconbeforebg={validateimg} iconlastbg={rt} handle={this.state.handlet} placeholder="验证码" getValidate="1" margin ={other} padding={getValidatePadding} onChange={this.handleValida}onClick={this.handleGetvalidate} ></Input>
+          <Input iconbeforebg={validateimg} iconlastbg={rt} handle={this.state.handlet} placeholder="验证码" getValidate="1" margin ={other} padding={getValidatePadding} onChange={this.handleValida} onClick={this.state.tag===true?this.handleGetvalidate:void(0)} ></Input>
           <Input iconbeforebg={pas} iconlastbg={this.state.passwordvalidate} placeholder="设置密码" margin ={other} padding={padding} onChange={this.handlePassword}></Input>
           <Input iconbeforebg={pas} iconlastbg={this.state.repasswordvalidate} placeholder="再次 输入密码" margin ={other} padding={padding} onChange={this.handleRepassword}></Input>
           <ResetButton onClick={this.handleResetPassword}>登陆</ResetButton>
@@ -118,19 +118,20 @@ class Page extends PureComponent {
   //   code.css("opacity","0.8");
   // },1000)
   var time = 60;
-  console.log(1)
+  this.setState({tag:false})
   var set=setInterval(function(){
   --time
-   console.log(time);
+
    this.setState({
      handlet:time +"秒后重新获取"
    })
 
   }.bind(this), 1000);
   setTimeout(function(){
-  // code.attr("disabled",false).val("重新获取验证码");
+  this.setState({handlet:"重新获取验证"})
   clearInterval(set);
-  }, 60000);
+  this.setState({tag:true})
+  }.bind(this), 60000);
 }
 }
 export default withRouter(Page)
