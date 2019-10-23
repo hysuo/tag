@@ -219,32 +219,6 @@ const PublishDynamicContainer = styled.div`
                 }
             }
         }
-        >div:last-child{
-            height:.5rem;
-            width:100%;
-            display:flex;
-            background:rgba(247,247,247,1);
-            justify-content:space-between;
-            align-items:center;
-            padding:0 .1rem;
-            input{
-                width:2.85rem;
-                height:.36rem;
-                background:rgba(255,255,255,1);
-                border:0px solid rgba(216,206,206,1);
-                opacity:1;
-                border-radius:.1rem;
-            }
-            button{
-                width:.6rem;
-                height:.36rem;
-                background:rgba(137,195,235,1);
-                opacity:1;
-                border-radius:.1rem;
-                border: none;
-                color: #fff;
-            }
-        }
     }
 `
 export{

@@ -10,7 +10,7 @@ import hidden from 'assets/img/publish/dy/hidden (1).png'
 
 import Photo from 'components/photo/Photo'
 export default (props) => {
-    let {cancel, isShow, flag, isShowCue, flagCue, flagTag, isShowTag, isShowAdd, flagAdd, isDeleteImg, deleteImg, clickTag, SelectTag, addTags,addToTextarea,changeValue} = props
+    let {cancel, isShow, flag, isShowCue, flagCue, flagTag, isShowTag, isShowAdd, flagAdd, isDeleteImg, deleteImg, clickTag, SelectTag, addTags,addToTextarea,changeValue, inputValue, handleInput, submit} = props
     return(
         <PublishDynamicContainer>
             <Photo flagAdd={flagAdd} isShowAdd={isShowAdd}></Photo>
@@ -19,11 +19,11 @@ export default (props) => {
                     <img src={goBack} alt=""/>
                 </div>
                 <div>动态</div>
-                <div>发布</div>
+                <div onClick={()=>{submit()} }>发布</div>
             </header>
             <main>
                 <div className={addTags?'tags active':'tags'}>#{SelectTag}</div>
-                <textarea className={flagCue||flagTag ? 'active':''} name="" id="" cols="40" rows="20" placeholder='你的小秘密：'></textarea>
+                <textarea value={inputValue} className={flagCue||flagTag ? 'active':''} name="" id="" cols="40" rows="20" placeholder='你的小秘密：' onChange={handleInput.bind(this)} ></textarea>
                 <div className={flagTag? 'addTag active' : 'addTag'}>
                     <div>
                         <div onClick={()=>{isShowTag()}}>取消</div>
@@ -90,10 +90,10 @@ export default (props) => {
                         <img onClick={()=>{isShow()}} src={flag? merge : hidden} alt=""/>
                     </div>
                 </div>
-                <div>
+                {/* <div>
                     <input type="text" placeholder="回复小雅："/>
-                    <button>发送</button>
-                </div>
+                    <button >发送</button>
+                </div> */}
             </footer>
         </PublishDynamicContainer>
     )
