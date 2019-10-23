@@ -26,7 +26,7 @@ class Page extends PureComponent {
     change1:'',
     account:"",
     password: "",
-    logaccount: JSON.parse(localStorage.getItem("gf")).account,
+    logaccount: JSON.parse(localStorage.getItem("gf"))?JSON.parse(localStorage.getItem("gf")).account:'',
     // logaccount: JSON.parse(localStorage.getItem("gf")).password
    }
    this.handleReg=this.handleReg.bind(this)
