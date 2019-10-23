@@ -134,7 +134,7 @@ const padding ="0 .29rem 0 .2rem"
  
              }
              e.preventDefault();
-             fetch('http://localhost:9002/user',{
+             fetch('/alarpi/user',{
                  method: "POST",
                  body: JSON.stringify(users),
                  headers: {

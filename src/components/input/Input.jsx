@@ -27,7 +27,7 @@ export default class Inputbox extends Component {
         <NoneBorderContainer {...this.props}>
           <i><img src={this.props.iconbeforebg} alt=""/></i>
           <input type={this.props.type} placeholder={this.props.placeholder}/>        
-             <b><img src={this.props.iconlastbg?this.props.iconlastbg:''} alt=""/></b>           
+             <b><img src={this.props.iconlastbg?this.props.iconlastbg:''} alt="" onClick={this.props.handleq}/></b>           
         </NoneBorderContainer>
       )
   }

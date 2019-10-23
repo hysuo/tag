@@ -44,7 +44,7 @@ class Page extends PureComponent {
         <Pagestyle>
           <ul><li className={this.state.change0} onClick={this.handleLog} >登陆</li>|<li className={this.state.change1} onClick={this.handleReg}>注册</li></ul>
           <Input iconbeforebg={forw} iconlastbg={this.state.accountvalidateimg} placeholder={this.state.logaccount||userPlaceholder} margin={margin} padding={padding} onChange={this.handleAcc}></Input>
-          <Input iconbeforebg={pas} iconlastbg={this.state.type?ey:eye} placeholder={passPlaceholder} margin={margin} padding={padding} type={this.state.type?"password":"text"} onChange={this.handlePassword} onClick={this.handlePass}></Input>
+          <Input iconbeforebg={pas} iconlastbg={this.state.type?ey:eye} placeholder={passPlaceholder} margin={margin} padding={padding} type={this.state.type?"password":"text"} onChange={this.handlePassword} handleq={this.handlePass}></Input>
           <nav>
             <Tip onClick={this.handleSave}></Tip>
             <Tipy onClick={this.handleResetPassword}></Tipy>
@@ -100,12 +100,9 @@ class Page extends PureComponent {
     }
   console.log(log.account)
   e.preventDefault();
-             fetch('http://localhost:9002/user?account='+log.account
+             fetch('/alarpi/user?account='+log.account
              ,{
                  method: "GET",
-                //  mode: "no-cors",
-                //  body: users,
-                //  body: JSON.stringify(log),
                  headers: {
                      'Content-type': 'application/x-www-form-urlencoded'
                  }
@@ -123,7 +120,6 @@ class Page extends PureComponent {
                 }
               )
     .catch(()=>{
-        //错误
     })
 }
   
