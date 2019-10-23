@@ -43,7 +43,7 @@ export default class OtherDynamicContainer extends Component {
 gobacklist=()=>{
   this.props.history.push('/inform')
 }
-godetail=()=>{
-  this.props.history.push('/dynamic/dynamicDetail')
+godetail=(id)=>{
+  this.props.history.push('/dynamic/dynamicDetail',{id})
 }
 }

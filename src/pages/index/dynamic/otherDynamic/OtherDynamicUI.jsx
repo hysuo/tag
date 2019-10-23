@@ -57,7 +57,7 @@ export default (props)=>{
                 {
                     props.data.dy &&props.data.dy.map((item,index)=>{
                         return(
-                            <div className="dynamic" onClick={()=>{props.godetail()}} key={index}>
+                            <div className="dynamic" onClick={()=>{props.godetail(item.id)}} key={index}>
                         <div className="xian">
                             <img src={circle} alt=""/>
                             <img src={xian} alt=""/>

@@ -14,6 +14,7 @@ const DynamicDetailContainer = styled.div`
                     width:2.52rem;
                     >img{
                         height:.46rem;
+                        width: .46rem;
                         background:rgba(0,0,0,0);
                         border-radius:50%;
                         margin-right:.14rem;
