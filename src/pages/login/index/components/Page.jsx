@@ -115,8 +115,8 @@ class Page extends PureComponent {
                 return data.json()
               }).then(
                 (data)=> {
-                  if(data[0].password=== log.password){
-                    let obj= {"account": data[0].account,"password": data[0].password}
+                  if(data.password=== log.password){
+                    let obj= {"account": data.account,"password": data.password}
                     localStorage.setItem("gf",JSON.stringify(obj))
                     this.props.history.push("/index")
                   }
