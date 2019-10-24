@@ -22,4 +22,11 @@ module.exports = function(app) {
       '^/alarpi': ''
     }
   }))
+  app.use('/alarapi', proxy({
+    target: 'http://118.190.159.138:8080',
+    changeOrigin: true,
+    pathRewrite: {
+      '^/alarapi': ''
+    }
+  }))
 }
