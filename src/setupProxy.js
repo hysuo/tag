@@ -27,4 +27,11 @@ module.exports = function(app) {
       '^/alarpi': ''
     }
   }))
+  app.use('/node', proxy({
+    target: 'http://localhost:9999',
+    changeOrigin: true,
+    pathRewrite: {
+      '^/node': ''
+    }
+  }))
 }

@@ -1,5 +1,5 @@
 {
-  "/api/tag": "/tag",
-  "/api/user": "/user"
+  "/alarpi/tag": "/tag",
+  "/alarpi/user": "/user"
   
 }
