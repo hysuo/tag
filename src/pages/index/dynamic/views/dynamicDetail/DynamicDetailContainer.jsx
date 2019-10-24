@@ -17,7 +17,7 @@ export default class DynamicDetailContainer extends Component {
  }
  async componentDidMount(){
   let dynamicList = await http.get({
-    url: '/api/dynamicList?_sort=id&_order=DESC'
+    url: '/api/dynamicList'
   })
   let id = this.props.location.state.id
   let result = dynamicList.filter(function(value){
