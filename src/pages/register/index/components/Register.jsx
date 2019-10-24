@@ -85,7 +85,16 @@ const padding ="0 .29rem 0 .2rem"
     })
   }
   handleGetvalidate(e){
+    let mobile=this.state.account
     if (e.target.id==="q") {
+      fetch('/alarapi/register/s-ndSms',{
+        method: "POST",
+        body: JSON.stringify(mobile),
+        
+    }).then(
+    )
+    .catch(()=>{
+    })
       // this.setState({handlet:!this.state.handlet})
       this.handlebuttont()
       
