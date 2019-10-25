@@ -38,8 +38,6 @@ class changeImg extends Component {
 		})
 		axios.patch((('/data/' + Number(data))),{
 			usrname: name
-		}).then((res)=>{
-			console.log(res)
 		})
 		this.props.changeusr(this.props.name)
 		this.props.history.push('/index/profile')

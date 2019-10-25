@@ -19,10 +19,12 @@ class Profile extends Component {
     this.state = {
       // usrname: this.props.usrname,
       // signature: this.props.signature,
-      usrItem: {}
+      usrItem: {},
+     
     }
   }
   render(){
+    
     return (
       <ProfileContainer>
         <header>
@@ -46,6 +48,9 @@ class Profile extends Component {
     this.setState({
       usrItem: usr
     })
+    // window.location.reload()
+    console.log(0)
+    
   }  
 }
 export default Profile

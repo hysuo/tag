@@ -8,7 +8,7 @@ import {
   Head
 } from '../Styledprofile/Styledprofile.js'
 
-import HeadImg from 'img/profile/headImg.png'
+
 import girlImg from 'img/profile/girllittle.png'
 import boyImg from 'img/profile/boylittle.png'
 import secrecyImg from 'img/profile/secrecylittle.png'
@@ -31,7 +31,7 @@ class Header extends PureComponent {
       <Head>
         <div className="headLeft">
           <div className="head_img">
-            <img src={this.props.img} alt="" onClick={() => {
+            <img src={this.props.data.headimg} alt="" onClick={() => {
               this.props.changeHeadImg(this.props.sex,this.props.img)
             }} />
           </div>
@@ -54,6 +54,9 @@ class Header extends PureComponent {
   }
   handleClick(name){
     this.props.history.push(name)
+  }
+  componentWillMount(){
+    this.forceUpdate();
   }
 }
 

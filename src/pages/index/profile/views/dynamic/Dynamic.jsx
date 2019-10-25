@@ -29,7 +29,7 @@ class Dynamic extends PureComponent {
         <header>
           <div className="header">
             <Head></Head>
-            <Main></Main>
+            <Main data={this.state.usrItem}></Main>
             <Headbottom></Headbottom>
           </div>
         </header>
@@ -48,7 +48,7 @@ class Dynamic extends PureComponent {
     this.setState({
       usrItem: usr
     })
-    console.log(this.state.usrItem)
+ 
   }  
 }
 
