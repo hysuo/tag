@@ -45,7 +45,7 @@ const PublishDynamicContainer = styled.div`
             }
             display:none;
             width:100%;
-            height:7rem;
+            height:6rem;
             position: absolute;
             background:#fff;
             top: 1rem;

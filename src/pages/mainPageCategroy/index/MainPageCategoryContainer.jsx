@@ -29,11 +29,11 @@ constructor(props){
        return 'hot'
        break;
    case '002':
-      this.setState({tagtag:'请你赞扬'})
+      this.setState({tagtag:'请你表扬'})
       return 'premire'
       break;
   case '003':
-      this.setState({tagtag:'真的自嘈'})
+      this.setState({tagtag:'朕的自嘈'})
         return 'premire'
         break;
   case '004':

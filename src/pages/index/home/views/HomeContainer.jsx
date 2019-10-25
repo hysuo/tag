@@ -6,15 +6,42 @@ import http from 'utils/http'
 @connect
 class HomeContainder extends Component {
   state={
-    tags:[]
+    tags:[],
+    searchFlag: false,
+    inputValue:'',
+    searchTag:[]
   }
  render(){
   let { isShowPublish } = this.props
-  console.log(this.props)
    return (
      <HomeUI {...this.state} isShowPublish = {isShowPublish} publishDynamic = {this.publishDynamic} publishTag = {this.publishTag} weChat={this.weChat}
-     cate={this.cate} account={this.account} tagList={this.props.tagList}></HomeUI>
+     cate={this.cate} account={this.account} tagList={this.props.tagList}
+     clickSearch={this.clickSearch} changInput={this.changInput}></HomeUI>
    )
+ }
+ changInput=(e)=>{
+   this.setState({
+    inputValue:e.target.value
+   })
+   let keytag=this.state.inputValue
+   let arr =[]
+   let obj = {}
+   for(var value of (this.state.tags)){
+     for (let i = 0; i < keytag.length; i++) {
+         let re = new RegExp(keytag[i], 'g');
+         if (re.test(value.name)){
+         obj={id:value.id, name:value.name}
+         arr.push(obj)
+         }
+         }
+         this.setState({searchTag:arr})
+   }
+ }
+
+ clickSearch=()=>{
+   this.setState({
+    searchFlag:!this.state.searchFlag
+   })
  }
  publishDynamic=()=>{
   this.props.history.push('/publishDynamic')
@@ -36,7 +63,6 @@ class HomeContainder extends Component {
   let tags = await http.get({
     url: '/api/tags'
   })
-  console.log(tags.data)
   this.setState({
     tags:tags.data
   })

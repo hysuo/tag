@@ -5,6 +5,83 @@ const HomeContainer = styled.div`
     display:flex;
     flex-direction:column;
     background:#fff;
+    .active{
+        display:block;
+    }
+    >div:first-child{
+        display:none;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: .5;
+        position: absolute;
+        z-index:2;
+        &.active{
+            display:block;
+        }
+    }
+    >div:nth-child(2){
+        display:none;
+        position: absolute;
+        z-index:999;
+        top:.84rem;
+        left:.23rem;
+        &.active{
+            display:block;
+        }
+        >div:first-child{
+            width:3.26rem;
+            height:.5rem;
+            background:#fff;
+            box-shadow:0px 3px 6px rgba(0,0,0,0.16);
+            opacity:1;
+            border-radius:20px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            margin-bottom:.3rem;
+            display:flex;
+            input{
+                width:2.63rem;
+                height:.34rem;
+                background:#E5E5E5;
+                border:none;
+                border-radius:12px;
+                padding-left:.1rem;
+            }
+            img{
+                height:.3rem;
+                width:.3rem;
+                margin-left:.13rem;
+            }
+        }
+        >div:last-child{
+            padding:.3rem .12rem .13rem .15rem;
+            background:#fff;
+            box-shadow:0px 3px 6px rgba(0,0,0,0.16);
+            opacity:1;
+            border-radius:20px;
+            >div:first-child{
+                >div{
+                    width:3.06rem;
+                    height:.4rem;
+                    background:rgba(137,195,235,1);
+                    box-shadow:0px 3px 6px rgba(0,0,0,0.16);
+                    opacity:1;
+                    border-radius:15px;
+                    margin-bottom:.1rem;
+                    padding:.08rem 0 .07rem .2rem;
+                    font-size:.18rem;
+                    font-family:PingFang SC;
+                    font-weight:bold;
+                    color:rgba(254,254,254,1);
+                }
+            }
+            >div:last-child{
+                text-align:center;
+            }
+        }
+    }
     header{
         height : .72rem;
         width : 100%;

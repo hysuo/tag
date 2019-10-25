@@ -8,9 +8,28 @@ import go from 'assets/img/home1/微信图片_20190919090717.png'
 import Banner from './components/Swiper'
 
 export default (props) => {
-    let {weChat,cate,account, tagList, tags} = props
+    let {weChat,cate,account, tagList, tags, searchFlag, clickSearch, changInput, inputValue, searchTag} = props
     return(
         <HomeContainer>
+        <div onClick={()=>{clickSearch()}} className={searchFlag?'active':''}></div>
+        <div className={searchFlag?'active':''}>
+            <div>
+                <input type="text" value={inputValue} onChange={changInput.bind(this)}/>
+                <img src={search} alt=""/>
+            </div>
+            <div>
+                <div>
+                    {
+                        searchTag.map((value, index)=>(
+                            <div key={value.id+index} onClick={()=>{weChat(value.id,value.name)}} >{value.name}</div>
+                        ))
+                    }
+                </div>
+                <div>
+                    呐~就这么多
+                </div>
+            </div>
+        </div>
            <header>
                <div onClick={()=>{account()}}>
                    <img src={more} alt=""/>
@@ -19,7 +38,7 @@ export default (props) => {
                    <img src={logo} alt=""/>
                </div>
                <div>
-                   <img src={search} alt=""/>
+                   <img onClick={()=>{clickSearch()}} src={search} alt=""/>
                </div>
            </header>
            <main>
