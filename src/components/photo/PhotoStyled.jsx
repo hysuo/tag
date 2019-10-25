@@ -40,10 +40,16 @@ const PhotoShow = styled.div`
             align-items:center;
             font-size:.14rem;
             color:rgba(25,25,25,1);
+            position: relative;
             img{
                 width:.24rem;
                 height:.2rem;
                 margin: 0 .2rem;
+            }
+            input{
+                position: absolute;
+                left: .5rem;
+                opacity: 0;
             }
         }
         >div:last-child{

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PublishDynamicUI from './PublishDynamicUI'
 import axios from 'axios'
+import defaultImg from 'assets/img/publish/dy/TAGTAG.png'
 
 class PublishDynamicContainer extends Component {
     state={
@@ -12,11 +13,26 @@ class PublishDynamicContainer extends Component {
         SelectTag : '',
         addTags:true,
         addDynamic:{},
-        inputValue:""
+        inputValue:"",
+        imgPush:defaultImg,
+        users:'',
+        userList:[],
+        aUser:'',
+        someUsers:[
+            'aaaa',
+            'abababa',
+            'aaaa',
+            'adadad',
+            'cccc',
+            'dddd',
+            'qwqwqw',
+            'iiiii',
+            'popop'
+        ]
     }
     render(){
         return (
-            <PublishDynamicUI {...this.state} cancel={this.cancel} isShow={this.isShow} isShowCue={this.isShowCue}  isShowTag={this.isShowTag}  isShowAdd={this.isShowAdd}  isDeleteImg={this.isDeleteImg} clickTag={this.clickTag} addToTextarea={this.addToTextarea} changeValue={this.changeValue} handleInput={this.handleInput} submit={this.submit}></PublishDynamicUI>
+            <PublishDynamicUI {...this.state} cancel={this.cancel} isShow={this.isShow} isShowCue={this.isShowCue}  isShowTag={this.isShowTag}  isShowAdd={this.isShowAdd}  isDeleteImg={this.isDeleteImg} clickTag={this.clickTag} addToTextarea={this.addToTextarea} changeValue={this.changeValue} handleInput={this.handleInput} submit={this.submit} upload={this.upload} selectUser={this.selectUser} getUser={this.getUser}></PublishDynamicUI>
         )
     }
     cancel=()=>{
@@ -45,7 +61,8 @@ class PublishDynamicContainer extends Component {
     }
     isDeleteImg=()=>{
         this.setState({
-            deleteImg:!this.state.deleteImg
+            deleteImg:!this.state.deleteImg,
+            imgPush:''
         })
     }
     clickTag=(event)=>{
@@ -66,6 +83,56 @@ class PublishDynamicContainer extends Component {
         console.log(this.state.inputValue)
         this.setState({inputValue:e.target.value})
     }
+    getUser=(value)=>{
+        this.setState({
+            aUser:value,
+            users:value
+        })
+    }
+    selectUser=(e)=>{
+        this.setState({
+            users:e.target.value
+        })
+        let keytag=this.state.users
+        let arr =[]
+        for(var value of (this.state.someUsers)){
+            for (let i = 0; i < keytag.length; i++) {
+                let re = new RegExp(keytag[i], 'g');
+                if (re.test(value)){
+                arr.push(value)
+                }
+                }
+                this.setState({userList:arr})
+        }
+        console.log(this.state.userList)
+    }
+    upload = (c) => {
+        let $c = document.querySelector(c)
+        let file = $c.files[0]
+        let reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onload = (e) => {
+          this.setState({
+            imgPush: e.target.result
+          })
+        }
+          // const or = getImageTag(file, 'Orientation')
+          // // reader.readAsDataURL(file)
+          // reader.onloadend = function () {
+          //   // this.result就是转化后的结果
+          //     const result = this.result;
+          //     // 将base64添加到图片标签上
+          //     const img = new Image();
+          //     img.src = result;
+          //     img.onload = function () {
+          //       // 这里添加旋转图片的代码
+          //       const data = this.getRotateImg(img, or);
+          //       // 如果上传接口不支持base64，则这里需要将base64转为文档流
+          //       const f = dataURLtoFile(data);
+          //       // 调用接口，上传图片
+          //     }
+          // }
+        }
     submit= async ()=>{
         console.log(this.state.inputValue)
         let aDynamic = {
@@ -75,7 +142,7 @@ class PublishDynamicContainer extends Component {
             "createTime":"1分钟前",
             "tag" : this.state.SelectTag,
             "text":this.state.inputValue,
-            "img":"http://img3.imgtn.bdimg.com/it/u=2702933053,3904923690&fm=26&gp=0.jpg",
+            "img":this.state.imgPush,
             "zan":0,
             "comment":[]
           }
