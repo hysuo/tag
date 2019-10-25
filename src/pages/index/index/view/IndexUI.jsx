@@ -27,10 +27,11 @@ import { Dynamic } from 'pages/index/dynamic/'
 import { Profile } from 'pages/index/profile/'
 
 export default (props) => {
-	let { path, handleClick, pathname, isShowPublish, changePublishState, publishTag, publishDynamic, isUpdateheadimg, isUpadatesex, changeHeadImg, changeSex, updateSex, sex, upload, img, changImg, cancelimg,previmg } = props
+	let { path, handleClick, pathname, isShowPublish, changeMockImg,changePublishState, publishTag, publishDynamic, isUpdateheadimg, isUpadatesex, changeHeadImg, changeSex, updateSex, sex, upload, img, changImg, cancelimg,previmg } = props
 	return (
 		<IndexContainer>
 			<div className={isUpdateheadimg ? 'wrap' : ''} onClick={() => {
+				changeMockImg()
 				changImg(sex, img)
 				changeHeadImg(sex, img)
 			}}></div>

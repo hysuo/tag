@@ -60,8 +60,10 @@ const Main = styled.div `
       height: .6rem;
       border-radius: 50%;
       img {
-        width: 100%;
-        height: 100%;
+        width: .6rem;
+        height: .6rem;
+        border-radius: 50%;
+        display: block;
       }
     }
     .usrname {
