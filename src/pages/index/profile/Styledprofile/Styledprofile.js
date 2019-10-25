@@ -27,8 +27,8 @@ const Head = styled.div `
 		height: .78rem; */
 		position: relative;
 		div	{
-			width: .6rem;
-      height: .6rem;
+			width: .55rem;
+      height: .55rem;
 			margin-left: .1rem;
 			margin-top: .1rem;
       border-radius: 50%;
@@ -38,8 +38,10 @@ const Head = styled.div `
       align-items: center;
       justify-content: center;
 			img {
-				width: 100%;
-				height: 100%;
+				display: block;
+				border-radius: 50%;
+				width: .55rem;
+      	height: .55rem;
 			}
 		}
 		.sex {
@@ -48,8 +50,8 @@ const Head = styled.div `
 			border-radius: 50%;
 			background: #fff;
 			position: absolute;
-			left: .4rem;
-			top: .4rem;
+			left: .37rem;
+			top: .37rem;
 			img {
 				width: 100%;
 				height: 100%;

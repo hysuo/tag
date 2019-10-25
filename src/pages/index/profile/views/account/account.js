@@ -25,8 +25,10 @@ const Usr = styled.div `
       height: .6rem;
       margin-right: .1rem;
       img {
-        width: 100%;
-        height: 100%;
+        display: block;
+        border-radius: 50%;
+        width: .6rem;
+        height: .6rem;
       }
     }
     .right {

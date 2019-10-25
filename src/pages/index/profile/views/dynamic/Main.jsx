@@ -8,7 +8,7 @@ import {
 import {
   Main
 } from './dynamic.js'
-import headImg from '../../../../../assets/img/profile/headImg.png'
+
 import connect from '../connect'
 
 const labelList = [
@@ -42,7 +42,7 @@ class Mainer extends PureComponent {
 			<Main>
         <div className="usrinfo">
           <div className="headimg">
-            <img src={headImg} alt=""/>
+            <img src={this.props.data.headimg} alt=""/>
           </div>
           <div className="usrname">
             <p>{this.state.usrItem.usrname}</p>
