@@ -9,6 +9,7 @@ import pas from 'images/pas/xiugaimima.svg'
 import shouji from 'images/tel/ziyuan.svg'
 import validateimg from 'images/tel/yanzhengma.svg'
 import RegisterButton from './RegisterButton'
+import axios from 'axios'
 const margin =".3rem .16rem 0 .24rem"
 const other =".1rem .16rem 0 .24rem"
 const getValidatePadding ='0 .1rem 0 .2rem'
@@ -86,18 +87,21 @@ const padding ="0 .29rem 0 .2rem"
   }
   handleGetvalidate(e){
     let mobile=this.state.account
+    console.log(mobile)
     if (e.target.id==="q") {
-      fetch('/alarapi/register/s-ndSms',{
-        method: "POST",
-        body: JSON.stringify(mobile),
+    //   fetch('/alarapi/api/register/s-ndSms',{
+    //     method: "POST",
+    //     body: JSON.stringify(mobile),
         
-    }).then(
-    )
-    .catch(()=>{
+    // }).then(
+    // )
+    // .catch(()=>{
+    // })
+    axios.post('/alarapi/api/register/s-ndSms',{
+      mobile
     })
       // this.setState({handlet:!this.state.handlet})
       this.handlebuttont()
-      
     }
   }
   handleName(e){

@@ -91,7 +91,9 @@ class Usr extends PureComponent {
                   <p className="usrname">{value.name}</p>
                   <p className="signature">{value.signature}</p>
                 </div>
-                <div className="next"><img src={next} alt=""/></div>
+                <div className="next" onClick={() => {
+                  this.props.history.push("/otherdynamic/"+ 100)
+                }}><img src={next} alt=""/></div>
               </div>
             </div>
           })

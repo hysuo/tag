@@ -11,6 +11,7 @@ const dy002 = require('./otherdynamic/002.json')
 const dy003 = require('./otherdynamic/003.json')
 const dy10 = require('./otherdynamic/10.json')
 const dy11 = require('./otherdynamic/11.json')
+const dy100 = require('./otherdynamic/100.json')
 module.exports = function(){
   return{
       chatlist,
@@ -25,6 +26,7 @@ module.exports = function(){
       dy002,
       dy003,
       dy10,
-      dy11
+      dy11,
+      dy100
 }
 }

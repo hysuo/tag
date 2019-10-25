@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import ChatUI from './ChatUI'
 import connect  from './connext';
-import io from 'socket.io-client'
+// import io from 'socket.io-client'
 @connect
 class Chat extends Component {
  state={
   //  list:this.props.chat,
    data:[],
-   id:Math.floor(Math.random()*10)
+   id:1
  }
  render(){
    return (
@@ -22,10 +22,10 @@ class Chat extends Component {
  }
  componentDidMount(){
   //  this.props.
-    this.socket = io('/node')
-    this.socket.on('msg_from_server', (data)=> {
-      this.props.addchat(data)
-    })
+    // this.socket = io('/node')
+    // this.socket.on('msg_from_server', (data)=> {
+    //   this.props.addchat(data)
+    // })
     let list = this.props.list.filter((item,value)=>{
       if(item.id === this.props.match.params.id){
         return item
@@ -41,10 +41,14 @@ class Chat extends Component {
   //   this.props.addchat(data)
   // })
    if(value){
-    this.socket.emit('msg_from_client',{
-      id:this.state.id,
-      data:value
+    this.props.addchat({
+        id:this.state.id,
+        data:value
     })
+    // this.socket.emit('msg_from_client',{
+    //   id:this.state.id,
+    //   data:value
+    // })
    }
  }
  godynamic=()=>{
