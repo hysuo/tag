@@ -100,7 +100,7 @@ class Page extends PureComponent {
     }
   console.log(log.account)
   e.preventDefault();
-             fetch('/alarpi/user?account='+log.account
+             fetch('/alarpi/user'
              ,{
                  method: "GET",
                  headers: {
@@ -112,7 +112,7 @@ class Page extends PureComponent {
                 return data.json()
               }).then(
                 (data)=> {
-                  if(data.password=== log.password){
+                  if(data.count ===log.count && data.password=== log.password){
                     let obj= {"account": data.account,"password": data.password}
                     localStorage.setItem("gf",JSON.stringify(obj))
                     this.props.history.push("/index")

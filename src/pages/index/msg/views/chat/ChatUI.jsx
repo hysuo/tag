@@ -50,7 +50,7 @@ export default (props) => {
                                     <div key={index} className='own'>
                                         <li>
                                         <span>{value.data}</span>
-                                        <img src={headImg} alt=""/>
+                                        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1666966895,993299225&fm=26&gp=0.jpg" alt=""/>
                                     </li>
                                     </div>
                                     
