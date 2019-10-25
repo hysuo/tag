@@ -6,8 +6,8 @@ import forw from 'images/use/zhanghao.svg'
 import rt from 'images/rig/dui.svg'
 import wg from 'images/rig/cuo.svg'
 import pas from 'images/pas/xiugaimima.svg'
-import ey from 'images/ey/eyq.svg'
-import eye from 'images/ey/eyw.svg'
+import ey from 'images/ey/eyw.svg'
+import eye from 'images/ey/eyq.svg'
 import Tip from 'components/tip/Tip'
 import LoginButton from './Button'
 import Tipy from 'components/tip/Tipy'
@@ -44,7 +44,7 @@ class Page extends PureComponent {
         <Pagestyle>
           <ul><li className={this.state.change0} onClick={this.handleLog} >登陆</li>|<li className={this.state.change1} onClick={this.handleReg}>注册</li></ul>
           <Input iconbeforebg={forw} iconlastbg={this.state.accountvalidateimg} placeholder={this.state.logaccount||userPlaceholder} margin={margin} padding={padding} onChange={this.handleAcc}></Input>
-          <Input iconbeforebg={pas} iconlastbg={this.state.type?ey:eye} placeholder={passPlaceholder} margin={margin} padding={padding} type={this.state.type?"password":"text"} onChange={this.handlePassword} handleq={this.handlePass}></Input>
+          <Input iconbeforebg={pas} iconlastbg={this.state.type?ey:eye} placeholder={passPlaceholder} margin={margin} padding={padding} type={this.state.type?"text":"password"} onChange={this.handlePassword} handleq={this.handlePass}></Input>
           <nav>
             <Tip onClick={this.handleSave}></Tip>
             <Tipy onClick={this.handleResetPassword}></Tipy>
